@@ -31,7 +31,13 @@ const Navbar = () => {
                                 Dúvidas
                         </NavLink>
                     </li>
-                    {!user && (
+                    <li>
+                        <NavLink to="/entrar" className={({ isActive }) => (isActive ? styles.active : null )}>
+                                Entrar
+                        </NavLink>
+                    </li>
+                    
+                    {/* {!user && (
                         <>
                             <li>
                                 <NavLink to="/login" className={({ isActive }) => (isActive ? styles.active : null )}>
@@ -48,7 +54,7 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                     </>
-                    )}
+                    )} */}
                     
                 </ul>
             </nav>
