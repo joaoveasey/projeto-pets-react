@@ -31,11 +31,11 @@ const Navbar = () => {
                                 Dúvidas
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/entrar" className={({ isActive }) => (isActive ? styles.active : null )}>
-                                Entrar
+                    <button>
+                        <NavLink to="/entrar" className={styles.entrar}>
+                                Login
                         </NavLink>
-                    </li>
+                    </button>
                     
                     {/* {!user && (
                         <>
