@@ -1,0 +1,24 @@
+.brand{
+border: 2px solid red;
+margin-left: 20px;
+}
+
+.navbar{
+    background-color: aqua;
+    display:flex;
+    justify-content: space-between;
+    border: 2px solid red;
+    height: 70px;
+    align-items: center;
+}
+
+.link_list{
+    display:flex;
+    justify-content: space-around;
+    width: 700px;
+    list-style-type: none;
+}
+
+.link_list a{
+    text-decoration: none;
+}
