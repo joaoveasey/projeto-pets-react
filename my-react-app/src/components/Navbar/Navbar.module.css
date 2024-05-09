@@ -1,14 +1,13 @@
 .brand{
-border: 2px solid red;
-margin-left: 20px;
+    margin-left: 30px;
+    
 }
 
 .navbar{
-    background-color: aqua;
+    background-color: #152540;
     display:flex;
     justify-content: space-between;
-    border: 2px solid red;
-    height: 70px;
+    height: 110px;
     align-items: center;
 }
 
@@ -21,4 +20,16 @@ margin-left: 20px;
 
 .link_list a{
     text-decoration: none;
+    font-size: 20px;
+    color: #f0f0f0;
+}
+
+.entrar {
+    border: none;
+    background-color: #3d61ff;
+    padding: 10px 40px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #f0f0f0;
 }
