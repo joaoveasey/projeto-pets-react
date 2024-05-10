@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from 'react-router-dom'
 import styles from './Navbar.module.css'
-import logo from "./img/logo-conexao-canina.png"
+import logo from "./img/logo.png"
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -9,7 +9,8 @@ const Navbar = () => {
         <>
             <nav className={styles.navbar}>
                 <NavLink to="/" className={styles.brand}>
-                    {/* <img src={logo} alt="logo-site" /> */}
+                    <img src={logo} alt="logo" width="120px" height="110px"/>
+                    <p>Conexão Canina</p>
                 </NavLink>
                 <ul className={styles.link_list}>
                     <li>
