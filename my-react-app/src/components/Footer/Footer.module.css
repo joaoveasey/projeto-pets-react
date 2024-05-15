@@ -1,0 +1,12 @@
+.footer {
+    height: 230px;
+    background-color: #152540;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer h2,h3 {
+    color: #f0f0f0;
+    margin-top: 15px;
+}

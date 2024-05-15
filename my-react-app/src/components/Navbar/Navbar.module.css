@@ -1,24 +1,52 @@
-.brand{
-border: 2px solid red;
-margin-left: 20px;
-}
-
 .navbar{
-    background-color: aqua;
+    background-color: #152540;
     display:flex;
     justify-content: space-between;
-    border: 2px solid red;
-    height: 70px;
+    height: 120px;
     align-items: center;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+.brand p{
+    color: #f0f0f0;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .link_list{
     display:flex;
     justify-content: space-around;
-    width: 700px;
+    width: 800px;
     list-style-type: none;
 }
 
 .link_list a{
     text-decoration: none;
+    font-size: 21px;
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+.link_list a:hover {
+    color:#506ffc;
+}
+
+.entrar {
+    border: none;
+    background-color: #3d61ff;
+    padding: 10px 50px;
+    border-radius: 12px;
+    color: #f0f0f0;
+}
+
+
+.link_list button a:hover{
+    background-color: #506ffc;
+    color: #f0f0f0;
 }
