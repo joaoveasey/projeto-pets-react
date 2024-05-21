@@ -1,0 +1,165 @@
+.container {
+    font-family: 'Inter', sans-serif;
+    width: 98.9vw;
+    height: 160vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .container span {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 24px;
+    color: #152540;
+  }
+  
+  .container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    height: 160vh;
+    width: 650px;
+  }
+
+  .container form  .inputContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .container form  .inputContainer label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 8px;
+  }
+  
+  .container form  .inputContainer input {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px;
+    width: 520px;
+    height: 40px;
+    border: 1px solid #152540;
+    border-radius: 15px;
+    margin-bottom: 16px;
+    font-size: 15px;
+  }
+
+  .form h3 {
+    color:black;
+    margin: 5px;
+  }
+
+  .inputContainer_Select {
+    display: block;
+    margin-bottom: 18px;
+  }
+  
+  .inputContainer_Select select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .inputContainer_Select select:focus {
+    outline: none;
+    border-color: black;  
+  }
+  
+  .inputContainer_Select option {
+    font-size: 16px;
+  }
+  
+  .inputContainer_Photo {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .inputContainer_Photo input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .inputContainer_Photo input[type="file"]:focus {
+    outline: none;
+    border-color: black; 
+  }
+  
+  .form button {
+    width: 280px;
+    height: 48px;
+    background: #152540;
+    border-radius: 12px;
+    color: #fff;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 15px;
+  }
+
+  .form button {
+    width: 280px;
+    height: 48px;
+    background: #152540;
+    border-radius: 12px;
+    color: #fff;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .form button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  
+  .inputContainer textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Estilo quando o textarea está em foco */
+  .inputContainer textarea:focus {
+    outline: none;
+    border-color: black; 
+  }
+  
+  .inputContainer textarea::placeholder {
+    color: #999; 
+  }
+  

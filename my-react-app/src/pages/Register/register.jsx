@@ -1,4 +1,4 @@
-import './register.module.css'
+import styles from './register.module.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
 // import { userAuthentication } from '../../hooks/userAuthentication'
@@ -74,10 +74,12 @@ function Register() {
   
   return (
     <>
-      <form onSubmit={handlerSubmit}>
+    <div className={styles.container}>
+    <form className={styles.form} onSubmit={handlerSubmit}>
         <div >
-          <h1>Novo usuário? Cadastre-se!</h1>
-          <label>
+          <span>Novo usuário? Cadastre-se!</span>
+          <h3>Nome:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="text" 
             name='firstName'
@@ -86,7 +88,8 @@ function Register() {
             onChange={(e) => setFirstName(e.target.value)}
             placeholder='Nome'></input>
           </label>
-          <label>
+          <h3>Sobrenome:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="text" 
             name='lastName'
@@ -95,7 +98,8 @@ function Register() {
             onChange={(e) => setLastName(e.target.value)}
             placeholder='Sobrenome'></input>
           </label>
-          <label>
+          <h3>Email:</h3>
+          <label className={styles.inputContainer} >
             <input 
             type="email" 
             name='email'
@@ -104,7 +108,8 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder='Email'></input>
           </label>
-          <label>
+          <h3>Celular:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="tel" 
             name='phoneNumber'
@@ -113,7 +118,8 @@ function Register() {
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder='Celular'></input>
           </label>
-          <label>
+          <h3>Cidade:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="text" 
             name='city'
@@ -122,7 +128,8 @@ function Register() {
             onChange={(e) => setCity(e.target.value)}
             placeholder='Cidade'></input>
           </label>
-          <label>
+          <h3>Estado:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="text" 
             name='state'
@@ -131,7 +138,8 @@ function Register() {
             onChange={(e) => setState(e.target.value)}
             placeholder='Estado'></input>
           </label>
-          <label>
+          <h3>Nome de Usuário:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="text" 
             name='username'
@@ -140,7 +148,8 @@ function Register() {
             onChange={(e) => setUsername(e.target.value)}
             placeholder='Nome de Usuário'></input>
           </label>
-          <label>
+          <h3>Senha:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="password" 
             name='password'
@@ -149,7 +158,8 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder='Senha'></input>
           </label>
-          <label>
+          <h3>Confirme sua senha:</h3>
+          <label className={styles.inputContainer}>
             <input 
             type="password" 
             name='confirmedPassword'
@@ -160,8 +170,8 @@ function Register() {
           </label>
         </div>
         <div>
-          <h1>Informações do Cão</h1>
-          <label>
+          <span>Informações do Cão</span>
+          <label className={styles.inputContainer}>
             <input 
             type="text" 
             name='dogName'
@@ -170,7 +180,18 @@ function Register() {
             onChange={(e) => setDogName(e.target.value)}
             placeholder='Nome'></input>
           </label>
-          <label>
+          <h3>Idade:</h3>
+          <label className={styles.inputContainer}>
+            <input 
+            type="number" 
+            name='dogAge'
+            required
+            value={dogAge}
+            onChange={(e) => setDogAge(e.target.value)}
+            placeholder='Idade'></input>
+          </label>
+          <h3>Raça:</h3>
+          <label className={styles.inputContainer_Select}>
             <select 
             name="dogBreed" 
             value={dogBreed}
@@ -205,7 +226,8 @@ function Register() {
               <option selected value="Outro">Outro</option>
             </select>
           </label>
-          <label>
+          <h3>Porte:</h3>
+          <label className={styles.inputContainer_Select}>
             <select
               name='dogSize'
               required
@@ -219,7 +241,8 @@ function Register() {
               <option value="muitoGrande">Muito Grande</option>  
             </select> 
           </label>
-          <label>
+          <h3>Gênero:</h3>
+          <label className={styles.inputContainer_Select}>
           <select 
               name='dogGender'
               required
@@ -230,24 +253,16 @@ function Register() {
               <option value="F">Feminino</option>
             </select> 
           </label>
-          <label>
-            <input 
-            type="number" 
-            name='dogAge'
-            required
-            value={dogAge}
-            onChange={(e) => setDogAge(e.target.value)}
-            placeholder='Idade'></input>
-          </label>
-          <label>
-          Adicione uma foto do seu Pet
+          
+          <h3>Insira uma foto do seu Pet:</h3>
+          <label className={styles.inputContainer_Photo}>
             <input 
             type="file" 
             name='dogPhoto'
             value={dogPhoto}
             onChange={(e) => setDogPhoto(e.target.value)}></input>
           </label>
-          <label>
+          <label className={styles.inputContainer}>
             <textarea 
             type="text" 
             name='dogInfo'
@@ -257,8 +272,10 @@ function Register() {
             placeholder='Conte aqui um pouco sobre o Pet'></textarea>
           </label>
         </div>
-        <button className='btn'>Cadastrar</button>
+        <button className='button'>Cadastrar</button>
       </form>
+    </div>
+      
     </>
     
   )
