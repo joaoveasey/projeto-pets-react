@@ -26,10 +26,11 @@ function Login() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <span>Login</span>
+        
       </header>
 
       <form>
+      <span>Login</span>
         <div className={styles.inputContainer}>
           <label htmlFor="email">E-mail</label>
           <input
