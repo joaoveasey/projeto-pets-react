@@ -77,8 +77,10 @@ function Register() {
     <div className={styles.container}>
     <form className={styles.form} onSubmit={handlerSubmit}>
         <div >
-          <span>Novo usuário? Cadastre-se!</span>
-          <h3>Nome:</h3>
+          <div className={styles.header}>
+           <span>Novo usuário? Cadastre-se!</span>
+          </div>
+          <span>Nome:</span>
           <label className={styles.inputContainer}>
             <input 
             type="text" 
@@ -88,7 +90,7 @@ function Register() {
             onChange={(e) => setFirstName(e.target.value)}
             placeholder='Nome'></input>
           </label>
-          <h3>Sobrenome:</h3>
+          <span>Sobrenome:</span>
           <label className={styles.inputContainer}>
             <input 
             type="text" 
@@ -98,7 +100,7 @@ function Register() {
             onChange={(e) => setLastName(e.target.value)}
             placeholder='Sobrenome'></input>
           </label>
-          <h3>Email:</h3>
+          <span>Email:</span>
           <label className={styles.inputContainer} >
             <input 
             type="email" 
@@ -108,7 +110,7 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder='Email'></input>
           </label>
-          <h3>Celular:</h3>
+          <span>Celular:</span>
           <label className={styles.inputContainer}>
             <input 
             type="tel" 
@@ -118,7 +120,7 @@ function Register() {
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder='Celular'></input>
           </label>
-          <h3>Cidade:</h3>
+          <span>Cidade:</span>
           <label className={styles.inputContainer}>
             <input 
             type="text" 
@@ -128,7 +130,7 @@ function Register() {
             onChange={(e) => setCity(e.target.value)}
             placeholder='Cidade'></input>
           </label>
-          <h3>Estado:</h3>
+          <span>Estado:</span>
           <label className={styles.inputContainer}>
             <input 
             type="text" 
@@ -138,7 +140,7 @@ function Register() {
             onChange={(e) => setState(e.target.value)}
             placeholder='Estado'></input>
           </label>
-          <h3>Nome de Usuário:</h3>
+          <span>Nome de Usuário:</span>
           <label className={styles.inputContainer}>
             <input 
             type="text" 
@@ -148,7 +150,7 @@ function Register() {
             onChange={(e) => setUsername(e.target.value)}
             placeholder='Nome de Usuário'></input>
           </label>
-          <h3>Senha:</h3>
+          <span>Senha:</span>
           <label className={styles.inputContainer}>
             <input 
             type="password" 
@@ -158,7 +160,7 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder='Senha'></input>
           </label>
-          <h3>Confirme sua senha:</h3>
+          <span>Confirme sua senha:</span>
           <label className={styles.inputContainer}>
             <input 
             type="password" 
@@ -170,7 +172,10 @@ function Register() {
           </label>
         </div>
         <div>
-          <span>Informações do Cão</span>
+        <div className={styles.header}>
+         <span>Informações do Cão</span>
+        </div>
+        <span>Nome:</span>
           <label className={styles.inputContainer}>
             <input 
             type="text" 
@@ -180,7 +185,7 @@ function Register() {
             onChange={(e) => setDogName(e.target.value)}
             placeholder='Nome'></input>
           </label>
-          <h3>Idade:</h3>
+          <span>Idade:</span>
           <label className={styles.inputContainer}>
             <input 
             type="number" 
@@ -190,7 +195,7 @@ function Register() {
             onChange={(e) => setDogAge(e.target.value)}
             placeholder='Idade'></input>
           </label>
-          <h3>Raça:</h3>
+          <span>Raça:</span>
           <label className={styles.inputContainer_Select}>
             <select 
             name="dogBreed" 
@@ -198,6 +203,7 @@ function Register() {
             required
             onChange={(e) => setDogBreed(e.target.value)}
             > 
+              <option selected value="-1"></option>
               <option value="Golden Retriever">Golden Retriever</option>
               <option value="Pit Bull">Pit Bull</option>
               <option value="Labrador Retriever">Labrador Retriever</option>
@@ -226,7 +232,7 @@ function Register() {
               <option selected value="Outro">Outro</option>
             </select>
           </label>
-          <h3>Porte:</h3>
+          <span>Porte:</span>
           <label className={styles.inputContainer_Select}>
             <select
               name='dogSize'
@@ -234,6 +240,7 @@ function Register() {
               value={dogSize}
               onChange={(e) => setDogSize(e.target.value)}
             >
+              <option selected value="-1"></option>
               <option value="muitoPequeno">Muito Pequeno</option>  
               <option selected value="Pequeno">Pequeno</option>  
               <option value="Medio">Médio</option>  
@@ -241,7 +248,7 @@ function Register() {
               <option value="muitoGrande">Muito Grande</option>  
             </select> 
           </label>
-          <h3>Gênero:</h3>
+          <span>Gênero:</span>
           <label className={styles.inputContainer_Select}>
           <select 
               name='dogGender'
@@ -249,12 +256,13 @@ function Register() {
               value={dogGender}
               onChange={(e) => setDogGender(e.target.value)}
             >
+              <option selected value="-1"></option>
               <option value="M">Masculino</option>  
               <option value="F">Feminino</option>
             </select> 
           </label>
           
-          <h3>Insira uma foto do seu Pet:</h3>
+          <span>Adicione uma foto do seu Pet:</span>
           <label className={styles.inputContainer_Photo}>
             <input 
             type="file" 

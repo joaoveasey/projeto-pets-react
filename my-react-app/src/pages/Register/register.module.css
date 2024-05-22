@@ -1,16 +1,23 @@
 .container {
     font-family: 'Inter', sans-serif;
     width: 98.9vw;
-    height: 160vh;
+    height: 76vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
   }
 
   .container span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 8px;
+  }
+
+  .header span {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -88,10 +95,11 @@
   .inputContainer_Photo {
     display: block;
     margin-bottom: 10px;
+    
   }
   
   .inputContainer_Photo input[type="file"] {
-    width: 100%;
+    width: 65%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -163,3 +171,15 @@
     color: #999; 
   }
   
+  @media only screen and (max-width: 1800px) {
+    .container{
+      height: 220vh;
+    }
+
+    .container form {
+      height: 220vh;
+    }
+      
+    
+
+    }
