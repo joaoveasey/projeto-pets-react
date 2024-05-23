@@ -37,15 +37,7 @@ function Register() {
       city,
       state,
       username,
-      password
-    }
-
-    if (password != confirmedPassword){
-      setError("As senhas precisam ser iguais.")
-      return
-    }
-
-    const dog = {
+      password,
       dogName,
       dogBreed,
       dogSize,
@@ -55,12 +47,16 @@ function Register() {
       dogInfo
     }
 
+    if (password != confirmedPassword){
+      setError("As senhas precisam ser iguais.")
+      return
+    }
+
     if (dogAge < 0){
       setError("A idade não pode ser menor que 0.")
     } 
 
-    const resUser = await createUser(user)
-    const resDog = await createUser(dog)
+    const res = await createUser(user)
 
     console.table(res)
   }
@@ -70,7 +66,7 @@ function Register() {
   //     setError(authError)
   //   }
   // }, [authError] 
-  //}
+  // )
   
   return (
     <>

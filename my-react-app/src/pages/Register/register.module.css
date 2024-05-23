@@ -1,7 +1,7 @@
 .container {
     font-family: 'Inter', sans-serif;
     width: 98.9vw;
-    height: 150vh;
+    height: 200vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@
     align-items: center;
     flex-direction: column;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    height: 150vh;
+    height: 200vh;
     width: 650px;
   }
 
@@ -170,16 +170,3 @@
   .inputContainer textarea::placeholder {
     color: #999; 
   }
-  
-  @media only screen and (max-width: 1800px) {
-    .container{
-      height: 220vh;
-    }
-
-    .container form {
-      height: 220vh;
-    }
-      
-    
-
-    }
