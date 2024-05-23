@@ -5,13 +5,11 @@ import { useState, useEffect } from 'react'
 
 
 function Register() {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
-  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [confirmedPassword, setConfirmedPassword] = useState('')
 
@@ -30,13 +28,11 @@ function Register() {
     e.preventDefault()
     setError('')
     const user = {
-      firstName,
-      lastName,
+      name,
       email,
       phoneNumber,
       city,
       state,
-      username,
       password,
       dogName,
       dogBreed,
@@ -76,25 +72,15 @@ function Register() {
           <div className={styles.header}>
            <span>Novo usuário? Cadastre-se!</span>
           </div>
-          <span>Nome:</span>
+          <span>Nome Completo:</span>
           <label className={styles.inputContainer}>
             <input 
             type="text" 
-            name='firstName'
+            name='name'
             required
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            placeholder='Nome'></input>
-          </label>
-          <span>Sobrenome:</span>
-          <label className={styles.inputContainer}>
-            <input 
-            type="text" 
-            name='lastName'
-            required
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            placeholder='Sobrenome'></input>
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder='Nome Completo'></input>
           </label>
           <span>Email:</span>
           <label className={styles.inputContainer} >
@@ -105,6 +91,26 @@ function Register() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder='Email'></input>
+          </label>
+          <span>Senha:</span>
+          <label className={styles.inputContainer}>
+            <input 
+            type="password" 
+            name='password'
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder='Senha'></input>
+          </label>
+          <span>Confirme sua senha:</span>
+          <label className={styles.inputContainer}>
+            <input 
+            type="password" 
+            name='confirmedPassword'
+            required
+            value={confirmedPassword}
+            onChange={(e) => setConfirmedPassword(e.target.value)}
+            placeholder='Confirme sua senha'></input>
           </label>
           <span>Celular:</span>
           <label className={styles.inputContainer}>
@@ -136,36 +142,7 @@ function Register() {
             onChange={(e) => setState(e.target.value)}
             placeholder='Estado'></input>
           </label>
-          <span>Nome de Usuário:</span>
-          <label className={styles.inputContainer}>
-            <input 
-            type="text" 
-            name='username'
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder='Nome de Usuário'></input>
-          </label>
-          <span>Senha:</span>
-          <label className={styles.inputContainer}>
-            <input 
-            type="password" 
-            name='password'
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder='Senha'></input>
-          </label>
-          <span>Confirme sua senha:</span>
-          <label className={styles.inputContainer}>
-            <input 
-            type="password" 
-            name='confirmedPassword'
-            required
-            value={confirmedPassword}
-            onChange={(e) => setConfirmedPassword(e.target.value)}
-            placeholder='Confirme sua senha'></input>
-          </label>
+          
         </div>
         <div>
         <div className={styles.header}>

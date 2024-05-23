@@ -30,8 +30,21 @@ export const userAuthentication = () => {
         try{
             const { user } = await createUserWithEmailAndPassword(
                 auth,
+                data.firstName,
+                data.lastName,
                 data.email,
-                data.password
+                data.phoneNumber,
+                data.city,
+                data.state,
+                data.username,
+                data.password,
+                data.dogName,
+                data.dogBreed,
+                data.dogSize,
+                data.dogGender,
+                data.dogAge,
+                data.dogPhoto,
+                data.dogInfo,
             )
 
             await updateProfile(user, {
@@ -72,7 +85,7 @@ export const userAuthentication = () => {
         setError(false)
 
         try{
-            await signInWithEmailAndPassword(auth, data.email, data.password)
+            await signInWithEmailAndPassword(auth, data.username, data.password)
             setLoading(false)
         }catch(error){
             console.error(error.message)
