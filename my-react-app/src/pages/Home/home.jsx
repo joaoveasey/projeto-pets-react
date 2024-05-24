@@ -3,6 +3,7 @@ import styles from './home.module.css';
 import sampleImage from '../../assets/dog-home.jpg';
 import Rex from '../../assets/dog.jpg';
 import Bella from '../../assets/blackDog.jpg';
+import { NavLink } from 'react-router-dom';
 
 const dogs = [
   {
@@ -64,7 +65,9 @@ const Home = () => {
         </div>
         <div className={styles.content}>
           <h1 className={styles.containerText}>Encontre o par perfeito para o seu cão.</h1>
-          <button className={styles.button}>Cadastrar Agora!</button>
+          <NavLink to="/cadastro" className={styles.button}>
+            Cadastrar Agora!
+          </NavLink>
         </div>
       </div>
       <hr className={styles.divider} />
@@ -83,7 +86,9 @@ const Home = () => {
       </div>
       <div className={styles.learnMore}>
         <span className={styles.learnMoreText}>Conheça um parceiro para o seu Cachorro!</span>
-        <button className={styles.learnMoreButton}>Conhecer Mais</button>
+        <NavLink to="/cachorros" className={styles.learnMoreButton}>
+          Conhecer Mais
+        </NavLink>
       </div>
     </div>
   );
