@@ -1,46 +1,45 @@
 import styles from './register.module.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
-// import { userAuthentication } from '../../hooks/userAuthentication'
+import { userAuthentication } from '../../hooks/userAuthentication'
 
 
 function Register() {
-  const [name, setName] = useState('')
+  const [displayName, setDisplayName] = useState('')
   const [email, setEmail] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
-  const [city, setCity] = useState('')
-  const [state, setState] = useState('')
   const [password, setPassword] = useState('')
   const [confirmedPassword, setConfirmedPassword] = useState('')
-
-  const [dogName, setDogName] = useState('')
-  const [dogBreed, setDogBreed] = useState('')
-  const [dogSize, setDogSize] = useState('')
-  const [dogGender, setDogGender] = useState('')
-  const [dogAge, setDogAge] = useState('')
-  const [dogInfo, setDogInfo] = useState('')
-  const [dogPhoto, setDogPhoto] = useState('')
   const [error, setError] = useState('')
+  // const [phoneNumber, setPhoneNumber] = useState('')
+  // const [city, setCity] = useState('')
+  // const [state, setState] = useState('')
 
-  // const { createUser, error: authError, loading } = userAuthentication()
+  // const [dogName, setDogName] = useState('')
+  // const [dogBreed, setDogBreed] = useState('')
+  // const [dogSize, setDogSize] = useState('')
+  // const [dogGender, setDogGender] = useState('')
+  // const [dogAge, setDogAge] = useState('')
+  // const [dogInfo, setDogInfo] = useState('')
+  // const [dogPhoto, setDogPhoto] = useState('')
+  const { createUser, error: authError, loading } = userAuthentication()
 
   const handlerSubmit = async (e) => {
     e.preventDefault()
     setError('')
     const user = {
-      name,
+      displayName,
       email,
-      phoneNumber,
-      city,
-      state,
       password,
-      dogName,
-      dogBreed,
-      dogSize,
-      dogGender,
-      dogAge,
-      dogPhoto,
-      dogInfo
+      // phoneNumber,
+      // city,
+      // state,
+      // dogName,
+      // dogBreed,
+      // dogSize,
+      // dogGender,
+      // dogAge,
+      // dogPhoto,
+      // dogInfo
     }
 
     if (password != confirmedPassword){
@@ -48,21 +47,20 @@ function Register() {
       return
     }
 
-    if (dogAge < 0){
-      setError("A idade não pode ser menor que 0.")
-    } 
+    // if (dogAge < 0){
+    //   setError("A idade não pode ser menor que 0.")
+    // } 
 
     const res = await createUser(user)
 
     console.table(res)
   }
 
-  // useEffect(() => {
-  //   if (authError) {
-  //     setError(authError)
-  //   }
-  // }, [authError] 
-  // )
+  useEffect(() => {
+    if (authError) {
+      setError(authError)
+    }
+  }, [authError])
   
   return (
     <>
@@ -76,10 +74,10 @@ function Register() {
           <label className={styles.inputContainer}>
             <input 
             type="text" 
-            name='name'
+            name='displayName'
             required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
             placeholder='Nome Completo'></input>
           </label>
           <span>Email:</span>
@@ -112,7 +110,7 @@ function Register() {
             onChange={(e) => setConfirmedPassword(e.target.value)}
             placeholder='Confirme sua senha'></input>
           </label>
-          <span>Celular:</span>
+          {/* <span>Celular:</span>
           <label className={styles.inputContainer}>
             <input 
             type="tel" 
@@ -251,9 +249,11 @@ function Register() {
             value={dogInfo}
             onChange={(e) => setDogInfo(e.target.value)}
             placeholder='Conte aqui um pouco sobre o Pet'></textarea>
-          </label>
+          </label> */}
         </div>
-        <button className='button'>Cadastrar</button>
+        {!loading && <button className='button'>Cadastrar</button>}
+        {loading && <button className='button' disabled>Aguarde...</button>}
+        {error && <p className='error'>{error}</p>}
       </form>
     </div>
       

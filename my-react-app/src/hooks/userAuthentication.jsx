@@ -30,30 +30,26 @@ export const userAuthentication = () => {
         try{
             const { user } = await createUserWithEmailAndPassword(
                 auth,
-                data.firstName,
-                data.lastName,
                 data.email,
-                data.phoneNumber,
-                data.city,
-                data.state,
-                data.username,
                 data.password,
-                data.dogName,
-                data.dogBreed,
-                data.dogSize,
-                data.dogGender,
-                data.dogAge,
-                data.dogPhoto,
-                data.dogInfo,
+                // data.phoneNumber,
+                // data.city,
+                // data.state,
+                // data.username,
+                // data.dogName,
+                // data.dogBreed,
+                // data.dogSize,
+                // data.dogGender,
+                // data.dogAge,
+                // data.dogPhoto,
+                // data.dogInfo,
             )
 
             await updateProfile(user, {
                 displayName: data.displayName
             })
-
+            
             setLoading(false)
-
-            return user
         }catch(error){
             console.error(error.message)
             console.table(typeof error.message)

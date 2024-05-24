@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate , Link } from 'react-router-dom'
+import { userAuthentication } from '../../hooks/userAuthentication'
 import styles from './login.module.css'
-
 function Login() {
   const [email, setEmail ] = useState('');
   const [password, setPassword ] = useState('');
   const [error, setError ] = useState('');
 
+  const { login, error: authError, loading } = userAuthentication()
   const navigate = useNavigate();
 
   const handlerSubmit = async (e) => {
@@ -23,13 +24,18 @@ function Login() {
     navigate("/cachorros")
   }
 
+  useEffect(() => {
+      if(authError){
+        setError(authError)
+      }
+  }, [authError])
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         
       </header>
 
-      <form>
+      <form onSubmit={handlerSubmit}>
       <span>Login</span>
         <div className={styles.inputContainer}>
           <label htmlFor="email">E-mail</label>
@@ -54,17 +60,15 @@ function Login() {
         </div>
 
         <a href="#">Esqueceu sua senha?</a>
-
-        <button className={styles.button}>
-          Entrar 
-        </button>
+        {!loading && <button className={styles.button}>Entrar</button>}
+        {loading && <button className={styles.button} disabled>Aguarde..</button>}
+        {error && <p className='error'>{error}</p>}
         <div className={styles.footer}>
           <p>Você não tem uma conta?</p>
           <Link to="/cadastro">Crie a sua conta aqui</Link>
         </div>
       </form>
     </div>
-    
   )
 }
 
