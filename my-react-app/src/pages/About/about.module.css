@@ -1,0 +1,66 @@
+.titulo {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+}
+
+h1, h2 {
+    color: #152540;
+}
+
+.objetivos {
+    display: flex;
+    align-items: center;
+    padding: 40px 300px;
+}
+
+.txtobjetivos {
+    padding-left: 200px;
+    text-align: left;
+}
+
+.txtobjetivos h2 {
+    padding-bottom: 35px;
+}
+
+.txtobjetivos p {
+    font-size: 18px;
+}
+
+.facil {
+    display: flex;
+    align-items: center;
+    padding: 40px 300px;
+}
+
+.txtfacil {
+    padding-right: 200px;
+    text-align: left;
+}
+
+.txtfacil h2 {
+    padding-bottom: 35px;
+}
+
+.txtfacil p {
+    font-size: 18px;
+}
+
+.vantagens {
+    display: flex;
+    align-items: center;
+    padding: 40px 300px 100px 300px;
+}
+
+.txtvantagens {
+    padding-left: 200px;
+    text-align: left;
+}
+
+.txtvantagens h2 {
+    padding-bottom: 35px;
+}
+
+.txtvantagens p {
+    font-size: 18px;
+}

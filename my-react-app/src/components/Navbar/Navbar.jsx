@@ -33,8 +33,8 @@ const Navbar = () => {
                                 Dúvidas
                         </NavLink>
                     </li>
-                    <button>
-                        <NavLink to="/entrar" className={styles.entrar}>
+                    <button className={styles.entrar}>
+                        <NavLink to="/entrar">
                                 Login
                         </NavLink>
                     </button>

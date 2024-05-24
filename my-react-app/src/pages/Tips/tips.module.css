@@ -1,0 +1,125 @@
+.tempocertodicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.tempocertodicas h2 {
+    padding-bottom: 20px;
+}
+
+.tempocertodicas p {
+    padding: 10px 300px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#tempocertomachos {
+    padding-bottom: 20px;
+}
+
+.parperfeitodicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.parperfeitodicas h2 {
+    padding-bottom: 20px;
+}
+
+.parperfeitodicas p {
+    padding: 10px 300px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#parperfeitoinstrucao {
+    padding-bottom: 20px;
+}
+
+.aproximacaodicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.aproximacaodicas h2 {
+    padding-bottom: 20px;
+}
+
+.aproximacaodicas p {
+    padding: 10px 300px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#aproximacaoinstrucao {
+    padding-bottom: 20px;
+}
+
+.cruzamentodicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.cruzamentodicas h2 {
+    padding-bottom: 20px;
+}
+
+.cruzamentodicas p {
+    padding: 10px 300px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#cruzamentoinstrucao {
+    padding-bottom: 20px;
+}
+
+.partodicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.partodicas h2 {
+    padding-bottom: 20px;
+}
+
+.partodicas p {
+    padding: 10px 300px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#partoinstrucao {
+    padding-bottom: 20px;
+}
+
+.localdicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.localdicas h2 {
+    padding-bottom: 20px;
+} 
+
+.localdicas p {
+    padding: 10px 300px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#localinstrucao {
+    padding-bottom: 50px;
+}

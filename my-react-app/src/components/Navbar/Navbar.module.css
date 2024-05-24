@@ -22,6 +22,7 @@
 .link_list{
     display:flex;
     justify-content: space-around;
+    align-items: center;
     width: 800px;
     list-style-type: none;
 }
