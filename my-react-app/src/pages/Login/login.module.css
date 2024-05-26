@@ -109,3 +109,13 @@
     text-decoration-line: underline;
     color: #6d99e6;
   }
+
+  .inputContainer button {
+    background-color: #fff;
+    border:none;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 15px;
+  }

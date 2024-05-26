@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate , Link } from 'react-router-dom'
 import { userAuthentication } from '../../hooks/userAuthentication'
 import styles from './login.module.css'
+
 function Login() {
   const [email, setEmail ] = useState('');
   const [password, setPassword ] = useState('');
@@ -11,6 +12,11 @@ function Login() {
   const { login, error: authError, loading } = userAuthentication()
   const navigate = useNavigate();
 
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handlerSubmit = async (e) => {
     e.preventDefault()
     setError('')
@@ -18,7 +24,7 @@ function Login() {
       email,
       password
     }
-    const res = await Login(user)
+    const res = await login(user)
 
     console.table(res)
     navigate("/cachorros")
@@ -31,10 +37,6 @@ function Login() {
   }, [authError])
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        
-      </header>
-
       <form onSubmit={handlerSubmit}>
       <span>Login</span>
         <div className={styles.inputContainer}>
@@ -47,18 +49,20 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-
         <div className={styles.inputContainer}>
-          <label htmlFor="password">Senha</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Senha"
+        <label className={styles.inputContainer}>
+            <input 
+            type={showPassword ? 'text' : 'password'} 
+            name='password'
+            required
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
+            placeholder='Senha'></input>
+            <button type="button" onClick={toggleShowPassword}>
+              {showPassword ? '👁️' : '👁️'}
+            </button>
+          </label>
         </div>
-
         <a href="#">Esqueceu sua senha?</a>
         {!loading && <button className={styles.button}>Entrar</button>}
         {loading && <button className={styles.button} disabled>Aguarde..</button>}

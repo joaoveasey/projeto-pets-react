@@ -7,12 +7,13 @@ import {
     signOut,
 } from 'firebase/auth'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export const userAuthentication = () => {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(null)
     const [cancelled, setCancelled] = useState(null)
-
+    const navigate = useNavigate();
     const auth = getAuth()
 
     function checkIfIsCancelled(){
@@ -50,6 +51,7 @@ export const userAuthentication = () => {
             })
             
             setLoading(false)
+            alert("Conta criada com sucesso!")
         }catch(error){
             console.error(error.message)
             console.table(typeof error.message)
@@ -74,7 +76,7 @@ export const userAuthentication = () => {
         signOut(auth)
     }
 
-    const login = async () => {
+    const login = async (data) => {
         checkIfIsCancelled()
 
         setLoading(true)
@@ -82,7 +84,9 @@ export const userAuthentication = () => {
 
         try{
             await signInWithEmailAndPassword(auth, data.username, data.password)
+            
             setLoading(false)
+            navigate("/cachorros")
         }catch(error){
             console.error(error.message)
             console.table(typeof error.message)

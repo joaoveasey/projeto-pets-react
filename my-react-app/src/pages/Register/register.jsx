@@ -13,7 +13,6 @@ function Register() {
   // const [phoneNumber, setPhoneNumber] = useState('')
   // const [city, setCity] = useState('')
   // const [state, setState] = useState('')
-
   // const [dogName, setDogName] = useState('')
   // const [dogBreed, setDogBreed] = useState('')
   // const [dogSize, setDogSize] = useState('')
@@ -21,8 +20,14 @@ function Register() {
   // const [dogAge, setDogAge] = useState('')
   // const [dogInfo, setDogInfo] = useState('')
   // const [dogPhoto, setDogPhoto] = useState('')
+
   const { createUser, error: authError, loading } = userAuthentication()
 
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  
   const handlerSubmit = async (e) => {
     e.preventDefault()
     setError('')
@@ -47,12 +52,7 @@ function Register() {
       return
     }
 
-    // if (dogAge < 0){
-    //   setError("A idade não pode ser menor que 0.")
-    // } 
-
     const res = await createUser(user)
-
     console.table(res)
   }
 
@@ -93,22 +93,28 @@ function Register() {
           <span>Senha:</span>
           <label className={styles.inputContainer}>
             <input 
-            type="password" 
+            type={showPassword ? 'text' : 'password'} 
             name='password'
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder='Senha'></input>
+            <button type="button" onClick={toggleShowPassword}>
+              {showPassword ? '👁️' : '👁️'}
+            </button>
           </label>
           <span>Confirme sua senha:</span>
           <label className={styles.inputContainer}>
             <input 
-            type="password" 
+            type={showPassword ? 'text' : 'password'}
             name='confirmedPassword'
             required
             value={confirmedPassword}
             onChange={(e) => setConfirmedPassword(e.target.value)}
             placeholder='Confirme sua senha'></input>
+            <button type="button" onClick={toggleShowPassword}>
+              {showPassword ? '👁️' : '👁️'}
+            </button>
           </label>
           {/* <span>Celular:</span>
           <label className={styles.inputContainer}>
@@ -256,9 +262,7 @@ function Register() {
         {error && <p className='error'>{error}</p>}
       </form>
     </div>
-      
     </>
-    
   )
 }
 
