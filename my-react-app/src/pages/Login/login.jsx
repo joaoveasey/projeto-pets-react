@@ -50,18 +50,17 @@ function Login() {
           />
         </div>
         <div className={styles.inputContainer}>
-        <label className={styles.inputContainer}>
-            <input 
+          <label htmlFor="senha">Senha</label>
+          <input
             type={showPassword ? 'text' : 'password'} 
-            name='password'
-            required
-            value={password}
+            name="password"
+            id="password"
+            placeholder="Senha"
             onChange={(e) => setPassword(e.target.value)}
-            placeholder='Senha'></input>
-            <button type="button" onClick={toggleShowPassword}>
+          />
+          <button type="button" onClick={toggleShowPassword}>
               {showPassword ? '👁️' : '👁️'}
             </button>
-          </label>
         </div>
         <a href="#">Esqueceu sua senha?</a>
         {!loading && <button className={styles.button}>Entrar</button>}

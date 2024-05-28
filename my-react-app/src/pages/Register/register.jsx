@@ -99,7 +99,7 @@ function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder='Senha'></input>
-            <button type="button" onClick={toggleShowPassword}>
+            <button className={styles.olho} type="button" onClick={toggleShowPassword}>
               {showPassword ? '👁️' : '👁️'}
             </button>
           </label>
@@ -112,7 +112,7 @@ function Register() {
             value={confirmedPassword}
             onChange={(e) => setConfirmedPassword(e.target.value)}
             placeholder='Confirme sua senha'></input>
-            <button type="button" onClick={toggleShowPassword}>
+            <button className={styles.olho}  onClick={toggleShowPassword}>
               {showPassword ? '👁️' : '👁️'}
             </button>
           </label>
