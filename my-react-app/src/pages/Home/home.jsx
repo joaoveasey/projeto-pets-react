@@ -80,6 +80,7 @@ const Home = () => {
       </div>
       <hr className={styles.divider} />
       <h1 className={styles.emphasis}>Destaques</h1>
+      
       <div className={styles.dogHighlights}>
         {dogs.map((dog, index) => (
           <div key={index} className={styles.dogCard}>
@@ -92,6 +93,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+
       <div className={styles.learnMore}>
         <span className={styles.learnMoreText}>Conheça um parceiro para o seu Cachorro!</span>
         <NavLink to="/cachorros" className={styles.learnMoreButton}>
