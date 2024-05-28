@@ -27,27 +27,40 @@
     list-style-type: none;
 }
 
-.link_list a {
+.links a {
     text-decoration: none;
     font-size: 21px;
     color: #f0f0f0;
     font-weight: 500;
 }
 
-.link_list a:hover {
+.links a:hover {
     color: #506ffc;
 }
 
-.entrar {
+.entrarButton {
+    padding: 10px 50px;
     border: none;
     background-color: #3d61ff;
-    padding: 10px 50px;
-    border-radius: 12px;
-    color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.entrarButton:hover {
+    background-color: #2c4d85;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    color: #fff;
+
+ 
 }
 
 
-.link_list button a:hover {
+.entrarButton a:hover {
     background-color: #506ffc;
     color: #f0f0f0;
 }

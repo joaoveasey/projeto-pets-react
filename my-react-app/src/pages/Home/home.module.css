@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  padding-right: 20px;
 }
 
 .imageTextContainer {
@@ -35,7 +36,7 @@
 .content {
   flex: 1;
   padding: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .containerText {
@@ -83,14 +84,15 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
-  width: 100%;
+  width: 95%;
   cursor: pointer;
+  
 }
 
 .dogCard {
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -99,7 +101,7 @@
 .dogImage {
   width: 380px;
   height: 250px;
-  border-radius: 8px;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
@@ -122,6 +124,7 @@
   font-size: 20px;
   color: #777;
 }
+
 
 .learnMore {
   width: 100%;

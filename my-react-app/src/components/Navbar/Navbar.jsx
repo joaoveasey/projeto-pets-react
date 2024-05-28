@@ -9,36 +9,37 @@ const Navbar = () => {
         <>
             <nav className={styles.navbar}>
                 <NavLink to="/" className={styles.brand}>
-                    <img src={logo} alt="logo" width="120px" height="110px"/>
+                    <img src={logo} alt="logo" width="120px" height="110px" />
                     <p>Conexão Canina</p>
                 </NavLink>
-                <ul className={styles.link_list}>
-                    <li>
-                        <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : null )}>
+                <ul className={styles.link_list}> 
+                    <li className={styles.links}>
+                        <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : null)}>
                             Home
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/sobre" className={({ isActive }) => (isActive ? styles.active : null )}>
-                                Sobre
+                    <li className={styles.links}>
+                        <NavLink to="/sobre" className={({ isActive }) => (isActive ? styles.active : null)}>
+                            Sobre
+                        </NavLink>
+                    </li>
+                    <li className={styles.links}>
+                        <NavLink to="/dicas" className={({ isActive }) => (isActive ? styles.active : null)}>
+                            Dicas
+                        </NavLink>
+                    </li>
+                    <li className={styles.links}>
+                        <NavLink to="/duvidas" className={({ isActive }) => (isActive ? styles.active : null)}>
+                            Dúvidas
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/dicas" className={({ isActive }) => (isActive ? styles.active : null )}>
-                                Dicas
+                        <NavLink to="/entrar" className={styles.entrarButton}>
+                            Login
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/duvidas" className={({ isActive }) => (isActive ? styles.active : null )}>
-                                Dúvidas
-                        </NavLink>
-                    </li>
-                    <button className={styles.entrar}>
-                        <NavLink to="/entrar">
-                                Login
-                        </NavLink>
-                    </button>
-                    
+
+
                     {/* {!user && (
                         <>
                             <li>
@@ -57,7 +58,7 @@ const Navbar = () => {
                         </li>
                     </>
                     )} */}
-                    
+
                 </ul>
             </nav>
         </>
