@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate , Link } from 'react-router-dom'
+import { userAuthentication } from '../../hooks/userAuthentication'
 import styles from './login.module.css'
 
 function Login() {
@@ -8,7 +9,13 @@ function Login() {
   const [password, setPassword ] = useState('');
   const [error, setError ] = useState('');
 
+  const { login, error: authError, loading } = userAuthentication()
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handlerSubmit = async (e) => {
     e.preventDefault()
@@ -17,19 +24,20 @@ function Login() {
       email,
       password
     }
-    const res = await Login(user)
+    const res = await login(user)
 
     console.table(res)
     navigate("/cachorros")
   }
 
+  useEffect(() => {
+      if(authError){
+        setError(authError)
+      }
+  }, [authError])
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        
-      </header>
-
-      <form>
+      <form onSubmit={handlerSubmit}>
       <span>Login</span>
         <div className={styles.inputContainer}>
           <label htmlFor="email">E-mail</label>
@@ -41,30 +49,29 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-
         <div className={styles.inputContainer}>
-          <label htmlFor="password">Senha</label>
+          <label htmlFor="senha">Senha</label>
           <input
-            type="password"
+            type={showPassword ? 'text' : 'password'} 
             name="password"
             id="password"
             placeholder="Senha"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <button type="button" onClick={toggleShowPassword}>
+              {showPassword ? '👁️' : '👁️'}
+            </button>
         </div>
-
         <a href="#">Esqueceu sua senha?</a>
-
-        <button className={styles.button}>
-          Entrar 
-        </button>
+        {!loading && <button className={styles.button}>Entrar</button>}
+        {loading && <button className={styles.button} disabled>Aguarde..</button>}
+        {error && <p className='error'>{error}</p>}
         <div className={styles.footer}>
           <p>Você não tem uma conta?</p>
           <Link to="/cadastro">Crie a sua conta aqui</Link>
         </div>
       </form>
     </div>
-    
   )
 }
 
