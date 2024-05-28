@@ -51,3 +51,5 @@ Joao Veasey - Comandante Geral
  Nicolas - Canonico
 
 Cesar Prando - Mascote 
+## Mudanças
+o projeto seguiu diversas mudanças em comparação com a versão anterior do semestre, para começar o site inteiro agora esta sendo e foi feito com react com firebase para autenticar a autenticação do usuario, teve mudanças simples e mais complexas em todos as paginas, como na Home, Login, Cadastro cão, Cadastro Usuario e tela principal de cachorros
