@@ -1,9 +1,17 @@
 import React from 'react';
 import styles from './home.module.css';
 import sampleImage from '../../assets/dog-home.jpg';
-import Rex from '../../assets/dog.jpg';
-import Bella from '../../assets/blackDog.jpg';
 import { NavLink } from 'react-router-dom';
+
+// Importar imagens cachorros
+import Rex from '../../assets/dog1.jpg';
+import Bella from '../../assets/dog2.jpg';
+import Thor from '../../assets/dog3.jpg';
+import Pintado from '../../assets/dog4.jpg';
+import Cesar from '../../assets/dog5.jpg';
+import Dorinha from '../../assets/dog6.jpg';
+import Chanel from '../../assets/dog7.jpg';
+import Birulinha from '../../assets/dog8.jpg';
 
 const dogs = [
   {
@@ -19,40 +27,40 @@ const dogs = [
     image: Bella,
   },
   {
-    name: 'Bella',
-    city: 'Rio de Janeiro, RJ',
-    gender: 'F',
-    image: Bella,
+    name: 'Thor',
+    city: 'Santos, SP',
+    gender: 'M',
+    image: Thor,
   },
   {
-    name: 'Bella',
-    city: 'Rio de Janeiro, RJ',
-    gender: 'F',
-    image: Bella,
+    name: 'Pintado',
+    city: 'Salvador, Bahia',
+    gender: 'M',
+    image: Pintado,
   },
   {
-    name: 'Bella',
-    city: 'Rio de Janeiro, RJ',
-    gender: 'F',
-    image: Bella,
+    name: 'Cesar',
+    city: 'Matão, SP',
+    gender: 'M',
+    image: Cesar,
   },
   {
-    name: 'Bella',
-    city: 'Rio de Janeiro, RJ',
+    name: 'Dorinha',
+    city: 'Manaus, AM',
     gender: 'F',
-    image: Bella,
+    image: Dorinha,
   },
   {
-    name: 'Bella',
+    name: 'Chanel',
     city: 'Rio de Janeiro, RJ',
     gender: 'F',
-    image: Bella,
+    image: Chanel,
   },
   {
-    name: 'Bella',
-    city: 'Rio de Janeiro, RJ',
-    gender: 'F',
-    image: Bella,
+    name: 'Birulinha',
+    city: 'Belo Horizonte, MG',
+    gender: 'm',
+    image: Birulinha,
   },
 ];
 
