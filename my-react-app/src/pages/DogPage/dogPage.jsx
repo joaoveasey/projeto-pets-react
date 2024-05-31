@@ -113,7 +113,7 @@ const dogs = [
     breed: 'Poodle',
     city: 'Fortaleza, CE',
     state: "CE",
-    size: "Pequeno",
+    size: "MuitoPequeno",
     gender: 'F',
     image: Luna,
   },
@@ -185,7 +185,7 @@ const dogs = [
     breed: 'Rottweiler',
     city: 'Aracaju, SE',
     state: "SE",
-    size: "Grande",
+    size: "MuitoGrande",
     gender: 'F',
     image: Bailey,
   },
@@ -194,7 +194,7 @@ const dogs = [
     breed: 'Pastor Alemão',
     city: 'Belém, PA',
     state: "PA",
-    size: "Grande",
+    size: "MuitoGrande",
     gender: 'M',
     image: Charlie,
   },
@@ -230,7 +230,7 @@ const dogs = [
     breed: 'São Bernardo',
     city: 'Macapá, AP',
     state: "AP",
-    size: "Grande",
+    size: "MuitoGrande",
     gender: 'M',
     image: Duke,
   },
@@ -249,7 +249,7 @@ function DogPage() {
   const [ selectedBreed, setSelectedBreed ] = useState('-1')
   const [ selectedGender, setSelectedGender ] = useState('-1');
   const [ selectedState, setSelectedState ] = useState('-1');
-  // adicionar filtro porte
+  const [ selectedSize, setSelectedSize ] = useState('-1');
 
   const handleFilterChange = (event) =>{
     const { name, value } = event.target;
@@ -259,13 +259,16 @@ function DogPage() {
       setSelectedGender(value)
     } else if (name === 'state'){
       setSelectedState(value)
+    } else if (name === 'dogSize'){
+      setSelectedSize(value)
     }
   }
 
   const filteredDogs = dogs.filter(dog => {
     return (selectedGender === '-1' || dog.gender === selectedGender) &&
            (selectedBreed === '-1' || dog.breed === selectedBreed) &&
-           (selectedState === '-1' || dog.state === selectedState)
+           (selectedState === '-1' || dog.state === selectedState) &&
+           (selectedSize === '-1' || dog.size === selectedSize)
   })
     
   return (
@@ -324,6 +327,8 @@ function DogPage() {
           <label className={styles.container_filter_input}>
             <select
               name='dogSize'
+              value={selectedSize}
+              onChange={handleFilterChange}
             >
               <option selected value="-1">Porte</option>
               <option value="MuitoPequeno">Muito Pequeno</option>  
