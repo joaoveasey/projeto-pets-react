@@ -8,20 +8,22 @@ import Cesar from '../../assets/dog5.jpg';
 import Dorinha from '../../assets/dog6.jpg';
 import Chanel from '../../assets/dog7.jpg';
 import Birulinha from '../../assets/dog8.jpg';
-// max golder retriever
-// luna poodle, 
-// buddy labrador retriever,
-// molly buldog frnces, 
-// rocky boxer, 
-// daisy rtweiller, 
-// zeus doberman, 
-// lola shih tzu, 
-// toby yorkshire terrier, 
-// bailey sao bernardo, 
-// charlie pastor alemao,
-// jack great dane, 
-// lucy pastor autraliano, 
-// duke border collie
+import Max from '../../assets/dog9.jpeg';
+import Luna from '../../assets/dog10.jpg';
+import Buddy from '../../assets/dog11.jpg';
+import Molly from '../../assets/dog12.jpg';
+import Rocky from '../../assets/dog13.jpg';
+import Daisy from '../../assets/dog23.jpg';
+import Zeus from '../../assets/dog15.jpg';
+import Lola from '../../assets/dog16.jpg';
+import Toby from '../../assets/dog17.jpg';
+import Bailey from '../../assets/dog14.jpg';
+import Charlie from '../../assets/dog19.jpg';
+import Rosie from '../../assets/dog24.jpg';
+import Jack from '../../assets/dog20.jpg';
+import Lucy from '../../assets/dog21.jpg';
+import Duke from '../../assets/dog18.jpg';
+import Maggie from '../../assets/dog22.jpg';
 
 const dogs = [
   {
@@ -63,7 +65,7 @@ const dogs = [
   {
     name: 'Cesar',
     city: 'Matão, SP',
-    breed: 'Shiba Inu',
+    breed: 'Labrador Retriever',
     state: "SP",
     size: "Medio",
     gender: 'M',
@@ -126,7 +128,7 @@ const dogs = [
   },
   {
     name: 'Molly',
-    breed: 'French Bulldog',
+    breed: 'Bulldog Francês',
     city: 'Florianópolis, SC',
     state: "SC",
     size: "Pequeno",
@@ -153,7 +155,7 @@ const dogs = [
   },
   {
     name: 'Zeus',
-    breed: 'Doberman Pinscher',
+    breed: 'Doberman',
     city: 'Natal, RN',
     state: "RN",
     size: "Grande",
@@ -189,7 +191,7 @@ const dogs = [
   },
   {
     name: 'Charlie',
-    breed: 'German Shepherd',
+    breed: 'Pastor Alemão',
     city: 'Belém, PA',
     state: "PA",
     size: "Grande",
@@ -198,7 +200,7 @@ const dogs = [
   },
   {
     name: 'Rosie',
-    breed: 'Maltese',
+    breed: 'Maltês',
     city: 'Maceió, AL',
     state: "AL",
     size: "Pequeno",
@@ -207,7 +209,7 @@ const dogs = [
   },
   {
     name: 'Jack',
-    breed: 'Great Dane',
+    breed: 'Dogue Alemão',
     city: 'Recife, PE',
     state: "PE",
     size: "Grande",
@@ -216,7 +218,7 @@ const dogs = [
   },
   {
     name: 'Lucy',
-    breed: 'Australian Shepherd',
+    breed: 'Pastor Australiano',
     city: 'Palmas, TO',
     state: "TO",
     size: "Medio",
@@ -225,7 +227,7 @@ const dogs = [
   },
   {
     name: 'Duke',
-    breed: 'Saint Bernard',
+    breed: 'São Bernardo',
     city: 'Macapá, AP',
     state: "AP",
     size: "Grande",
@@ -281,7 +283,7 @@ function DogPage() {
               <option value="Pit Bull">Pit Bull</option>
               <option value="Labrador Retriever">Labrador Retriever</option>
               <option value="German Shepherd">Pastor Alemão</option>
-              <option value="French Bulldog">Buldogue Francês</option>
+              <option value="Bulldog Francês">Buldogue Francês</option>
               <option value="Beagle">Beagle</option>
               <option value="Bulldog">Buldogue Inglês</option>
               <option value="Poodle">Poodle</option>
@@ -292,16 +294,16 @@ function DogPage() {
               <option value="Chihuahua">Chihuahua</option>
               <option value="Shih Tzu">Shih Tzu</option>
               <option value="Rottweiler">Rottweiler</option>
-              <option value="Great Dane">Dogue Alemão</option>
+              <option value="Pastor Alemão">Dogue Alemão</option>
               <option value="Cocker Spaniel">Cocker Spaniel</option>
-              <option value="Doberman Pinscher">Doberman</option>
+              <option value="Doberman">Doberman</option>
               <option value="Shiba Inu">Shiba Inu</option>
               <option value="Border Collie">Border Collie</option>
-              <option value="Australian Shepherd">Pastor Australiano</option>
-              <option value="Saint Bernard">São Bernardo</option>
+              <option value="Pastor Australiano">Pastor Australiano</option>
+              <option value="São Bernardo">São Bernardo</option>
               <option value="Basset Hound">Basset Hound</option>
               <option value="Weimaraner">Weimaraner</option>
-              <option value="Maltese">Maltês</option>
+              <option value="Maltês">Maltês</option>
               <option value="Dalmata">Dálmata</option>
               <option value="Pinscher">Pinscher</option>
             </select>
