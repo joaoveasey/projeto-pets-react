@@ -8,6 +8,20 @@ import Cesar from '../../assets/dog5.jpg';
 import Dorinha from '../../assets/dog6.jpg';
 import Chanel from '../../assets/dog7.jpg';
 import Birulinha from '../../assets/dog8.jpg';
+// max golder retriever
+// luna poodle, 
+// buddy labrador retriever,
+// molly buldog frnces, 
+// rocky boxer, 
+// daisy rtweiller, 
+// zeus doberman, 
+// lola shih tzu, 
+// toby yorkshire terrier, 
+// bailey sao bernardo, 
+// charlie pastor alemao,
+// jack great dane, 
+// lucy pastor autraliano, 
+// duke border collie
 
 const dogs = [
   {
@@ -15,6 +29,7 @@ const dogs = [
     breed: 'Beagle',
     city: 'São Paulo, SP',
     state: "SP",
+    size: "Medio",
     gender: 'M',
     image: Rex,
   },
@@ -23,6 +38,7 @@ const dogs = [
     breed: 'Basset Hound',
     city: 'Rio de Janeiro, RJ',
     state: "RJ",
+    size: "Pequeno",
     gender: 'F',
     image: Bella,
   },
@@ -31,6 +47,7 @@ const dogs = [
     breed: 'Pinscher',
     city: 'Santos, SP',
     state: "SP",
+    size: "Pequeno",
     gender: 'M',
     image: Thor,
   },
@@ -39,6 +56,7 @@ const dogs = [
     breed: 'Dalmata',
     city: 'Salvador, BH',
     state: "BH",
+    size: "Grande",
     gender: 'M',
     image: Pintado,
   },
@@ -47,6 +65,7 @@ const dogs = [
     city: 'Matão, SP',
     breed: 'Shiba Inu',
     state: "SP",
+    size: "Medio",
     gender: 'M',
     image: Cesar,
   },
@@ -55,6 +74,7 @@ const dogs = [
     breed: 'Chihuahua',
     city: 'Manaus, AM',
     state: "AM",
+    size: "MuitoPequeno",
     gender: 'F',
     image: Dorinha,
   },
@@ -63,6 +83,7 @@ const dogs = [
     breed: 'Pinscher',
     city: 'Rio de Janeiro, RJ',
     state: "RJ",
+    size: "Pequeno",
     gender: 'F',
     image: Chanel,
   },
@@ -71,32 +92,189 @@ const dogs = [
     breed: 'Chihuahua',
     city: 'Belo Horizonte, MG',
     state: "SP",
+    size: "Pequeno",
     gender: 'M',
     image: Birulinha,
   },
+
+  {
+    name: 'Max',
+    breed: 'Golden Retriever',
+    city: 'Curitiba, PR',
+    state: "PR",
+    size: "Grande",
+    gender: 'M',
+    image: Max,
+  },
+  {
+    name: 'Luna',
+    breed: 'Poodle',
+    city: 'Fortaleza, CE',
+    state: "CE",
+    size: "Pequeno",
+    gender: 'F',
+    image: Luna,
+  },
+  {
+    name: 'Buddy',
+    breed: 'Labrador Retriever',
+    city: 'Porto Alegre, RS',
+    state: "RS",
+    size: "Grande",
+    gender: 'M',
+    image: Buddy,
+  },
+  {
+    name: 'Molly',
+    breed: 'French Bulldog',
+    city: 'Florianópolis, SC',
+    state: "SC",
+    size: "Pequeno",
+    gender: 'F',
+    image: Molly,
+  },
+  {
+    name: 'Rocky',
+    breed: 'Boxer',
+    city: 'São Luís, MA',
+    state: "MA",
+    size: "Grande",
+    gender: 'M',
+    image: Rocky,
+  },
+  {
+    name: 'Daisy',
+    breed: 'Cocker Spaniel',
+    city: 'João Pessoa, PB',
+    state: "PB",
+    size: "Medio",
+    gender: 'F',
+    image: Daisy,
+  },
+  {
+    name: 'Zeus',
+    breed: 'Doberman Pinscher',
+    city: 'Natal, RN',
+    state: "RN",
+    size: "Grande",
+    gender: 'M',
+    image: Zeus,
+  },
+  {
+    name: 'Lola',
+    breed: 'Shih Tzu',
+    city: 'Vitória, ES',
+    state: "ES",
+    size: "Pequeno",
+    gender: 'F',
+    image: Lola,
+  },
+  {
+    name: 'Toby',
+    breed: 'Yorkshire Terrier',
+    city: 'Campo Grande, MS',
+    state: "MS",
+    size: "Pequeno",
+    gender: 'M',
+    image: Toby,
+  },
+  {
+    name: 'Bailey',
+    breed: 'Rottweiler',
+    city: 'Aracaju, SE',
+    state: "SE",
+    size: "Grande",
+    gender: 'F',
+    image: Bailey,
+  },
+  {
+    name: 'Charlie',
+    breed: 'German Shepherd',
+    city: 'Belém, PA',
+    state: "PA",
+    size: "Grande",
+    gender: 'M',
+    image: Charlie,
+  },
+  {
+    name: 'Rosie',
+    breed: 'Maltese',
+    city: 'Maceió, AL',
+    state: "AL",
+    size: "Pequeno",
+    gender: 'F',
+    image: Rosie,
+  },
+  {
+    name: 'Jack',
+    breed: 'Great Dane',
+    city: 'Recife, PE',
+    state: "PE",
+    size: "Grande",
+    gender: 'M',
+    image: Jack,
+  },
+  {
+    name: 'Lucy',
+    breed: 'Australian Shepherd',
+    city: 'Palmas, TO',
+    state: "TO",
+    size: "Medio",
+    gender: 'F',
+    image: Lucy,
+  },
+  {
+    name: 'Duke',
+    breed: 'Saint Bernard',
+    city: 'Macapá, AP',
+    state: "AP",
+    size: "Grande",
+    gender: 'M',
+    image: Duke,
+  },
+  {
+    name: 'Maggie',
+    breed: 'Border Collie',
+    city: 'Boa Vista, RR',
+    state: "RR",
+    size: "Medio",
+    gender: 'F',
+    image: Maggie,
+  }
 ];
 
 function DogPage() {
-
+  const [ selectedBreed, setSelectedBreed ] = useState('-1')
   const [ selectedGender, setSelectedGender ] = useState('-1');
+  const [ selectedState, setSelectedState ] = useState('-1');
+  // adicionar filtro porte
 
   const handleFilterChange = (event) =>{
-    setSelectedGender(event.target.value);
+    const { name, value } = event.target;
+    if (name === 'dogBreed'){
+      setSelectedBreed(value)
+    } else if (name === 'dogGender'){
+      setSelectedGender(value)
+    } else if (name === 'state'){
+      setSelectedState(value)
+    }
   }
 
-  const filteredDogs = selectedGender === '-1'
-    ? dogs
-    : dogs.filter(dog => dog.gender === selectedGender)
-
- 
-
+  const filteredDogs = dogs.filter(dog => {
+    return (selectedGender === '-1' || dog.gender === selectedGender) &&
+           (selectedBreed === '-1' || dog.breed === selectedBreed) &&
+           (selectedState === '-1' || dog.state === selectedState)
+  })
+    
   return (
     <>
       <h1>Encontre um Parceiro</h1>
       <div className={styles.container_filter}>
           <label className={styles.container_filter_input}>
             <select 
-            name="dogBreed" 
+            name='dogBreed'
+            value={selectedBreed}
+            onChange={handleFilterChange}
             > 
               <option className={styles.default_option} selected value="-1">Raça</option>
               <option value="Golden Retriever">Golden Retriever</option>
@@ -146,16 +324,18 @@ function DogPage() {
               name='dogSize'
             >
               <option selected value="-1">Porte</option>
-              <option value="muitoPequeno">Muito Pequeno</option>  
+              <option value="MuitoPequeno">Muito Pequeno</option>  
               <option value="Pequeno">Pequeno</option>  
               <option value="Medio">Médio</option>  
               <option value="Grande">Grande</option>  
-              <option value="muitoGrande">Muito Grande</option>  
+              <option value="MuitoGrande">Muito Grande</option>  
             </select> 
           </label>
           <label className={styles.container_filter_input}>
             <select
               name='state'
+              value={selectedState}
+              onChange={handleFilterChange}
             >
               <option selected value="-1">Estado</option>
               <option value="AC">Acre</option>
