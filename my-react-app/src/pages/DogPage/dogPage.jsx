@@ -247,9 +247,25 @@ const dogs = [
 
 function DogPage() {
   const [ selectedBreed, setSelectedBreed ] = useState('-1')
-  const [ selectedGender, setSelectedGender ] = useState('-1');
-  const [ selectedState, setSelectedState ] = useState('-1');
-  const [ selectedSize, setSelectedSize ] = useState('-1');
+  const [ selectedGender, setSelectedGender ] = useState('-1')
+  const [ selectedState, setSelectedState ] = useState('-1')
+  const [ selectedSize, setSelectedSize ] = useState('-1')
+
+  const filteredDogs = dogs.filter(dog => {
+    return (selectedGender === '-1' || dog.gender === selectedGender) &&
+           (selectedBreed === '-1' || dog.breed === selectedBreed) &&
+           (selectedState === '-1' || dog.state === selectedState) &&
+           (selectedSize === '-1' || dog.size === selectedSize)
+  })
+
+  const [ currentPage, setCurrentPage ] = useState(2)
+  const dogsPerPage = 12;
+
+  const indexOfLastDog = currentPage * dogsPerPage
+  const indexOfFirstDog = indexOfLastDog - dogsPerPage
+  const currentDogs = filteredDogs.slice(indexOfFirstDog, indexOfLastDog)
+
+  const totalPages = Math.ceil(filteredDogs.length / dogsPerPage)
 
   const handleFilterChange = (event) =>{
     const { name, value } = event.target;
@@ -263,13 +279,18 @@ function DogPage() {
       setSelectedSize(value)
     }
   }
+  
+  const handlePrevPage = () => {
+    if(currentPage > 1){
+      setCurrentPage(currentPage - 1)
+    }
+  }
 
-  const filteredDogs = dogs.filter(dog => {
-    return (selectedGender === '-1' || dog.gender === selectedGender) &&
-           (selectedBreed === '-1' || dog.breed === selectedBreed) &&
-           (selectedState === '-1' || dog.state === selectedState) &&
-           (selectedSize === '-1' || dog.size === selectedSize)
-  })
+  const handleNextPage = () => {
+    if(currentPage < totalPages){
+      setCurrentPage(currentPage + 1)
+    }
+  } 
     
   return (
     <>
@@ -377,7 +398,7 @@ function DogPage() {
       </div>
 
       <div className={styles.dogHighlights}>
-        {filteredDogs.map((dog, index) => (
+        {currentDogs.map((dog, index) => (
           <div key={index} className={styles.dogCard}>
             <img src={dog.image} alt={dog.name} className={styles.dogImage} />
             <h2 className={styles.dogName}>
@@ -390,8 +411,18 @@ function DogPage() {
           </div>
         ))}
       </div>
+      <div className={styles.pagination}>
+        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+          Anterior
+        </button>
+        <span>
+          Página {currentPage} de {totalPages}
+        </span>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+          Próxima
+        </button>
+      </div>
     </>
-    
   )
 }
 
