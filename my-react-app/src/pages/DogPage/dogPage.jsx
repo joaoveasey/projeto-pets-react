@@ -258,7 +258,7 @@ function DogPage() {
            (selectedSize === '-1' || dog.size === selectedSize)
   })
 
-  const [ currentPage, setCurrentPage ] = useState(2)
+  const [ currentPage, setCurrentPage ] = useState(1)
   const dogsPerPage = 12;
 
   const indexOfLastDog = currentPage * dogsPerPage
