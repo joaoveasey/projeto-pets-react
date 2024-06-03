@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './home.module.css';
-import sampleImage from '../../assets/dog-home.jpg';
 import { NavLink } from 'react-router-dom';
 
-// Importar imagens cachorros
+import sampleImage from '../../assets/dog-home.jpg';
 import Rex from '../../assets/dog1.jpg';
 import Bella from '../../assets/dog2.jpg';
 import Thor from '../../assets/dog3.jpg';
@@ -16,50 +15,74 @@ import Birulinha from '../../assets/dog8.jpg';
 const dogs = [
   {
     name: 'Rex',
+    breed: 'Beagle',
     city: 'São Paulo, SP',
+    state: "SP",
+    size: "Medio",
     gender: 'M',
     image: Rex,
   },
   {
     name: 'Bella',
+    breed: 'Basset Hound',
     city: 'Rio de Janeiro, RJ',
+    state: "RJ",
+    size: "Pequeno",
     gender: 'F',
     image: Bella,
   },
   {
     name: 'Thor',
+    breed: 'Pinscher',
     city: 'Santos, SP',
+    state: "SP",
+    size: "Pequeno",
     gender: 'M',
     image: Thor,
   },
   {
     name: 'Pintado',
-    city: 'Salvador, Bahia',
+    breed: 'Dalmata',
+    city: 'Salvador, BH',
+    state: "BH",
+    size: "Grande",
     gender: 'M',
     image: Pintado,
   },
   {
     name: 'Cesar',
+    breed: 'Labrador Retriever',
     city: 'Matão, SP',
+    state: "SP",
+    size: "Medio",
     gender: 'M',
     image: Cesar,
   },
   {
     name: 'Dorinha',
+    breed: 'Chihuahua',
     city: 'Manaus, AM',
+    state: "AM",
+    size: "MuitoPequeno",
     gender: 'F',
     image: Dorinha,
   },
   {
     name: 'Chanel',
+    breed: 'Pinscher',
     city: 'Rio de Janeiro, RJ',
+    state: "RJ",
+    size: "Pequeno",
     gender: 'F',
     image: Chanel,
   },
   {
     name: 'Birulinha',
+    breed: 'Chihuahua',
     city: 'Belo Horizonte, MG',
-    gender: 'm',
+    state: "SP",
+    size: "Pequeno",
+    gender: 'M',
     image: Birulinha,
   },
 ];
@@ -83,14 +106,16 @@ const Home = () => {
       
       <div className={styles.dogHighlights}>
         {dogs.map((dog, index) => (
-          <div key={index} className={styles.dogCard}>
+          <NavLink key={index} to={`/detalhes/${dog.name}`} className={styles.dogCard}>
             <img src={dog.image} alt={dog.name} className={styles.dogImage} />
-            <h2 className={styles.dogName}>{dog.name}</h2>
+            <h2 className={styles.dogName}>
+              {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
+            </h2>
             <p className={styles.dogDetails}>{dog.city}</p>
             <p className={styles.dogGender}>
               {dog.gender === 'M' ? '♂' : '♀'}
             </p>
-          </div>
+          </NavLink>
         ))}
       </div>
 

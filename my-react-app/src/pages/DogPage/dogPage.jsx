@@ -1,5 +1,8 @@
 import styles from './dogPage.module.css'
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
+
+
 import Rex from '../../assets/dog1.jpg';
 import Bella from '../../assets/dog2.jpg';
 import Thor from '../../assets/dog3.jpg';
@@ -399,7 +402,7 @@ function DogPage() {
 
       <div className={styles.dogHighlights}>
         {currentDogs.map((dog, index) => (
-          <div key={index} className={styles.dogCard}>
+          <NavLink key={index} to={`/detalhes/${dog.name}`} className={styles.dogCard}>
             <img src={dog.image} alt={dog.name} className={styles.dogImage} />
             <h2 className={styles.dogName}>
               {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
@@ -408,7 +411,7 @@ function DogPage() {
             <p className={styles.dogGender}>
               {dog.gender === 'M' ? '♂' : '♀'}
             </p>
-          </div>
+          </NavLink>
         ))}
       </div>
       <div className={styles.pagination}>

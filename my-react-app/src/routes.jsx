@@ -20,7 +20,7 @@ function MainRoutes(){
             <Route path="/duvidas" element={<Doubts />}></Route>
             <Route path="/entrar" element={<Login />}></Route>
             <Route path="/usuario" element={<UserPage />}></Route>
-            <Route path="/detalhes" element={<DogDetails />}></Route>
+            <Route path="/detalhes/:name" element={<DogDetails />}></Route>
             <Route path="/cachorros" element={<DogPage />}></Route>
             <Route path="/cadastro" element={<Register />}></Route>
         </Routes>
