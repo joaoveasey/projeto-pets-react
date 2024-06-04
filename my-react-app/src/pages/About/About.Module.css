@@ -1,5 +1,4 @@
 .titulo {
-    font-size: 25px;
     display: flex;
     justify-content: center;
     padding: 70px 0;
@@ -21,12 +20,11 @@ h1, h2 {
 }
 
 .txtobjetivos h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
+    padding-bottom: 35px;
 }
 
 .txtobjetivos p {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .facil {
@@ -41,12 +39,11 @@ h1, h2 {
 }
 
 .txtfacil h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
+    padding-bottom: 35px;
 }
 
 .txtfacil p {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .vantagens {
@@ -61,10 +58,9 @@ h1, h2 {
 }
 
 .txtvantagens h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
+    padding-bottom: 35px;
 }
 
 .txtvantagens p {
-    font-size: 22px;
+    font-size: 18px;
 }
