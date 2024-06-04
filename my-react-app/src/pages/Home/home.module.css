@@ -96,6 +96,7 @@
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  text-decoration: none;
 }
 
 .dogImage {
@@ -109,7 +110,6 @@
   transform: rotate(-2deg);
 }
 
-
 .dogName {
   font-size: 18px;
   margin: 10px 0;
@@ -118,6 +118,11 @@
 .dogDetails {
   font-size: 14px;
   color: #555;
+}
+
+.dogBreed {
+  font-size: 14px;
+  margin: 10px 0;
 }
 
 .dogGender {
