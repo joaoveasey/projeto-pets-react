@@ -6,17 +6,19 @@
 }
 
 .tempocertodicas h2 {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 35px;
 }
 
 .tempocertodicas p {
     padding: 10px 300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #tempocertomachos {
     padding-bottom: 20px;
+    font-size: 22px
 }
 
 .parperfeitodicas {
@@ -27,13 +29,14 @@
 }
 
 .parperfeitodicas h2 {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 35px;
 }
 
 .parperfeitodicas p {
     padding: 10px 300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #parperfeitoinstrucao {
@@ -48,13 +51,14 @@
 }
 
 .aproximacaodicas h2 {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 35px;
 }
 
 .aproximacaodicas p {
     padding: 10px 300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #aproximacaoinstrucao {
@@ -69,13 +73,14 @@
 }
 
 .cruzamentodicas h2 {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 35PX;
 }
 
 .cruzamentodicas p {
     padding: 10px 300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #cruzamentoinstrucao {
@@ -90,36 +95,38 @@
 }
 
 .partodicas h2 {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    font-size: 35px;
 }
 
 .partodicas p {
     padding: 10px 300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #partoinstrucao {
     padding-bottom: 20px;
 }
 
-.localdicas {
+.consideracoes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px 0;
 }
 
-.localdicas h2 {
-    padding-bottom: 20px;
+.consideracoes h2 {
+    padding-bottom: 15px;
+    font-size: 35px;
 } 
 
-.localdicas p {
+.consideracoes p {
     padding: 10px 300px;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
 }
 
-#localinstrucao {
+#consideracoesfin {
     padding-bottom: 50px;
 }
