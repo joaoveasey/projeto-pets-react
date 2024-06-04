@@ -49,3 +49,28 @@ Cesar Prando - Mascote
 
 ## Mudanças
 #### O projeto seguiu diversas mudanças em comparação com a versão anterior do semestre, para começar o site inteiro agora foi feito com React e Firebase para a autenticação do usuário, teve mudanças simples e mais complexas em todos as paginas, como na Home, Login, Cadastro e Tela Principal de Cachorros.
+
+## Telas 
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/24671a92-13dc-40c1-987a-bffd29464bce)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/ba625527-b3a0-4500-b28c-eb3ca9b1d65b)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/5f547004-cb0d-4784-9ca6-be37080a1e51)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/c02529b0-9289-4b94-9d9d-83c2a2d131fa)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/5783cb81-66a8-4b3a-8ae6-21c4c0c5af52)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/1dd62036-7626-44b0-9a39-21b437fd8549)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/d7ae0906-9505-4e51-aec8-427539601f69)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/7c52a8fe-5818-4417-bb1f-4170ee3f98a6)
+
+![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/10488219-3ac0-43b7-8bd6-ea3c94ae8d26)
+
+
+
+
+
+
