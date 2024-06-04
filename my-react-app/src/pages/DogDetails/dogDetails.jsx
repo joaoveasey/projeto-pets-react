@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './dogDetails.module.css';
 
@@ -44,6 +44,11 @@ const dogData = {
     age: '3 anos',
     description: 'Rex é um cachorro alegre e cheio de energia.',
     image: Rex,
+    owner: {
+      name: 'Carlos Silva',
+      email: 'carlos.silva@example.com',
+      phone: '(11) 98765-4321',
+    }
   },
   Bella: {
     name: 'Bella',
@@ -55,127 +60,187 @@ const dogData = {
     age: '2 anos',
     description: 'Bella é uma cadela carinhosa e tranquila.',
     image: Bella,
+    owner: {
+      name: 'Ana Souza',
+      email: 'ana.souza@example.com',
+      phone: '(21) 98765-4321',
+    }
   },
   Thor: {
     name: 'Thor',
-    breed: 'Pinscher',
-    city: 'Santos',
-    state: 'SP',
-    size: 'Pequeno',
-    gender: 'Macho',
-    age: '1 ano',
-    description: 'Thor é um pequeno guerreiro cheio de coragem.',
-    image: Thor,
-  },
-  Pintado: {
-    name: 'Pintado',
-    breed: 'Dalmata',
-    city: 'Salvador',
-    state: 'BA',
+    breed: 'Golden Retriever',
+    city: 'Belo Horizonte',
+    state: 'MG',
     size: 'Grande',
     gender: 'Macho',
     age: '4 anos',
-    description: 'Pintado é um cão dócil e muito ativo.',
-    image: Pintado,
+    description: 'Thor é um cachorro amigável e muito obediente.',
+    image: Thor,
+    owner: {
+      name: 'Bruno Santos',
+      email: 'bruno.santos@example.com',
+      phone: '(31) 98765-4321',
+    }
   },
-  Cesar: {
-    name: 'Cesar',
-    breed: 'Labrador Retriever',
-    city: 'Matão',
-    state: 'SP',
-    size: 'Médio',
-    gender: 'Macho',
-    age: '5 anos',
-    description: 'Cesar é muito amigável e adora brincar.',
-    image: Cesar,
-  },
-  Dorinha: {
-    name: 'Dorinha',
-    breed: 'Chihuahua',
-    city: 'Manaus',
-    state: 'AM',
-    size: 'Muito Pequeno',
-    gender: 'Fêmea',
-    age: '3 anos',
-    description: 'Dorinha é pequena, mas cheia de personalidade.',
-    image: Dorinha,
-  },
-  Chanel: {
-    name: 'Chanel',
-    breed: 'Pinscher',
-    city: 'Rio de Janeiro',
-    state: 'RJ',
-    size: 'Pequeno',
-    gender: 'Fêmea',
-    age: '2 anos',
-    description: 'Chanel é uma cadela elegante e protetora.',
-    image: Chanel,
-  },
-  Birulinha: {
-    name: 'Birulinha',
-    breed: 'Chihuahua',
-    city: 'Belo Horizonte',
-    state: 'MG',
-    size: 'Pequeno',
-    gender: 'Macho',
-    age: '4 anos',
-    description: 'Birulinha adora se aninhar e receber carinho.',
-    image: Birulinha,
-  },
-  Max: {
-    name: 'Max',
-    breed: 'Golden Retriever',
+  Pintado: {
+    name: 'Pintado',
+    breed: 'Dalmatian',
     city: 'Curitiba',
     state: 'PR',
     size: 'Grande',
     gender: 'Macho',
-    age: '6 anos',
-    description: 'Max é um gigante gentil, ótimo com crianças.',
-    image: Max,
+    age: '5 anos',
+    description: 'Pintado é um cachorro brincalhão e cheio de energia.',
+    image: Pintado,
+    owner: {
+      name: 'Mariana Ferreira',
+      email: 'mariana.ferreira@example.com',
+      phone: '(41) 98765-4321',
+    }
   },
-  Luna: {
-    name: 'Luna',
+  Cesar: {
+    name: 'Cesar',
     breed: 'Poodle',
-    city: 'Fortaleza',
-    state: 'CE',
-    size: 'Muito Pequeno',
-    gender: 'Fêmea',
-    age: '3 anos',
-    description: 'Luna é muito esperta e cheia de truques.',
-    image: Luna,
-  },
-  Buddy: {
-    name: 'Buddy',
-    breed: 'Labrador Retriever',
     city: 'Porto Alegre',
     state: 'RS',
+    size: 'Médio',
+    gender: 'Macho',
+    age: '2 anos',
+    description: 'Cesar é um cachorro inteligente e fácil de treinar.',
+    image: Cesar,
+    owner: {
+      name: 'Roberto Costa',
+      email: 'roberto.costa@example.com',
+      phone: '(51) 98765-4321',
+    }
+  },
+  Dorinha: {
+    name: 'Dorinha',
+    breed: 'Shih Tzu',
+    city: 'Fortaleza',
+    state: 'CE',
+    size: 'Pequeno',
+    gender: 'Fêmea',
+    age: '3 anos',
+    description: 'Dorinha é uma cadela carinhosa e muito apegada aos donos.',
+    image: Dorinha,
+    owner: {
+      name: 'Luciana Almeida',
+      email: 'luciana.almeida@example.com',
+      phone: '(85) 98765-4321',
+    }
+  },
+  Chanel: {
+    name: 'Chanel',
+    breed: 'Chihuahua',
+    city: 'Salvador',
+    state: 'BA',
+    size: 'Pequeno',
+    gender: 'Fêmea',
+    age: '1 ano',
+    description: 'Chanel é uma cadela pequena, mas muito corajosa.',
+    image: Chanel,
+    owner: {
+      name: 'Fernanda Oliveira',
+      email: 'fernanda.oliveira@example.com',
+      phone: '(71) 98765-4321',
+    }
+  },
+  Birulinha: {
+    name: 'Birulinha',
+    breed: 'Bulldog',
+    city: 'Recife',
+    state: 'PE',
+    size: 'Médio',
+    gender: 'Macho',
+    age: '4 anos',
+    description: 'Birulinha é um cachorro calmo e muito companheiro.',
+    image: Birulinha,
+    owner: {
+      name: 'Paulo Mendes',
+      email: 'paulo.mendes@example.com',
+      phone: '(81) 98765-4321',
+    }
+  },
+  Max: {
+    name: 'Max',
+    breed: 'Labrador',
+    city: 'Brasília',
+    state: 'DF',
     size: 'Grande',
     gender: 'Macho',
     age: '5 anos',
-    description: 'Buddy é leal e adora nadar.',
-    image: Buddy,
+    description: 'Max é um cachorro muito leal e protetor.',
+    image: Max,
+    owner: {
+      name: 'Gustavo Moreira',
+      email: 'gustavo.moreira@example.com',
+      phone: '(61) 98765-4321',
+    }
   },
-  Molly: {
-    name: 'Molly',
-    breed: 'Bulldog Francês',
-    city: 'Florianópolis',
-    state: 'SC',
-    size: 'Pequeno',
+  Luna: {
+    name: 'Luna',
+    breed: 'Husky Siberiano',
+    city: 'Manaus',
+    state: 'AM',
+    size: 'Grande',
     gender: 'Fêmea',
-    age: '4 anos',
-    description: 'Molly é muito engraçada e cheia de energia.',
-    image: Molly,
+    age: '3 anos',
+    description: 'Luna é uma cadela ativa e muito brincalhona.',
+    image: Luna,
+    owner: {
+      name: 'Juliana Rocha',
+      email: 'juliana.rocha@example.com',
+      phone: '(92) 98765-4321',
+    }
   },
-  Rocky: {
-    name: 'Rocky',
-    breed: 'Boxer',
-    city: 'São Luís',
-    state: 'MA',
+  Buddy: {
+    name: 'Buddy',
+    breed: 'Pastor Alemão',
+    city: 'Belém',
+    state: 'PA',
     size: 'Grande',
     gender: 'Macho',
     age: '6 anos',
-    description: 'Rocky é um cão muito ativo e protetor.',
+    description: 'Buddy é um cachorro muito inteligente e obediente.',
+    image: Buddy,
+    owner: {
+      name: 'Ricardo Lima',
+      email: 'ricardo.lima@example.com',
+      phone: '(91) 98765-4321',
+    }
+  },
+  Molly: {
+    name: 'Molly',
+    breed: 'Pug',
+    city: 'Natal',
+    state: 'RN',
+    size: 'Pequeno',
+    gender: 'Fêmea',
+    age: '2 anos',
+    description: 'Molly é uma cadela amorosa e muito divertida.',
+    image: Molly,
+    owner: {
+      name: 'Patrícia Barbosa',
+      email: 'patricia.barbosa@example.com',
+      phone: '(84) 98765-4321',
+    }
+  },
+  Rocky: {
+    name: 'Rocky',
+    breed: 'Rottweiler',
+    city: 'Florianópolis',
+    state: 'SC',
+    size: 'Grande',
+    gender: 'Macho',
+    age: '5 anos',
+    description: 'Rocky é um cachorro muito protetor e leal.',
     image: Rocky,
+    owner: {
+      name: 'Fábio Carvalho',
+      email: 'fabio.carvalho@example.com',
+      phone: '(48) 98765-4321',
+    }
   },
   Daisy: {
     name: 'Daisy',
@@ -184,130 +249,208 @@ const dogData = {
     state: 'PB',
     size: 'Médio',
     gender: 'Fêmea',
-    age: '3 anos',
-    description: 'Daisy é muito amigável e adora correr.',
+    age: '4 anos',
+    description: 'Daisy é uma cadela muito carinhosa e dócil.',
     image: Daisy,
+    owner: {
+      name: 'Marina Costa',
+      email: 'marina.costa@example.com',
+      phone: '(83) 98765-4321',
+    }
   },
   Zeus: {
     name: 'Zeus',
-    breed: 'Doberman',
-    city: 'Natal',
-    state: 'RN',
+    breed: 'Dogue Alemão',
+    city: 'Teresina',
+    state: 'PI',
     size: 'Grande',
     gender: 'Macho',
-    age: '4 anos',
-    description: 'Zeus é um cão muito leal e protetor.',
+    age: '6 anos',
+    description: 'Zeus é um cachorro imponente e muito obediente.',
     image: Zeus,
+    owner: {
+      name: 'Daniel Martins',
+      email: 'daniel.martins@example.com',
+      phone: '(86) 98765-4321',
+    }
   },
   Lola: {
     name: 'Lola',
-    breed: 'Shih Tzu',
-    city: 'Vitória',
-    state: 'ES',
-    size: 'Pequeno',
-    gender: 'Fêmea',
-    age: '2 anos',
-    description: 'Lola é uma cadela carinhosa e cheia de charme.',
-    image: Lola,
-  },
-  Toby: {
-    name: 'Toby',
-    breed: 'Yorkshire Terrier',
-    city: 'Campo Grande',
-    state: 'MS',
-    size: 'Pequeno',
-    gender: 'Macho',
-    age: '3 anos',
-    description: 'Toby é pequeno, mas muito corajoso.',
-    image: Toby,
-  },
-  Bailey: {
-    name: 'Bailey',
-    breed: 'Rottweiler',
-    city: 'Aracaju',
-    state: 'SE',
-    size: 'Muito Grande',
-    gender: 'Fêmea',
-    age: '5 anos',
-    description: 'Bailey é uma gigante dócil e protetora.',
-    image: Bailey,
-  },
-  Charlie: {
-    name: 'Charlie',
-    breed: 'Pastor Alemão',
-    city: 'Belém',
-    state: 'PA',
-    size: 'Muito Grande',
-    gender: 'Macho',
-    age: '4 anos',
-    description: 'Charlie é muito inteligente e adora desafios.',
-    image: Charlie,
-  },
-  Rosie: {
-    name: 'Rosie',
-    breed: 'Maltês',
+    breed: 'Pomeranian',
     city: 'Maceió',
     state: 'AL',
     size: 'Pequeno',
     gender: 'Fêmea',
-    age: '2 anos',
-    description: 'Rosie é muito fofa e adora brincar.',
-    image: Rosie,
-  },
-  Jack: {
-    name: 'Jack',
-    breed: 'Dogue Alemão',
-    city: 'Recife',
-    state: 'PE',
-    size: 'Grande',
-    gender: 'Macho',
-    age: '5 anos',
-    description: 'Jack é grande, mas muito gentil.',
-    image: Jack,
-  },
-  Lucy: {
-    name: 'Lucy',
-    breed: 'Pastor Australiano',
-    city: 'Palmas',
-    state: 'TO',
-    size: 'Médio',
-    gender: 'Fêmea',
     age: '3 anos',
-    description: 'Lucy é muito inteligente e adora pastorear.',
-    image: Lucy,
+    description: 'Lola é uma cadela pequena, mas cheia de energia.',
+    image: Lola,
+    owner: {
+      name: 'Camila Azevedo',
+      email: 'camila.azevedo@example.com',
+      phone: '(82) 98765-4321',
+    }
   },
-  Duke: {
-    name: 'Duke',
-    breed: 'Husky Siberiano',
-    city: 'Boa Vista',
-    state: 'RR',
-    size: 'Grande',
+  Toby: {
+    name: 'Toby',
+    breed: 'Jack Russell Terrier',
+    city: 'Aracaju',
+    state: 'SE',
+    size: 'Pequeno',
     gender: 'Macho',
     age: '4 anos',
-    description: 'Duke é cheio de energia e adora o frio.',
-    image: Duke,
+    description: 'Toby é um cachorro muito esperto e cheio de energia.',
+    image: Toby,
+    owner: {
+      name: 'Rafael Souza',
+      email: 'rafael.souza@example.com',
+      phone: '(79) 98765-4321',
+    }
   },
-  Maggie: {
-    name: 'Maggie',
-    breed: 'Schnauzer',
-    city: 'Porto Velho',
-    state: 'RO',
+  Bailey: {
+    name: 'Bailey',
+    breed: 'Cavalier King Charles Spaniel',
+    city: 'Campo Grande',
+    state: 'MS',
+    size: 'Pequeno',
+    gender: 'Fêmea',
+    age: '2 anos',
+    description: 'Bailey é uma cadela muito amigável e tranquila.',
+    image: Bailey,
+    owner: {
+      name: 'Isabela Lima',
+      email: 'isabela.lima@example.com',
+      phone: '(67) 98765-4321',
+    }
+  },
+  Charlie: {
+    name: 'Charlie',
+    breed: 'Border Collie',
+    city: 'Cuiabá',
+    state: 'MT',
+    size: 'Médio',
+    gender: 'Macho',
+    age: '5 anos',
+    description: 'Charlie é um cachorro muito inteligente e ativo.',
+    image: Charlie,
+    owner: {
+      name: 'Adriana Mendes',
+      email: 'adriana.mendes@example.com',
+      phone: '(65) 98765-4321',
+    }
+  },
+  Rosie: {
+    name: 'Rosie',
+    breed: 'Shiba Inu',
+    city: 'Palmas',
+    state: 'TO',
     size: 'Pequeno',
     gender: 'Fêmea',
     age: '3 anos',
-    description: 'Maggie é muito esperta e adora explorar.',
-    image: Maggie,
+    description: 'Rosie é uma cadela independente e cheia de energia.',
+    image: Rosie,
+    owner: {
+      name: 'Elaine Barbosa',
+      email: 'elaine.barbosa@example.com',
+      phone: '(63) 98765-4321',
+    }
   },
+  Jack: {
+    name: 'Jack',
+    breed: 'Akita',
+    city: 'Porto Velho',
+    state: 'RO',
+    size: 'Grande',
+    gender: 'Macho',
+    age: '6 anos',
+    description: 'Jack é um cachorro muito leal e protetor.',
+    image: Jack,
+    owner: {
+      name: 'José Silva',
+      email: 'jose.silva@example.com',
+      phone: '(69) 98765-4321',
+    }
+  },
+  Lucy: {
+    name: 'Lucy',
+    breed: 'Samoyed',
+    city: 'Rio Branco',
+    state: 'AC',
+    size: 'Grande',
+    gender: 'Fêmea',
+    age: '4 anos',
+    description: 'Lucy é uma cadela muito amigável e cheia de energia.',
+    image: Lucy,
+    owner: {
+      name: 'Tatiana Freitas',
+      email: 'tatiana.freitas@example.com',
+      phone: '(68) 98765-4321',
+    }
+  },
+  Duke: {
+    name: 'Duke',
+    breed: 'Bernese Mountain Dog',
+    city: 'Macapá',
+    state: 'AP',
+    size: 'Grande',
+    gender: 'Macho',
+    age: '5 anos',
+    description: 'Duke é um cachorro calmo e muito leal.',
+    image: Duke,
+    owner: {
+      name: 'Vinícius Pereira',
+      email: 'vinicius.pereira@example.com',
+      phone: '(96) 98765-4321',
+    }
+  },
+  Maggie: {
+    name: 'Maggie',
+    breed: 'Australian Shepherd',
+    city: 'Boa Vista',
+    state: 'RR',
+    size: 'Médio',
+    gender: 'Fêmea',
+    age: '3 anos',
+    description: 'Maggie é uma cadela muito inteligente e ativa.',
+    image: Maggie,
+    owner: {
+      name: 'Renata Gomes',
+      email: 'renata.gomes@example.com',
+      phone: '(95) 98765-4321',
+    }
+  }
 };
+
+const Modal = ({ onClose, owner }) => (
+  <div className={styles.modalOverlay}>
+    <div className={styles.modalContent}>
+      <div className={styles.infos}>
+      <h2 className={styles.ownerContact}>Contato do Dono</h2>
+      <p className={styles.ownerName}><strong>Nome:</strong> {owner.name}</p>
+      <p className={styles.ownerEmail}><strong>Email:</strong> {owner.email}</p>
+      <p className={styles.ownerPhone}><strong>Telefone:</strong> {owner.phone}</p>
+      </div>
+      <button onClick={onClose} className={styles.closeButton}>Fechar</button>
+    </div>
+  </div>
+);
 
 const DogDetails = () => {
   const { name } = useParams();
   const navigate = useNavigate();
   const dog = dogData[name];
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (!dog) {
     return <div>Cachorro não encontrado!</div>;
   }
+
+  const handleContactClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className={styles.container}>
@@ -321,21 +464,25 @@ const DogDetails = () => {
         <div className={styles.details}>
           <p className={styles.detailItemPaw}>
             <img src={pawIcon} alt="Paw icon" className={styles.iconPaw} />
-             {dog.gender} | {dog.size} | {dog.age}
+            {dog.gender} | {dog.size} | {dog.age}
           </p>
           <p className={styles.detailItemLocation}>
             <img src={locationIcon} alt="Location icon" className={styles.iconLocation} />
-             {dog.city}, {dog.state}
+            {dog.city}, {dog.state}
           </p>
           <p className={styles.detailItemDescription}>
             <img src={descriptionIcon} alt="Description icon" className={styles.iconDescription} />
-             {dog.description}
+            {dog.description}
           </p>
         </div>
+        <button className={styles.contactButton} onClick={handleContactClick}>
+          Contato
+        </button>
         <button className={styles.backButton} onClick={() => navigate(-1)}>
           Voltar
         </button>
       </div>
+      {isModalOpen && <Modal onClose={handleCloseModal} owner={dog.owner} />}
     </div>
   );
 };
