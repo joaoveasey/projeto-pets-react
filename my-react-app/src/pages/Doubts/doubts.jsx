@@ -55,10 +55,16 @@ function Doubts() {
          activeText={"Os usuários podem se cadastrar no seu site fornecendo informações sobre seus cães, incluindo raça, idade, gênero, temperamento, histórico de saúde e qualquer outra informação relevante. Após o cadastro, podem navegar pelos perfis de outros cães cadastrados no site. Eles podem filtrar a busca com base em diferentes critérios, como raça, idade, localização geográfica, entre outros."} 
          image={buttonImage} />
         <DoubtsButton doubtsButtonText="2. Tem algum custo?"
-         activeText={"pedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinh opedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinho"} 
+         activeText={"Não. A priori o Conexão Canina não apresenta nenhum custo para usuário," + 
+         " todo o dinheiro arrecado do site é por meio de anúncios, não existe nenhum preço" 
+         + " imposto a quem utiliza o site, nenhum e-mail, mensagem enviada requirindo" +
+         " dinheiro é de forma oficial, não responda ou envie nenhum tipo de dado pessoal." +
+         " O Conexão Canina é um site totalmente grátis e não concorda nem incentiva" +
+         " venda de cães, nem compra ou venda de cruzamento, o objetivo é apenas a" +
+         " comunicação entre donos."} 
          image={buttonImage} />
         <DoubtsButton doubtsButtonText="3. Como faço para cadastrar meu cão?"
-         activeText={"pedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinh opedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinhopedrinho"}
+         activeText={"O cadastro de cão é muito simples e será feito juntamente com o do proprietário, serão requisitados os seguintes itens; nome, e-mail, numero de telefone, cidade, estado, entre outros."}
          image={buttonImage} />
          <hr className='divider' />
       </div>
