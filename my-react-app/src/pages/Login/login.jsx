@@ -62,7 +62,7 @@ function Login() {
               {showPassword ? '👁️' : '👁️'}
             </button>
         </div>
-        <a href="#">Esqueceu sua senha?</a>
+        <Link to="/recuperarSenha">Esqueceu sua senha?</Link>
         {!loading && <button className={styles.button}>Entrar</button>}
         {loading && <button className={styles.button} disabled>Aguarde..</button>}
         {error && <p className='error'>{error}</p>}
