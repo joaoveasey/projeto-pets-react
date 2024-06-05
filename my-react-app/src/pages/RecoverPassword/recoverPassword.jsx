@@ -1,32 +1,25 @@
 import styles from './recoverPassword.module.css'
 import React, { useState } from 'react';
 import { auth } from '../../firebase/config'
-import { sendPasswordResetEmail   } from 'firebase/auth'
+import { sendPasswordResetEmail } from 'firebase/auth'
 
 function RecoverPassword() {
-    const [ formValues, setFormValues ] = useState({
-        email: ''
-    })
+    const [ email, setEmail ] = useState('')
+    const [ message, setMessage ] = useState('')
+    const [ error, setError ] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setMessage('')
+        setError(null)
 
         try {
-            await sendPasswordResetEmail(auth, formValues.email)
-            alert('Link de recuperação de senha enviado para o email: ' + formValues.email)
+            await sendPasswordResetEmail(auth, email)
+            setMessage('Link de recuperação de senha enviado para o email: '+ email +'.')
         }
         catch (error) {
-            alert("Ocorreu um erro, tente novamente mais tarde")
+            setError("Ocorreu um erro, verifique se o e-mail está escrito corretamente.")
         }
-        
-    }
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target
-        setFormValues({
-            ...formValues,
-            [name]: value,
-        })
     }
   return (
     <>
@@ -40,13 +33,15 @@ function RecoverPassword() {
             id='email'
             name='email'
             placeholder='E-mail'
-            value={formValues.email}
-            onChange={handleInputChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
              />
         </div>
         <button type='submit' className={styles.button}>Enviar</button>
       </form>
+      {message && <p>{message}</p>}
+      {error && <p>{error}</p>}
     </div>
       
     </>
