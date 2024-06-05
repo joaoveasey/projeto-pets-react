@@ -1,7 +1,6 @@
 <img src="https://github.com/joaoveasey/projeto-fatec-front-end/assets/133874619/71769ebd-b1ad-4193-a70f-6f7f04efa5cf" width="100" height="100" alt="Texto do seu parágrafo (1)">
 
 # Projeto Pets - Conexão Canina | Feito com o Framework React
-#### Figma: https://www.figma.com/file/X79yYNwEzGCWtU5a7ABDl4/NOVO-DESIGN-PETS-2024---3-SEM?type=design&node-id=0-1&mode=design&t=xJ2qQgzvFcGHdnGv-0
 
 ## Objetivo
 Projeto feito com o intuito de ser um site para cruzamento de cachorros, o usuário entra no site e poderá encontrar um cachorro ideal para cruzar com o seu.
@@ -51,23 +50,30 @@ Cesar Prando - Mascote
 #### O projeto seguiu diversas mudanças em comparação com a versão anterior do semestre, para começar o site inteiro agora foi feito com React e Firebase para a autenticação do usuário, teve mudanças simples e mais complexas em todos as paginas, como na Home, Login, Cadastro e Tela Principal de Cachorros.
 
 ## Telas 
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/24671a92-13dc-40c1-987a-bffd29464bce)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/ba625527-b3a0-4500-b28c-eb3ca9b1d65b)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/5f547004-cb0d-4784-9ca6-be37080a1e51)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/c02529b0-9289-4b94-9d9d-83c2a2d131fa)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/5783cb81-66a8-4b3a-8ae6-21c4c0c5af52)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/1dd62036-7626-44b0-9a39-21b437fd8549)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/d7ae0906-9505-4e51-aec8-427539601f69)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/7c52a8fe-5818-4417-bb1f-4170ee3f98a6)
-
-![image](https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/10488219-3ac0-43b7-8bd6-ea3c94ae8d26)
+<div>
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/24671a92-13dc-40c1-987a-bffd29464bce" width="400" height="600">
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/ba625527-b3a0-4500-b28c-eb3ca9b1d65b" width="400" height="600">
+</div>
+<br>
+<div>
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/ba625527-b3a0-4500-b28c-eb3ca9b1d65b" width="400" height="600">
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/5f547004-cb0d-4784-9ca6-be37080a1e51" width="500" height="500">
+</div>
+<br>
+<div>
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/c02529b0-9289-4b94-9d9d-83c2a2d131fa" width="400" height="600">
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/5783cb81-66a8-4b3a-8ae6-21c4c0c5af52" width="500" height="450">
+</div>
+<br>
+<div>
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/1dd62036-7626-44b0-9a39-21b437fd8549" width="400" height="600">
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/d7ae0906-9505-4e51-aec8-427539601f69" width="500" height="450">
+</div>
+<br>
+<div>
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/7c52a8fe-5818-4417-bb1f-4170ee3f98a6" width="400" height="600">
+  <img src="https://github.com/joaoveasey/projeto-fatec-react/assets/133874619/10488219-3ac0-43b7-8bd6-ea3c94ae8d26" width="500" height="450">
+</div>
 
 
 
