@@ -9,6 +9,7 @@ import UserPage from "./pages/UserPage/userPage";
 import DogDetails from "./pages/DogDetails/dogDetails";
 import DogPage from "./pages/DogPage/dogPage";
 import Register from "./pages/Register/register";
+import RecoverPassword from "./pages/RecoverPassword/recoverPassword";
 
 function MainRoutes(){
 
@@ -23,9 +24,9 @@ function MainRoutes(){
             <Route path="/detalhes/:name" element={<DogDetails />}></Route>
             <Route path="/cachorros" element={<DogPage />}></Route>
             <Route path="/cadastro" element={<Register />}></Route>
+            <Route path="/recuperarSenha" element={<RecoverPassword />}></Route>
         </Routes>
     )
-    
 }
 
 export default MainRoutes
