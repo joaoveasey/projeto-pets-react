@@ -3,7 +3,7 @@ import styles from "./Footer.module.css"
 
 const Footer = () => {
     return (
-        <>
+        
             <footer className={styles.footer}>
                 <div className={styles.footer.left}>
                     <h2>© Copyright Conexão Canina</h2>
@@ -14,7 +14,7 @@ const Footer = () => {
                     <h3>E-mail: contato.conexaocanina@gmail.com</h3>
                 </div>
             </footer>
-        </>
+    
     )
 }
 
