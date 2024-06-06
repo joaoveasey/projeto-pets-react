@@ -297,7 +297,7 @@ function DogPage() {
     
   return (
     <>
-      <h1>Encontre um Parceiro</h1>
+      <h1 className={styles.title}>Encontre um Parceiro</h1>
       <div className={styles.container_filter}>
           <label className={styles.container_filter_input}>
             <select 

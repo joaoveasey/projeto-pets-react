@@ -1,4 +1,4 @@
-h1 {
+.title {
   text-align: center;
   font-weight: 900;
   margin-top: 5vh;
@@ -50,14 +50,12 @@ h1 {
   padding: 10px;
 }
 
-
 .dogHighlights {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
   cursor: pointer;
-
 }
 
 .dogCard {
@@ -81,7 +79,6 @@ h1 {
   transform: rotate(-2deg);
 }
 
-
 .dogName {
   font-size: 18px;
   margin: 10px 0;
@@ -101,7 +98,6 @@ h1 {
   font-size: 14px;
   margin: 10px 0;
 }
-
 
 .pagination {
   display: flex;
@@ -130,4 +126,76 @@ h1 {
 .pagination button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .container_filter {
+    margin: 20px 50px;
+    padding: 20px;
+  }
+
+  .dogHighlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dogImage {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container_filter {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .dogHighlights {
+    grid-template-columns: 1fr;
+  }
+
+  .dogImage {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container_filter {
+    margin: 10px;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .container_filter_input {
+    width: 100%;
+  }
+
+  .container_filter_input select {
+    font-size: 14px;
+  }
+
+  .dogHighlights {
+    grid-template-columns: 1fr;
+  }
+
+  .dogImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .pagination button {
+    margin: 5px 0;
+  }
 }
