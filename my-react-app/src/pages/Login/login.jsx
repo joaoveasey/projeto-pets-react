@@ -25,9 +25,7 @@ function Login() {
       password
     }
     const res = await login(user)
-
     console.table(res)
-    navigate("/cachorros")
   }
 
   useEffect(() => {

@@ -19,6 +19,18 @@
     font-weight: 700;
 }
 
+.usuario {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.usuario p {
+    color: #f0f0f0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .link_list {
     display: flex;
     justify-content: space-around;
@@ -59,8 +71,40 @@
  
 }
 
-
 .entrarButton a:hover {
     background-color: #506ffc;
     color: #f0f0f0;
+}
+
+.logoutButton {
+    position: absolute;
+    padding: 5px 15px;
+    border: none;
+    background-color: #3d61ff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+    margin-left: 10vh;
+}
+
+.logoutButton:hover {
+    background-color: #2c4d85;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    color: #fff;
+}
+
+.logoutButton a:hover {
+    background-color: #506ffc;
+    color: #f0f0f0;
+}
+
+.drawerToggle {
+    cursor: pointer;
+    position: absolute;
+    margin-left: 14vh;
+    margin-top: 1.5vh;
 }

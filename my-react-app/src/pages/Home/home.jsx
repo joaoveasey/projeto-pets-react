@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './home.module.css';
 import { NavLink } from 'react-router-dom';
-
+import { useAuthValue } from '../../context/AuthContext'
 import sampleImage from '../../assets/dog-home.jpg';
 import Rex from '../../assets/dog1.jpg';
 import Bella from '../../assets/dog2.jpg';
@@ -88,6 +88,7 @@ const dogs = [
 ];
 
 const Home = () => {
+  const { user } = useAuthValue()
   return (
     <div className={styles.container}>
       <div className={styles.imageTextContainer}>
@@ -96,9 +97,14 @@ const Home = () => {
         </div>
         <div className={styles.content}>
           <h1 className={styles.containerText}>Encontre o par perfeito para o seu cão.</h1>
-          <NavLink to="/cadastro" className={styles.button}>
+          {!user ? (
+            <NavLink to="/cadastro" className={styles.button}>
             Cadastrar Agora!
           </NavLink>
+          ) : (
+            <p></p>
+          )}
+          
         </div>
       </div>
       <hr className={styles.divider} />
