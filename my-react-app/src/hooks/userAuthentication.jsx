@@ -1,4 +1,4 @@
-import { db } from '../firebase/config'
+
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -13,9 +13,9 @@ export const userAuthentication = () => {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(null)
     const [cancelled, setCancelled] = useState(null)
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const auth = getAuth()
-
+    
     function checkIfIsCancelled(){
         if(cancelled){
             return
@@ -83,7 +83,7 @@ export const userAuthentication = () => {
         setError(false)
 
         try{
-            await signInWithEmailAndPassword(auth, data.username, data.password)
+            await signInWithEmailAndPassword(auth, data.email, data.password)
             
             setLoading(false)
             navigate("/cachorros")
@@ -97,8 +97,8 @@ export const userAuthentication = () => {
                 systemErrorMessage = "Este usuário não está cadastrado"
             } else if(error.message.includes("wrong-password")){
                 systemErrorMessage = "Erro nas credenciais"
-            } else {
-                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
+            } else if (error){
+                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde."
             }
 
             setLoading(false)

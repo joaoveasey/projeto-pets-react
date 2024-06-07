@@ -154,7 +154,7 @@ const dogData = {
     size: 'Médio',
     gender: 'Macho',
     age: '4 anos',
-    description: 'Birulinha é um cachorro calmo e muito companheiro.',
+    description: 'Birulinha é um cachorro calmo e muito pilantra.',
     image: Birulinha,
     owner: {
       name: 'Paulo Mendes',
