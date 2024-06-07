@@ -1,0 +1,60 @@
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Adicionando centralização vertical */
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .avatar {
+    margin-bottom: 20px;
+  }
+  
+  .avatarImg {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    
+    
+  }
+  
+  .userInfo {
+    text-align: right; /* Alinhando o texto à direita */
+  }
+  
+  .userInfo h1 {
+    margin-bottom: 10px;
+  }
+  
+  .userInfo p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinhando os ícones à direita */
+    
+  }
+  
+  .icon {
+    margin-right: 20px;
+    width: 25px;
+    line-height: 5rem;
+    padding: 5px;
+    
+    
+  }
+  
+  .editButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .editButton:hover {
+    background-color: #0056b3;
+  }
+  

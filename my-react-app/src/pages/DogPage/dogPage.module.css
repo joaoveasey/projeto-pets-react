@@ -1,4 +1,4 @@
-h1{
+.title {
   text-align: center;
   font-weight: 900;
   margin-top: 5vh;
@@ -50,74 +50,152 @@ h1{
   padding: 10px;
 }
 
-
 .dogHighlights {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.dogCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+}
+
+.dogImage {
+  width: 280px;
+  height: 180px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.dogImage:hover {
+  transform: rotate(-2deg);
+}
+
+.dogName {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.dogDetails {
+  font-size: 14px;
+  color: #555;
+}
+
+.dogGender {
+  font-size: 20px;
+  color: #777;
+}
+
+.dogBreed {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 5vh;
+  margin-right: 5vh;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 5px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #152540;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .container_filter {
+    margin: 20px 50px;
     padding: 20px;
-    cursor: pointer;
-    
   }
-  
-  .dogCard {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    text-decoration: none;
+
+  .dogHighlights {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .dogImage {
-    width: 280px;
-    height: 180px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
   }
-  
-  .dogImage:hover {
-    transform: rotate(-2deg);
-  }
-  
-  
-  .dogName {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  
-  .dogDetails {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .dogGender {
-    font-size: 20px;
-    color: #777;
+}
+
+@media (max-width: 768px) {
+  .container_filter {
+    margin: 20px;
+    padding: 15px;
   }
 
-  .dogBreed {
-    font-size: 14px;
-    margin: 10px 0;
+  .dogHighlights {
+    grid-template-columns: 1fr;
   }
 
-  
+  .dogImage {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container_filter {
+    margin: 10px;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .container_filter_input {
+    width: 100%;
+  }
+
+  .container_filter_input select {
+    font-size: 14px;
+  }
+
+  .dogHighlights {
+    grid-template-columns: 1fr;
+  }
+
+  .dogImage {
+    width: 100%;
+    height: auto;
+  }
+
   .pagination {
-    display: flex;
-    justify-content: right;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 5vh;
-    margin-right: 5vh;
+    margin-right: 0;
   }
 
   .pagination button {
-    margin: 0 10px;
-    padding: 5px 20px;
-    cursor: pointer;
+    margin: 5px 0;
   }
-
-  .pagination button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+}

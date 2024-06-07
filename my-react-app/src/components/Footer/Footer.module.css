@@ -4,9 +4,29 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-.footer h2,h3 {
+.footer h2, h3 {
     color: #f0f0f0;
     margin-top: 15px;
+}
+
+.footer .left, .footer .right {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .footer .left, .footer .right {
+        min-width: 100%;
+    }
 }
