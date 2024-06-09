@@ -116,6 +116,7 @@
     align-items: center;
     text-decoration: none;
     color: #fff;
+    font-weight: 600;
 }
 
 .brand img {
@@ -135,7 +136,10 @@
 
 .link_list {
     display: flex;
+    justify-content: space-around;
     align-items: center;
+    width: 800px;
+    list-style-type: none;
 }
 
 .links {
@@ -143,8 +147,13 @@
 }
 
 .links a {
-    color: #fff;
     text-decoration: none;
+    font-size: 21px;
+    color: #f0f0f0;
+}
+
+.links :hover {
+    color: #506ffc;
 }
 
 .burger {
@@ -176,6 +185,25 @@
     padding: 10px;
 }
 
+.entrarButton {
+    padding: 10px 50px;
+    border: none;
+    background-color: #3d61ff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.entrarButton:hover {
+    background-color: #2c4d85;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    color: #fff;
+}
+
 .logoutButton {
     background: none;
     border: none;
@@ -201,7 +229,6 @@
         top: 150px;
         left: 0;
         width: 100%;
-        padding: 20px;
     }
 
     .nav.open {
@@ -214,10 +241,16 @@
 
     .links {
         margin: 10px 0;
+        margin-right: 50%;
     }
 
     .burger {
         display: flex;
+        margin-right: 10px;
 
+    }
+
+    .pageName {
+        font-weight: 600;
     }
 }

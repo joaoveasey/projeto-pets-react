@@ -27,7 +27,7 @@ const Navbar = () => {
         <header className={styles.header}>
             <NavLink to="/" className={styles.brand}>
                 <img src={logo} alt="logo" width="120px" height="110px" />
-                <p>Conexão Canina</p>
+                <p className={styles.pageName}>Conexão Canina</p>
             </NavLink>
             <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
                 <ul className={styles.link_list}>
