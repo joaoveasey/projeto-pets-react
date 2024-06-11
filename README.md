@@ -291,39 +291,6 @@ jobs:
           projectId: your-firebase-project-id
 ```
 
-#### 11. Adicionar Placeholder ao Campo de Busca
-**Descrição:** Inserir um placeholder no campo de busca para melhorar a usabilidade e orientar os usuários.
-
-**Exemplo de Código:**
-```jsx
-/* No componente de busca */
-<input type="text" placeholder="Search..." className="search-input" />
-```
-
-#### 12. Estilizar Mensagens de Erro
-**Descrição:** Melhorar a aparência das mensagens de erro exibidas aos usuários.
-
-**Exemplo de Código:**
-```css
-/* Adicionar ao arquivo CSS */
-.error-message {
-  color: red;
-  font-weight: bold;
-  margin-top: 10px;
-}
-```
-
-#### 13. Ajustar o Layout de Rodapé
-**Descrição:** Modificar o layout do rodapé para torná-lo mais informativo e visualmente atraente.
-
-**Exemplo de Código:**
-```jsx
-/* No componente de rodapé */
-<footer className="footer">
-  <p>&copy; 2024 Your Company. All rights reserved.</p>
-  <p>Contact us: contact@yourcompany.com</p>
-</footer>
-```
 
 ### Tarefas de 13 Pontos
 
@@ -825,49 +792,6 @@ const enableTwoFactorAuth = async () => {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 ```
-
-#### 32. Adicionar Contagem de Caracteres em Textarea
-**Descrição:** Incluir uma contagem de caracteres em elementos textarea para fornecer feedback ao usuário.
-
-**Exemplo de Código:**
-```jsx
-import { useState } from 'react';
-
-/* Componente de Textarea com contagem de caracteres */
-const TextareaWithCounter = () => {
-  const [text, setText] = useState('');
-  
-  return (
-    <div>
-      <textarea
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        maxLength={200}
-      />
-      <p>{text.length}/200</p>
-    </div>
-  );
-};
-
-export default TextareaWithCounter;
-```
-
-#### 33. Estilizar Links de Navegação
-**Descrição:** Melhorar a aparência dos links de navegação para torná-los mais visíveis e interativos.
-
-**Exemplo de Código:**
-```css
-/* Adicionar ao arquivo CSS */
-.nav-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-```
-
 ### Tarefas de 13 Pontos
 
 #### 34. Implementar Página de Contato
@@ -1120,3 +1044,131 @@ jobs:
           channelId: live
           projectId: your-firebase-project-id
 ```
+### Revisão das Tarefas e Ajuste de Pontuações
+
+### Tarefas de 8 Pontos
+
+#### 11. Melhorar Estilo de Campos de Formulário
+**Descrição:** Atualizar o estilo dos campos de formulário para melhorar a consistência visual e a usabilidade. Incluir documentação de UX/UI e IHC.
+
+**Exemplo de Código:**
+```css
+/* Adicionar ao arquivo CSS */
+.form-input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+```
+**Documentação UX/UI e IHC:**
+- Escrever uma seção no manual de estilo que detalha os novos estilos de campos de formulário.
+- Explicar como o design melhora a experiência do usuário, com exemplos visuais e diretrizes de uso.
+
+#### 12. Adicionar Contagem de Caracteres em Textarea
+**Descrição:** Incluir uma contagem de caracteres em elementos textarea para fornecer feedback ao usuário. Incluir documentação de UX/UI e IHC.
+
+**Exemplo de Código:**
+```jsx
+import { useState } from 'react';
+
+/* Componente de Textarea com contagem de caracteres */
+const TextareaWithCounter = () => {
+  const [text, setText] = useState('');
+  
+  return (
+    <div>
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        maxLength={200}
+      />
+      <p>{text.length}/200</p>
+    </div>
+  );
+};
+
+export default TextareaWithCounter;
+```
+**Documentação UX/UI e IHC:**
+- Adicionar uma seção na documentação que explica a implementação e uso do contador de caracteres.
+- Fornecer diretrizes sobre a melhor forma de usar a funcionalidade para melhorar a interação do usuário.
+
+#### 13. Estilizar Links de Navegação
+**Descrição:** Melhorar a aparência dos links de navegação para torná-los mais visíveis e interativos. Incluir documentação de UX/UI e IHC.
+
+**Exemplo de Código:**
+```css
+/* Adicionar ao arquivo CSS */
+.nav-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+```
+**Documentação UX/UI e IHC:**
+- Documentar as alterações de estilo para links de navegação no manual de estilo.
+- Explicar como as novas estilizações melhoram a usabilidade e fornecer exemplos de boas práticas.
+
+### Tarefas de 13 Pontos
+
+#### 32. Adicionar Tooltips aos Botões
+**Descrição:** Incluir tooltips nos botões principais para melhorar a acessibilidade e fornecer informações adicionais. Incluir documentação de UX/UI e IHC.
+
+**Exemplo de Código:**
+```jsx
+import { Tooltip } from 'react-tooltip';
+
+/* No componente de botões */
+<button data-tip="Clique aqui para enviar" className="action-button">
+  Enviar
+</button>
+<Tooltip place="top" type="dark" effect="solid"/>
+```
+**Documentação UX/UI e IHC:**
+- Escrever uma seção na documentação que descreve a implementação e os benefícios dos tooltips.
+- Fornecer diretrizes sobre quando e onde usar tooltips para melhorar a experiência do usuário.
+
+#### 33. Melhorar Animação de Transição de Páginas
+**Descrição:** Implementar animações suaves nas transições de páginas para melhorar a experiência do usuário. Incluir documentação de UX/UI e IHC.
+
+**Exemplo de Código:**
+```jsx
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './transitions.css';
+
+/* No componente de roteamento */
+<TransitionGroup>
+  <CSSTransition key={location.key} classNames="fade" timeout={300}>
+    <Switch location={location}>
+      {/* Rotas da aplicação */}
+    </Switch>
+  </CSSTransition>
+</TransitionGroup>
+
+/* Adicionar ao arquivo transitions.css */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+```
+**Documentação UX/UI e IHC:**
+- Adicionar uma seção na documentação que detalha as animações de transição.
+- Explicar como as animações melhoram a experiência do usuário e fornecer exemplos visuais.
