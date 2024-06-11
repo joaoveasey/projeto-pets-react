@@ -1,114 +1,12 @@
-.tempocertodicas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.tempocertodicas h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
-}
-
-.tempocertodicas p {
-    padding: 10px 300px;
+.titulo {
     text-align: center;
-    font-size: 22px;
 }
 
-#tempocertomachos {
-    padding-bottom: 20px;
-    font-size: 22px
-}
-
-.parperfeitodicas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.parperfeitodicas h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
-}
-
-.parperfeitodicas p {
-    padding: 10px 300px;
-    text-align: center;
-    font-size: 22px;
-}
-
-#parperfeitoinstrucao {
-    padding-bottom: 20px;
-}
-
-.aproximacaodicas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.aproximacaodicas h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
-}
-
-.aproximacaodicas p {
-    padding: 10px 300px;
-    text-align: center;
-    font-size: 22px;
-}
-
-#aproximacaoinstrucao {
-    padding-bottom: 20px;
-}
-
-.cruzamentodicas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.cruzamentodicas h2 {
-    padding-bottom: 15px;
-    font-size: 35PX;
-}
-
-.cruzamentodicas p {
-    padding: 10px 300px;
-    text-align: center;
-    font-size: 22px;
-}
-
-#cruzamentoinstrucao {
-    padding-bottom: 20px;
-}
-
-.partodicas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.partodicas h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
-}
-
-.partodicas p {
-    padding: 10px 300px;
-    text-align: center;
-    font-size: 22px;
-}
-
-#partoinstrucao {
-    padding-bottom: 20px;
-}
-
+.tempocertodicas,
+.parperfeitodicas,
+.aproximacaodicas,
+.cruzamentodicas,
+.partodicas,
 .consideracoes {
     display: flex;
     flex-wrap: wrap;
@@ -116,17 +14,159 @@
     padding: 20px 0;
 }
 
+.tempocertodicas h2,
+.parperfeitodicas h2,
+.aproximacaodicas h2,
+.cruzamentodicas h2,
+.partodicas h2,
 .consideracoes h2 {
     padding-bottom: 15px;
     font-size: 35px;
-} 
+}
 
+.tempocertodicas p,
+.parperfeitodicas p,
+.aproximacaodicas p,
+.cruzamentodicas p,
+.partodicas p,
 .consideracoes p {
     padding: 10px 300px;
-    text-align: center;
+    text-align: justify;
     font-size: 22px;
 }
 
+#tempocertomachos,
+#parperfeitoinstrucao,
+#aproximacaoinstrucao,
+#cruzamentoinstrucao,
+#partoinstrucao,
 #consideracoesfin {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
+    font-size: 22px;
+}
+
+.fotodogdicas {
+    text-align: center;
+}
+
+.fotodogdicas img {
+    width: 100%;
+    max-width: 700px; /* Tamanho máximo para as imagens */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    border-radius: 5px;
+    box-shadow: inset 0 0 0.5em, 0 0 0.5em #152540;
+}
+
+@media (max-width: 1024px) {
+    .tempocertodicas p,
+    .parperfeitodicas p,
+    .aproximacaodicas p,
+    .cruzamentodicas p,
+    .partodicas p,
+    .consideracoes p {
+        padding: 10px 50px;
+        text-align: justify;
+        
+    }
+
+    .tempocertodicas h2,
+    .parperfeitodicas h2,
+    .aproximacaodicas h2,
+    .cruzamentodicas h2,
+    .partodicas h2,
+    .consideracoes h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #tempocertomachos,
+    #parperfeitoinstrucao,
+    #aproximacaoinstrucao,
+    #cruzamentoinstrucao,
+    #partoinstrucao,
+    #consideracoesfin {
+        font-size: 20px;
+    }
+
+    .fotodogdicas img {
+        width: 100%;
+        max-width: 500px; /* Ajusta o tamanho máximo para telas menores */
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .tempocertodicas p,
+    .parperfeitodicas p,
+    .aproximacaodicas p,
+    .cruzamentodicas p,
+    .partodicas p,
+    .consideracoes p {
+        padding: 10px 50px;
+        text-align: justify;
+    }
+
+    .tempocertodicas h2,
+    .parperfeitodicas h2,
+    .aproximacaodicas h2,
+    .cruzamentodicas h2,
+    .partodicas h2,
+    .consideracoes h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #tempocertomachos,
+    #parperfeitoinstrucao,
+    #aproximacaoinstrucao,
+    #cruzamentoinstrucao,
+    #partoinstrucao,
+    #consideracoesfin {
+        font-size: 20px;
+    }
+
+    .fotodogdicas img {
+        width: 100%;
+        max-width: 500px; /* Ajusta o tamanho máximo para telas menores */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .tempocertodicas p,
+    .parperfeitodicas p,
+    .aproximacaodicas p,
+    .cruzamentodicas p,
+    .partodicas p,
+    .consideracoes p {
+        padding: 10px 20px;
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .tempocertodicas h2,
+    .parperfeitodicas h2,
+    .aproximacaodicas h2,
+    .cruzamentodicas h2,
+    .partodicas h2,
+    .consideracoes h2 {
+        font-size: 24px;
+    }
+
+    #tempocertomachos,
+    #parperfeitoinstrucao,
+    #aproximacaoinstrucao,
+    #cruzamentoinstrucao,
+    #partoinstrucao,
+    #consideracoesfin {
+        font-size: 18px;
+    }
+
+    .fotodogdicas img {
+        width: 100%;
+        max-width: 300px; /* Ajusta o tamanho máximo para telas ainda menores */
+        height: auto;
+    }
 }

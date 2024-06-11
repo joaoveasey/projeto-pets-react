@@ -19,6 +19,7 @@
 
 .doubtsButton .doubtsButtonText {
     margin-right: 20px;
+    text-align: justify;
 }
 
 #pcomofunciona {
@@ -31,7 +32,7 @@
 .toggleButton button.active {
     padding: auto;
 }
-  
+
 .toggleButton button.inactive {
-   padding: auto;
+    padding: auto;
 }

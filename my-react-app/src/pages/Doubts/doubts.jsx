@@ -1,4 +1,4 @@
-import './Doubts.Module.css'
+import './doubts.Module.css'
 import './Doubts.Button.css';
 import React, { useState } from 'react';
 

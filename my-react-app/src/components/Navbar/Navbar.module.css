@@ -1,34 +1,35 @@
-.navbar {
+
+.header {
     background-color: #152540;
+    color: #fff;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
-    height: 120px;
     align-items: center;
+    position: relative;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    margin-left: 30px;
     text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.brand img {
+    margin-right: 10px;
 }
 
 .brand p {
-    color: #f0f0f0;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 24px;
 }
 
-.usuario {
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.usuario p {
-    color: #f0f0f0;
-    font-size: 20px;
-    font-weight: 500;
 }
 
 .link_list {
@@ -39,15 +40,50 @@
     list-style-type: none;
 }
 
+.links {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
 .links a {
     text-decoration: none;
     font-size: 21px;
     color: #f0f0f0;
-    font-weight: 500;
 }
 
-.links a:hover {
+.links :hover {
     color: #506ffc;
+}
+
+.burger {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+}
+
+.burger .line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.drawerToggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.drawer {
+    position: absolute;
+    top: 95px;
+    right: 195px;
+    background: #fff;
+    padding: 5px 20px;
+    border-radius: 5px;
 }
 
 .entrarButton {
@@ -67,44 +103,56 @@
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     color: #fff;
-
- 
-}
-
-.entrarButton a:hover {
-    background-color: #506ffc;
-    color: #f0f0f0;
 }
 
 .logoutButton {
-    position: absolute;
-    padding: 5px 15px;
+    background: none;
     border: none;
-    background-color: #3d61ff;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.2rem;
-    display: block;
-    margin-left: 10vh;
-}
-
-.logoutButton:hover {
-    background-color: #2c4d85;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: #152540;
     cursor: pointer;
-    color: #fff;
+    font-weight: bolder;
 }
 
-.logoutButton a:hover {
-    background-color: #506ffc;
-    color: #f0f0f0;
+.usuario {
+    display: flex;
+    align-items: center;
 }
 
-.drawerToggle {
-    cursor: pointer;
-    position: absolute;
-    margin-left: 14vh;
-    margin-top: 1.5vh;
+.usuario img {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #152540;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .link_list {
+        flex-direction: column;
+    }
+
+    .links {
+        margin: 10px 0;
+        margin-right: 50%;
+    }
+
+    .burger {
+        display: flex;
+        margin-right: 10px;
+
+    }
+
+    .pageName {
+        font-weight: 600;
+    }
 }

@@ -1,60 +1,81 @@
 .profileContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; /* Adicionando centralização vertical */
-    background-color: #f8f9fa;
-    padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  flex-wrap: wrap; /* Permitir que os itens envolvam em telas menores */
+}
+
+.avatar {
+  margin-bottom: 20px;
+}
+
+.avatarImg {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.userInfo {
+  text-align: right;
+  max-width: 600px; /* Limitar a largura máxima da seção de informações do usuário */
+  padding: 0 20px;
+  box-sizing: border-box; /* Garantir que o padding seja incluído nas medidas de largura */
+}
+
+.userInfo h1 {
+  margin-bottom: 10px;
+}
+
+.userInfo p {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon {
+  margin-right: 20px;
+  width: 25px;
+  line-height: 5rem;
+  padding: 5px;
+}
+
+.editButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 150px;  ;
+}
+
+.editButton:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .profileContainer {
+      flex-direction: column;
+      text-align: center; /* Centralizar texto em telas menores */
   }
-  
-  .avatar {
-    margin-bottom: 20px;
-  }
-  
-  .avatarImg {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    
-    
-  }
-  
+
   .userInfo {
-    text-align: right; /* Alinhando o texto à direita */
+      text-align: center;
+      padding: 0;
   }
-  
-  .userInfo h1 {
-    margin-bottom: 10px;
-  }
-  
+
   .userInfo p {
-    margin: 5px 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alinhando os ícones à direita */
-    
+      justify-content: left; /* Centralizar ícones em telas menores */
   }
-  
+
   .icon {
-    margin-right: 20px;
-    width: 25px;
-    line-height: 5rem;
-    padding: 5px;
-    
-    
+      margin-right: 10px;
   }
-  
-  .editButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .editButton:hover {
-    background-color: #0056b3;
-  }
-  
+}

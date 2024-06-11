@@ -213,6 +213,7 @@
 @media (max-width: 768px) {
   .imageContainer {
     padding: 20px;
+    width: 320px;
   }
 
   .dogName {

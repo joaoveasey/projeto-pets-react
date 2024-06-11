@@ -188,6 +188,7 @@
   .dogHighlights {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (max-width: 768px) {
@@ -212,6 +213,7 @@
     width: 100%;
     height: auto;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -232,6 +234,7 @@
   .learnMoreButton {
     padding: 10px 20px;
     font-size: 1rem;
+    margin-top: 15px;
   }
 
   .dogName {
