@@ -9,62 +9,81 @@ h1, h2 {
     color: #152540;
 }
 
-.objetivos {
+.objetivos, .facil, .vantagens {
     display: flex;
     align-items: center;
     padding: 40px 300px;
 }
 
-.txtobjetivos {
-    padding-left: 200px;
-    text-align: left;
+.objetivos img, .facil img, .vantagens img {
+    width: 250px;
+    height: auto;
 }
 
-.txtobjetivos h2 {
+.txtobjetivos, .txtfacil, .txtvantagens {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.txtobjetivos h2, .txtfacil h2, .txtvantagens h2 {
     padding-bottom: 15px;
     font-size: 35px;
 }
 
-.txtobjetivos p {
+.txtobjetivos p, .txtfacil p, .txtvantagens p {
     font-size: 22px;
+    text-align: justify;
 }
 
-.facil {
-    display: flex;
-    align-items: center;
-    padding: 40px 300px;
+@media (max-width: 1024px) {
+    .objetivos, .facil, .vantagens {
+        padding: 40px 100px;
+    }
+    
+    .txtobjetivos, .txtfacil, .txtvantagens {
+        padding: 0 20px;
+    }
 }
 
-.txtfacil {
-    padding-right: 200px;
-    text-align: left;
+@media (max-width: 768px) {
+    .objetivos, .facil, .vantagens {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .objetivos img, .facil img, .vantagens img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .txtobjetivos, .txtfacil, .txtvantagens {
+        padding: 0;
+        text-align: center;
+    }
+
+    .txtobjetivos h2, .txtfacil h2, .txtvantagens h2 {
+        font-size: 28px;
+    }
+
+    .txtobjetivos p, .txtfacil p, .txtvantagens p {
+        font-size: 18px;
+    }
 }
 
-.txtfacil h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
-}
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 20px;
+        padding: 50px 0;
+    }
 
-.txtfacil p {
-    font-size: 22px;
-}
+    .txtobjetivos h2, .txtfacil h2, .txtvantagens h2 {
+        font-size: 24px;
+    }
 
-.vantagens {
-    display: flex;
-    align-items: center;
-    padding: 40px 300px 100px 300px;
-}
-
-.txtvantagens {
-    padding-left: 200px;
-    text-align: left;
-}
-
-.txtvantagens h2 {
-    padding-bottom: 15px;
-    font-size: 35px;
-}
-
-.txtvantagens p {
-    font-size: 22px;
+    .txtobjetivos p, .txtfacil p, .txtvantagens p {
+        font-size: 16px;
+    }
 }
