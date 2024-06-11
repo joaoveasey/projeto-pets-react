@@ -7,7 +7,7 @@ function Tips() {
         <h1>DICAS ESSENCIAIS PARA CRUZAR SEU CACHORRO</h1>
       </div>
       <div className='fotodogdicas'>
-        <img src="/1dogdicas.jpg" alt="primeirodogdicas" style={{ padding: '30px 0' ,width: '550px', height: 'auto', display: 'block', margin: '0 auto' }}/>
+        <img src="/1dogdicas.jpg" alt="primeirodogdicas"/>
       </div>
       <div className='tempocertodicas'>
         <h2>Qual o momento ideal para levar seu cachorro para cruzar?</h2>
@@ -25,7 +25,7 @@ function Tips() {
           </p>
       </div>
       <div className='fotodogdicas'>
-        <img src="/2dogdicas.png" alt="segundodogdicas" style={{ padding: '30px 0' ,width: '550px', height: 'auto', display: 'block', margin: '0 auto' }}/>
+        <img src="/2dogdicas.png" alt="segundodogdicas"/>
       </div>
       <div className='parperfeitodicas'>
         <h2>Qual o par perfeito para meu cachorro?</h2>
@@ -51,7 +51,7 @@ function Tips() {
          </p>
       </div>
       <div className='fotodogdicas'>
-        <img src="/3dogdicas.png" alt="terceirodogdicas" style={{ padding: '30px 0' ,width: '550px', height: 'auto', display: 'block', margin: '0 auto' }}/>
+        <img src="/3dogdicas.png" alt="terceirodogdicas"/>
       </div>
       <div className='aproximacaodicas'>
         <h2>Como aproximar os cães e como saber se estão prontos para cruzar?</h2>
@@ -80,7 +80,7 @@ function Tips() {
           facilitando a aceitação mútua. Essa fase inicial é crucial para o sucesso do cruzamento.</p>
       </div>
       <div className='fotodogdicas'>
-        <img src="/4dogdicas.png" alt="quartodogdicas" style={{ padding: '30px 0' ,width: '550px', height: 'auto', display: 'block', margin: '0 auto' }}/>
+        <img src="/4dogdicas.png" alt="quartodogdicas"/>
       </div>
       <div className='cruzamentodicas'>
         <h2> Como funciona o cio?</h2>
@@ -107,7 +107,7 @@ function Tips() {
         </p>
       </div>
       <div className='fotodogdicas'>
-        <img src="/5dogdicas.png" alt="quintodogdicas" style={{ padding: '30px 0' ,width: '550px', height: 'auto', display: 'block', margin: '0 auto' }}/>
+        <img src="/5dogdicas.png" alt="quintodogdicas"/>
       </div>
       <div className='partodicas'>
         <h2>Pré-natal e parto</h2>
@@ -118,7 +118,7 @@ function Tips() {
           Esteja presente para oferecer suporte durante o parto, preparado para lidar com qualquer emergência.</p>
       </div>
       <div className='fotodogdicas'>
-        <img src="/6dogdicas.avif" alt="sextodogdicas" style={{ padding: '30px 0' ,width: '550px', height: 'auto', display: 'block', margin: '0 auto' }}/>
+        <img src="/6dogdicas.avif" alt="sextodogdicas"/>
       </div>
       <div className='consideracoes'>
         <h2>Considerações Finais</h2>
