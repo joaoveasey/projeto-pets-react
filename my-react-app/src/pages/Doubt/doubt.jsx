@@ -1,4 +1,4 @@
-import './doubt.module.css'
+import './Doubt.Module.css'
 import React, { useState } from 'react';
 
 const DoubtsButton = ({ doubtsButtonText, image, activeText }) => {
@@ -107,15 +107,16 @@ function Doubts() {
               required
             />
           </div>
-          <div className="form-row">
-            <textarea
-              id="mensagem"
-              name="mensagem"
-              placeholder="Mensagem"
-              value={formData.mensagem}
-              onChange={handleChange}
-              required
-            ></textarea>
+            <div className='form-row'>
+              <textarea 
+                id='mensagem'
+                name='mensagem'
+                placeholder='Mensagem'
+                value={formData.mensagem}
+                onChange={handleChange}
+                maxLength={200}
+              ></textarea>
+              <p>{formData.mensagem.length}/200</p>
           </div>
           <div className="button-container">
             <button type="submit" className="submit-button">Enviar</button>
