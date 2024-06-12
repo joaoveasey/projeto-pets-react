@@ -9,7 +9,7 @@ function Login() {
   const [password, setPassword ] = useState('');
   const [error, setError ] = useState('');
 
-  const { login, error: authError, loading } = userAuthentication()
+  const { login, loginWithFacebook, loginWithGithub, error: authError, loading } = userAuthentication()
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -62,6 +62,9 @@ function Login() {
         </div>
         <Link to="/recuperarSenha">Esqueceu sua senha?</Link>
         {!loading && <button className={styles.button}>Entrar</button>}
+        {loading && <button className={styles.button} disabled>Aguarde..</button>}
+        {!loading && <button onClick={loginWithFacebook} className={styles.button}>Login with Facebook</button>}
+        {!loading && <button onClick={loginWithGithub} className={styles.button}>Login with Github</button>}
         {loading && <button className={styles.button} disabled>Aguarde..</button>}
         {error && <p className='error'>{error}</p>}
         <div className={styles.footer}>

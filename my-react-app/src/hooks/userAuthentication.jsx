@@ -1,14 +1,15 @@
-
 import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     updateProfile,
     signOut,
+    FacebookAuthProvider,
+    GithubAuthProvider,
+    signInWithPopup
 } from 'firebase/auth'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-
 export const userAuthentication = () => {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(null)
@@ -32,18 +33,7 @@ export const userAuthentication = () => {
             const { user } = await createUserWithEmailAndPassword(
                 auth,
                 data.email,
-                data.password,
-                // data.phoneNumber,
-                // data.city,
-                // data.state,
-                // data.username,
-                // data.dogName,
-                // data.dogBreed,
-                // data.dogSize,
-                // data.dogGender,
-                // data.dogAge,
-                // data.dogPhoto,
-                // data.dogInfo,
+                data.password
             )
 
             await updateProfile(user, {
@@ -66,7 +56,7 @@ export const userAuthentication = () => {
                 systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
             }
 
-            setLoading(true)
+            setLoading(false)
             setError(systemErrorMessage)
         }
     }
@@ -97,8 +87,68 @@ export const userAuthentication = () => {
                 systemErrorMessage = "Este usuário não está cadastrado"
             } else if(error.message.includes("wrong-password")){
                 systemErrorMessage = "Erro nas credenciais"
-            } else if (error){
+            } else {
                 systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde."
+            }
+
+            setLoading(false)
+            setError(systemErrorMessage)
+        }
+    }
+
+    const loginWithFacebook = async () => {
+        checkIfIsCancelled();
+        setLoading(true)
+        setError(null)
+
+        
+        try{
+            const provider = new FacebookAuthProvider()
+            await signInWithPopup(auth, provider)
+            setLoading(false)
+            navigate("/cachorros")
+        } catch (error){
+            console.error(error.message)
+
+            let systemErrorMessage
+            if(error.message.includes("account-exists-with-different-credential")){
+                systemErrorMessage = "Conta existente com credencial diferente"
+            } 
+            else if(error.message.includes("auth/popup-closed-by-user")){
+                systemErrorMessage = "A janela de login foi fechada antes da conclusão"
+            }
+            else{
+                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
+            }
+
+            setLoading(false)
+            setError(systemErrorMessage)
+          
+        }
+    }
+
+    const loginWithGithub = async () => {
+        checkIfIsCancelled()
+        setLoading(true)
+        setError(null)
+
+        try{
+            const provider = new GithubAuthProvider()
+            await signInWithPopup(auth, provider)
+            setLoading(false)
+            navigate("/cachorros")
+        } catch (error){
+            console.error(error.message)
+
+            let systemErrorMessage
+            if(error.message.includes("account-exists-with-different-credential")){
+                systemErrorMessage = "Conta existente com credencial diferente"
+            } 
+            else if(error.message.includes("auth/popup-closed-by-user")){
+                systemErrorMessage = "A janela de login foi fechada antes da conclusão"
+            }
+            else{
+                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
             }
 
             setLoading(false)
@@ -116,6 +166,8 @@ export const userAuthentication = () => {
         error,
         loading,
         logout,
-        login
+        login,
+        loginWithFacebook,
+        loginWithGithub
     }
 }
