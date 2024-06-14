@@ -1,4 +1,4 @@
-import './doubt.module.css'
+import './Doubt.Module.css'
 import React, { useState } from 'react';
 
 const DoubtsButton = ({ doubtsButtonText, image, activeText }) => {
