@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faInfoCircle, faLightbulb, faQuestionCircle, faSignInAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './Navbar.module.css';
 import { userAuthentication } from '../../hooks/userAuthentication';
 import { useAuthValue } from '../../context/AuthContext';
@@ -33,34 +35,34 @@ const Navbar = () => {
                 <ul className={styles.link_list}>
                     <li className={styles.links}>
                         <NavLink to="/">
-                            Home
+                            <FontAwesomeIcon icon={faHome} /> Home
                         </NavLink>
                     </li>
                     <li className={styles.links}>
                         <NavLink to="/sobre">
-                            Sobre
+                            <FontAwesomeIcon icon={faInfoCircle} /> Sobre
                         </NavLink>
                     </li>
                     <li className={styles.links}>
                         <NavLink to="/dicas">
-                            Dicas
+                            <FontAwesomeIcon icon={faLightbulb} /> Dicas
                         </NavLink>
                     </li>
                     <li className={styles.links}>
                         <NavLink to="/duvidas">
-                            Dúvidas
+                            <FontAwesomeIcon icon={faQuestionCircle} /> FAQ
                         </NavLink>
                     </li>
                     {!user ? (
                         <li className={styles.links}>
                             <NavLink to="/entrar" className={styles.entrarButton}>
-                                Entrar
+                                <FontAwesomeIcon icon={faSignInAlt} /> Entrar
                             </NavLink>
                         </li>
                     ) : (
                         <li className={styles.links}>
                             <div className={styles.drawerToggle} onClick={() => setDrawerOpen(!drawerOpen)}>
-                                <img src={poligono} width="20px" height="18px" />
+                                <img src={poligono} width="20px" height="18px" alt="Menu Toggle" />
                             </div>
                             <NavLink to="/usuario" className={styles.usuario}>
                                 <img src={userPic} alt="Usuário" width="80px" height="45px" />
