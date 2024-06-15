@@ -4,7 +4,7 @@ function About() {
   return (
     <>   
       <div className="titulo">
-        <h1>SOBRE</h1>
+        <h1>SOBRE NÓS</h1>
       </div>
       <div className="objetivos">
         <img src="/objetivos.jpg" alt="fotoobjetivos" style={{ width: '250px', height: 'auto' }}/>
@@ -39,6 +39,37 @@ function About() {
              permitindo que os donos encontrem o par ideal para seu pet.
              Não sendo necessário procurar em outros sites, canis ou cidades.
           </p>
+        </div>
+      </div>
+      <hr className='divider'/>
+      <div className='titulo'>
+        <h1>EQUIPE</h1>
+      </div>
+      <div class="equipe">
+        <div class="member">
+            <img src="/enzo.jpg" alt="Enzo Garbim" />
+            <h2>Enzo Garbim</h2>
+            <p>Desenvolvedor</p>
+        </div>
+        <div class="member">
+            <img src="/cesar.jpg" alt="César Prando" />
+            <h2>César Prando</h2>
+            <p>Analista de QA</p>
+        </div>
+        <div class="member">
+            <img src="/nicolas.jpg" alt="Nicolas Canonico" />
+            <h2>Nícolas Canonico</h2>
+            <p>Desenvolvedor</p>
+        </div>
+        <div class="member">
+            <img src="/pedrin.jpg" alt="Pedro Garbim" />
+            <h2>Pedro Garbim</h2>
+            <p>Desenvolvedor</p>
+        </div>
+        <div class="member">
+            <img src="/veasey.jpg" alt="João Veasey" />
+            <h2>João Veasey</h2>
+            <p>Scrum Master</p>
         </div>
       </div>
     </>
