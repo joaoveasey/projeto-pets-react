@@ -134,6 +134,13 @@
     padding: auto;
 }
 
+.form-row p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    align-self: flex-end;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .titulocontato {
