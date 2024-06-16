@@ -16,6 +16,7 @@ import DogDetails from "./pages/DogDetails/dogDetails";
 import DogPage from "./pages/DogPage/dogPage";
 import Register from "./pages/Register/register";
 import RecoverPassword from "./pages/RecoverPassword/recoverPassword";
+import CommentsPage from './pages/CommentsPage/commentsPage';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 
@@ -53,6 +54,7 @@ function App(){
                     <Route path="/cachorros" element={<DogPage />}></Route>
                     <Route path="/cadastro" element={<Register />}></Route>
                     <Route path="/recuperarSenha" element={<RecoverPassword />}></Route>
+                    <Route path="/comentarios" element={<CommentsPage />}></Route>
                 </Routes>
                 </AnimatePresence>
                 <Footer />

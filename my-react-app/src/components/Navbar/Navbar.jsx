@@ -53,6 +53,7 @@ const Navbar = () => {
                             <FontAwesomeIcon icon={faQuestionCircle} /> FAQ
                         </NavLink>
                     </li>
+            
                     {!user ? (
                         <li className={styles.links}>
                             <NavLink to="/entrar" className={styles.entrarButton}>
