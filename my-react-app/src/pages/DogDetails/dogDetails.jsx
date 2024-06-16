@@ -37,6 +37,8 @@ import { db } from '../../firebase/config';
 import { collection, addDoc, query, where, getDocs, serverTimestamp } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
+import ShareButtons from './ShareButtons';
+
 const dogData = {
   Rex: {
     name: 'Rex',
@@ -406,6 +408,9 @@ const DogDetails = () => {
     setIsModalOpen(false);
   };
 
+  const currentUrl = window.location.href;
+  const shareText = "Confira este cachorrinho!";
+
   return (
     <div className={styles.container}>
     <div className={styles.imageContainer}>
@@ -435,47 +440,49 @@ const DogDetails = () => {
       <button className={styles.backButton} onClick={() => navigate(-1)}>
         Voltar
       </button>
+      <ShareButtons url={currentUrl} text={shareText} />
     </div>
     {isModalOpen && <Modal onClose={handleCloseModal} owner={dog.owner} />}
 
-    <div className={styles.reviewsSection}>
-      <h3 className={styles.sectionTitle}>Avaliações</h3>
-      {reviews.map((review, index) => (
-        <div key={index} className={styles.review}>
-          <p>Nota: {review.rating}</p>
-          <p>{review.comment}</p>
-        </div>
-      ))}
-    </div>
-
-    <div className={styles.reviewForm}>
-      <h3 className={styles.sectionTitle}>Deixe sua Avaliação</h3>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nota:</label>
-          <input 
-            type="number" 
-            name="rating" 
-            value={reviewData.rating} 
-            onChange={handleChange} 
-            min="1" 
-            max="5" 
-            required 
-          />
-        </div>
-        <div>
-          <label>Comentário:</label>
-          <textarea 
-            name="comment" 
-            value={reviewData.comment} 
-            onChange={handleChange} 
-            required 
-          />
-        </div>
-        <button type="submit" className={styles.submitButton}>Enviar Avaliação</button>
-      </form>
-      {success && <p>Avaliação enviada com sucesso!</p>}
-      {error && <p>{error}</p>}
+    <div className={styles.avaliacoesDogs}>
+      <div className={styles.reviewsSection}>
+        <h3 className={styles.sectionTitle}>Avaliações</h3>
+        {reviews.map((review, index) => (
+          <div key={index} className={styles.review}>
+            <p>Nota: {review.rating}</p>
+            <p>{review.comment}</p>
+          </div>
+        ))}
+      </div>
+      <div className={styles.reviewForm}>
+        <h3 className={styles.sectionTitle}>Deixe sua Avaliação</h3>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Nota:</label>
+            <input 
+              type="number" 
+              name="rating" 
+              value={reviewData.rating} 
+              onChange={handleChange} 
+              min="1" 
+              max="5" 
+              required 
+            />
+          </div>
+          <div>
+            <label>Comentário:</label>
+            <textarea 
+              name="comment" 
+              value={reviewData.comment} 
+              onChange={handleChange} 
+              required 
+            />
+          </div>
+          <button type="submit" className={styles.submitButton}>Enviar Avaliação</button>
+        </form>
+        {success && <p>Avaliação enviada com sucesso!</p>}
+        {error && <p>{error}</p>}
+      </div>  
     </div>
   </div>
 );
