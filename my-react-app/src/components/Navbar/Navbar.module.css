@@ -157,4 +157,8 @@
     .pageName {
         font-weight: 600;
     }
+
+    .brand p {
+        display: none;
+    }
 }
