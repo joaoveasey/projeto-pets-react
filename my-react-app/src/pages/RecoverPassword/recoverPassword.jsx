@@ -2,6 +2,7 @@ import styles from './recoverPassword.module.css'
 import React, { useState } from 'react';
 import { auth } from '../../firebase/config'
 import { sendPasswordResetEmail } from 'firebase/auth'
+import trasition from '../../components/Transition/transition'
 
 function RecoverPassword() {
     const [ email, setEmail ] = useState('')
@@ -48,4 +49,4 @@ function RecoverPassword() {
   )
 }
 
-export default RecoverPassword
+export default trasition(RecoverPassword);

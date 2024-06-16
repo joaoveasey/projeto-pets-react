@@ -2,6 +2,7 @@ import styles from './register.module.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { userAuthentication } from '../../hooks/userAuthentication'
+import trasition from '../../components/Transition/transition'
 
 
 function Register() {
@@ -266,4 +267,4 @@ function Register() {
   )
 }
 
-export default Register
+export default trasition(Register);

@@ -1,5 +1,7 @@
-import './Doubt.Module.css';
-import React, { useState } from 'react';  
+
+import './Doubt.Module.css'
+import React, { useState } from 'react';
+import trasition from '../../components/Transition/transition'
 import { db } from '../../firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -115,4 +117,5 @@ function Doubts() {
   );
 }
 
-export default Doubts;
+export default trasition(Doubts);
+

@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './home.module.css';
 import { NavLink } from 'react-router-dom';
 import { useAuthValue } from '../../context/AuthContext'
+import trasition from '../../components/Transition/transition'
+
 import sampleImage from '../../assets/dog-home.jpg';
 import Rex from '../../assets/dog1.jpg';
 import Bella from '../../assets/dog2.jpg';
@@ -135,4 +137,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default trasition(Home);

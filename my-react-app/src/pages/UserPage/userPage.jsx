@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './userPage.module.css';
+import trasition from '../../components/Transition/transition'
 
 import avatarIcon from '../../assets/PessoaUsuario.png';
 import userIcon from '../../assets/perfilUsuario.png';
@@ -72,4 +73,4 @@ const UserPage = () => {
   );
 };
 
-export default UserPage;
+export default trasition(UserPage);

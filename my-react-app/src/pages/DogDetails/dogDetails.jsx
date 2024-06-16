@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './dogDetails.module.css';
+import trasition from '../../components/Transition/transition'
 
 // Importar as imagens dos ícones
 import pawIcon from '../../assets/patacachorro.png';

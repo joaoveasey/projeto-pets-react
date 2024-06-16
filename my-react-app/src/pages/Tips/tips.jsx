@@ -1,4 +1,5 @@
 import './Tips.Module.css'
+import trasition from '../../components/Transition/transition'
 
 function Tips() {
   return (
@@ -152,4 +153,4 @@ function Tips() {
   )
 }
 
-export default Tips
+export default trasition(Tips);
