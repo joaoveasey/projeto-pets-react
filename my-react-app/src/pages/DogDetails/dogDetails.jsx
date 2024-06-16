@@ -488,4 +488,4 @@ const DogDetails = () => {
 );
 };
 
-export default DogDetails;
+export default trasition(DogDetails);
