@@ -1,5 +1,6 @@
 import './Doubt.Module.css'
 import React, { useState } from 'react';
+import trasition from '../../components/Transition/transition'
 
 const DoubtsButton = ({ doubtsButtonText, image, activeText }) => {
   const [isActive, setIsActive] = useState(false);
@@ -126,4 +127,4 @@ function Doubts() {
   )
 }
 
-export default Doubts
+export default trasition(Doubts);

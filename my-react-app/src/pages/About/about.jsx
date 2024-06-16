@@ -1,4 +1,5 @@
 import './About.Module.css'
+import trasition from '../../components/Transition/transition'
 
 function About() {
   return (
@@ -46,4 +47,4 @@ function About() {
   )
 }
 
-export default About
+export default trasition(About);

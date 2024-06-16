@@ -1,8 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useState, useEffect } from 'react'
 import { userAuthentication } from './hooks/userAuthentication'
+import { AnimatePresence } from 'framer-motion'
 
 import Home from "./pages/Home/home"
 import About from "./pages/About/about";
@@ -18,6 +19,7 @@ import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
 
 function App(){
+    const location = useLocation()
     const [ user, setUser ] = useState(undefined)
     const { auth } = userAuthentication()
 
@@ -29,7 +31,8 @@ function App(){
     return(    
         <AuthProvider value={{ user }}>
                 <Navbar />
-                <Routes>
+                <AnimatePresence mode='wait'>
+                <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Home />}></Route>
                     <Route path="/sobre" element={<About />}></Route>
                     <Route path="/dicas" element={<Tips />}></Route>
@@ -41,6 +44,7 @@ function App(){
                     <Route path="/cadastro" element={<Register />}></Route>
                     <Route path="/recuperarSenha" element={<RecoverPassword />}></Route>
                 </Routes>
+                </AnimatePresence>
                 <Footer />
         </AuthProvider>
     )

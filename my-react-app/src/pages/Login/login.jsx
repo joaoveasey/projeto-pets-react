@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { userAuthentication } from '../../hooks/userAuthentication';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import styles from './login.module.css';
+import trasition from '../../components/Transition/transition'
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -81,4 +82,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default trasition(Login);

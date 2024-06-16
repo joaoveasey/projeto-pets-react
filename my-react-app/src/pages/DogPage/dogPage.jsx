@@ -1,6 +1,7 @@
 import styles from './dogPage.module.css'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import trasition from '../../components/Transition/transition'
 
 
 import Rex from '../../assets/dog1.jpg';
@@ -429,4 +430,4 @@ function DogPage() {
   )
 }
 
-export default DogPage
+export default trasition(DogPage);
