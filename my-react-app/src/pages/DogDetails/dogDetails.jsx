@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './dogDetails.module.css';
 
@@ -32,6 +32,10 @@ import Jack from '../../assets/dog20.jpg';
 import Lucy from '../../assets/dog21.jpg';
 import Duke from '../../assets/dog18.jpg';
 import Maggie from '../../assets/dog22.jpg';
+
+import { db } from '../../firebase/config';
+import { collection, addDoc, query, where, getDocs, serverTimestamp } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 const dogData = {
   Rex: {
@@ -320,10 +324,10 @@ const Modal = ({ onClose, owner }) => (
   <div className={styles.modalOverlay}>
     <div className={styles.modalContent}>
       <div className={styles.infos}>
-      <h2 className={styles.ownerContact}>Contato do Dono</h2>
-      <p className={styles.ownerName}><strong>Nome:</strong> {owner.name}</p>
-      <p className={styles.ownerEmail}><strong>Email:</strong> {owner.email}</p>
-      <p className={styles.ownerPhone}><strong>Telefone:</strong> {owner.phone}</p>
+        <h2 className={styles.ownerContact}>Contato do Dono</h2>
+        <p className={styles.ownerName}><strong>Nome:</strong> {owner.name}</p>
+        <p className={styles.ownerEmail}><strong>Email:</strong> {owner.email}</p>
+        <p className={styles.ownerPhone}><strong>Telefone:</strong> {owner.phone}</p>
       </div>
       <button onClick={onClose} className={styles.closeButton}>Fechar</button>
     </div>
@@ -335,10 +339,64 @@ const DogDetails = () => {
   const navigate = useNavigate();
   const dog = dogData[name];
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [reviewData, setReviewData] = useState({ rating: 0, comment: '' });
+  const [reviews, setReviews] = useState([]);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   if (!dog) {
     return <div>Cachorro não encontrado!</div>;
   }
+
+  const fetchReviews = async () => {
+    const q = query(collection(db, 'dogReviews'), where('dogId', '==', name));
+    const querySnapshot = await getDocs(q);
+    const reviewsList = [];
+    querySnapshot.forEach((doc) => {
+      reviewsList.push(doc.data());
+    });
+    setReviews(reviewsList);
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, [name]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setReviewData({ ...reviewData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (!user) {
+      setError('Você precisa estar autenticado para enviar uma avaliação.');
+      return;
+    }
+
+    const newReview = {
+      dogId: name,
+      userId: user.uid,
+      rating: reviewData.rating,
+      comment: reviewData.comment,
+      timestamp: serverTimestamp(),
+    };
+
+    try {
+      await addDoc(collection(db, 'dogReviews'), newReview);
+      setSuccess(true);
+      setError('');
+      setReviewData({ rating: 0, comment: '' });
+      fetchReviews(); // Buscar as avaliações novamente para atualizar a lista
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      setError('Erro ao enviar a avaliação. Por favor, tente novamente.');
+    }
+  };
 
   const handleContactClick = () => {
     setIsModalOpen(true);
@@ -350,37 +408,77 @@ const DogDetails = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <img src={dog.image} alt={dog.name} className={styles.dogImage} />
-      </div>
-      <div className={styles.content}>
-        <h1 className={styles.dogName}>
-          {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
-        </h1>
-        <div className={styles.details}>
-          <p className={styles.detailItemPaw}>
-            <img src={pawIcon} alt="Paw icon" className={styles.iconPaw} />
-            {dog.gender} | {dog.size} | {dog.age}
-          </p>
-          <p className={styles.detailItemLocation}>
-            <img src={locationIcon} alt="Location icon" className={styles.iconLocation} />
-            {dog.city}, {dog.state}
-          </p>
-          <p className={styles.detailItemDescription}>
-            <img src={descriptionIcon} alt="Description icon" className={styles.iconDescription} />
-            {dog.description}
-          </p>
-        </div>
-        <button className={styles.contactButton} onClick={handleContactClick}>
-          Contato
-        </button>
-        <button className={styles.backButton} onClick={() => navigate(-1)}>
-          Voltar
-        </button>
-      </div>
-      {isModalOpen && <Modal onClose={handleCloseModal} owner={dog.owner} />}
+    <div className={styles.imageContainer}>
+      <img src={dog.image} alt={dog.name} className={styles.dogImage} />
     </div>
-  );
+    <div className={styles.content}>
+      <h1 className={styles.dogName}>
+        {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
+      </h1>
+      <div className={styles.details}>
+        <p className={styles.detailItemPaw}>
+          <img src={pawIcon} alt="Paw icon" className={styles.iconPaw} />
+          {dog.gender} | {dog.size} | {dog.age}
+        </p>
+        <p className={styles.detailItemLocation}>
+          <img src={locationIcon} alt="Location icon" className={styles.iconLocation} />
+          {dog.city}, {dog.state}
+        </p>
+        <p className={styles.detailItemDescription}>
+          <img src={descriptionIcon} alt="Description icon" className={styles.iconDescription} />
+          {dog.description}
+        </p>
+      </div>
+      <button className={styles.contactButton} onClick={handleContactClick}>
+        Contato
+      </button>
+      <button className={styles.backButton} onClick={() => navigate(-1)}>
+        Voltar
+      </button>
+    </div>
+    {isModalOpen && <Modal onClose={handleCloseModal} owner={dog.owner} />}
+
+    <div className={styles.reviewsSection}>
+      <h3 className={styles.sectionTitle}>Avaliações</h3>
+      {reviews.map((review, index) => (
+        <div key={index} className={styles.review}>
+          <p>Nota: {review.rating}</p>
+          <p>{review.comment}</p>
+        </div>
+      ))}
+    </div>
+
+    <div className={styles.reviewForm}>
+      <h3 className={styles.sectionTitle}>Deixe sua Avaliação</h3>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Nota:</label>
+          <input 
+            type="number" 
+            name="rating" 
+            value={reviewData.rating} 
+            onChange={handleChange} 
+            min="1" 
+            max="5" 
+            required 
+          />
+        </div>
+        <div>
+          <label>Comentário:</label>
+          <textarea 
+            name="comment" 
+            value={reviewData.comment} 
+            onChange={handleChange} 
+            required 
+          />
+        </div>
+        <button type="submit" className={styles.submitButton}>Enviar Avaliação</button>
+      </form>
+      {success && <p>Avaliação enviada com sucesso!</p>}
+      {error && <p>{error}</p>}
+    </div>
+  </div>
+);
 };
 
 export default DogDetails;
