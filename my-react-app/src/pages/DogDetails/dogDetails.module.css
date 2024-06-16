@@ -15,6 +15,7 @@
   align-items: center;
   box-sizing: border-box;
   margin-left: 5%;
+  flex-wrap: wrap;
 }
 
 .imageContainer {
@@ -180,8 +181,14 @@
 }
 
 /* Estilos para a seção de avaliações */
+.avaliacoesDogs{ 
+  margin-bottom: 40px;
+}
+
 .reviewsSection {
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .review {
@@ -196,7 +203,7 @@
 /* Estilos para o formulário de avaliação */
 .reviewForm {
   margin-top: 40px;
-  padding: 20px;
+  padding: 70px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
@@ -225,12 +232,15 @@
 .reviewForm button {
   border: none;
   background-color: #3d61ff;
-  padding: 10px 80px;
+  padding: 10px 50px;
   border-radius: 5px;
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: pointer;  
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .reviewForm button:hover {
