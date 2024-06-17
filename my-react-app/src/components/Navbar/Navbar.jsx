@@ -8,8 +8,11 @@ import { useAuthValue } from '../../context/AuthContext';
 import logo from "./img/logo.png";
 import userPic from "./img/user.png";
 import poligono from "./img/PolygonOpened.png";
+import { useTheme  } from '../../context/ThemeContext';
 
 const Navbar = () => {
+    const { theme, toggleTheme } = useTheme();
+
     const { user } = useAuthValue();
     const { logout } = userAuthentication();
     const navigate = useNavigate();
@@ -33,6 +36,9 @@ const Navbar = () => {
             </NavLink>
             <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
                 <ul className={styles.link_list}>
+                    <button className={styles.btnToggleTheme}onClick={toggleTheme}>
+                        {theme === 'light' ? '🌙' : '☀️'}
+                    </button>
                     <li className={styles.links}>
                         <NavLink to="/">
                             <FontAwesomeIcon icon={faHome} /> Home
