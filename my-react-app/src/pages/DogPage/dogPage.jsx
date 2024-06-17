@@ -1,9 +1,12 @@
-import styles from './dogPage.module.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './dogPage.module.css'; // Importando os estilos CSS
+import { auth } from '../../firebase/config';
 import trasition from '../../components/Transition/transition'
+import heartEmpty from '../../assets/heart-empty.png';
+import heartFull from '../../assets/heart-full.png';
 
-
+// Importando as imagens dos cachorros
 import Rex from '../../assets/dog1.jpg';
 import Bella from '../../assets/dog2.jpg';
 import Thor from '../../assets/dog3.jpg';
@@ -30,283 +33,133 @@ import Duke from '../../assets/dog18.jpg';
 import Maggie from '../../assets/dog22.jpg';
 
 const dogs = [
-  {
-    name: 'Rex',
-    breed: 'Beagle',
-    city: 'São Paulo, SP',
-    state: "SP",
-    size: "Medio",
-    gender: 'M',
-    image: Rex,
-  },
-  {
-    name: 'Bella',
-    breed: 'Basset Hound',
-    city: 'Rio de Janeiro, RJ',
-    state: "RJ",
-    size: "Pequeno",
-    gender: 'F',
-    image: Bella,
-  },
-  {
-    name: 'Thor',
-    breed: 'Pinscher',
-    city: 'Santos, SP',
-    state: "SP",
-    size: "Pequeno",
-    gender: 'M',
-    image: Thor,
-  },
-  {
-    name: 'Pintado',
-    breed: 'Dalmata',
-    city: 'Salvador, BH',
-    state: "BH",
-    size: "Grande",
-    gender: 'M',
-    image: Pintado,
-  },
-  {
-    name: 'Cesar',
-    city: 'Matão, SP',
-    breed: 'Labrador Retriever',
-    state: "SP",
-    size: "Medio",
-    gender: 'M',
-    image: Cesar,
-  },
-  {
-    name: 'Dorinha',
-    breed: 'Chihuahua',
-    city: 'Manaus, AM',
-    state: "AM",
-    size: "MuitoPequeno",
-    gender: 'F',
-    image: Dorinha,
-  },
-  {
-    name: 'Chanel',
-    breed: 'Pinscher',
-    city: 'Rio de Janeiro, RJ',
-    state: "RJ",
-    size: "Pequeno",
-    gender: 'F',
-    image: Chanel,
-  },
-  {
-    name: 'Birulinha',
-    breed: 'Chihuahua',
-    city: 'Belo Horizonte, MG',
-    state: "SP",
-    size: "Pequeno",
-    gender: 'M',
-    image: Birulinha,
-  },
-
-  {
-    name: 'Max',
-    breed: 'Golden Retriever',
-    city: 'Curitiba, PR',
-    state: "PR",
-    size: "Grande",
-    gender: 'M',
-    image: Max,
-  },
-  {
-    name: 'Luna',
-    breed: 'Poodle',
-    city: 'Fortaleza, CE',
-    state: "CE",
-    size: "MuitoPequeno",
-    gender: 'F',
-    image: Luna,
-  },
-  {
-    name: 'Buddy',
-    breed: 'Labrador Retriever',
-    city: 'Porto Alegre, RS',
-    state: "RS",
-    size: "Grande",
-    gender: 'M',
-    image: Buddy,
-  },
-  {
-    name: 'Molly',
-    breed: 'Bulldog Francês',
-    city: 'Florianópolis, SC',
-    state: "SC",
-    size: "Pequeno",
-    gender: 'F',
-    image: Molly,
-  },
-  {
-    name: 'Rocky',
-    breed: 'Boxer',
-    city: 'São Luís, MA',
-    state: "MA",
-    size: "Grande",
-    gender: 'M',
-    image: Rocky,
-  },
-  {
-    name: 'Daisy',
-    breed: 'Cocker Spaniel',
-    city: 'João Pessoa, PB',
-    state: "PB",
-    size: "Medio",
-    gender: 'F',
-    image: Daisy,
-  },
-  {
-    name: 'Zeus',
-    breed: 'Doberman',
-    city: 'Natal, RN',
-    state: "RN",
-    size: "Grande",
-    gender: 'M',
-    image: Zeus,
-  },
-  {
-    name: 'Lola',
-    breed: 'Shih Tzu',
-    city: 'Vitória, ES',
-    state: "ES",
-    size: "Pequeno",
-    gender: 'F',
-    image: Lola,
-  },
-  {
-    name: 'Toby',
-    breed: 'Yorkshire Terrier',
-    city: 'Campo Grande, MS',
-    state: "MS",
-    size: "Pequeno",
-    gender: 'M',
-    image: Toby,
-  },
-  {
-    name: 'Bailey',
-    breed: 'Rottweiler',
-    city: 'Aracaju, SE',
-    state: "SE",
-    size: "MuitoGrande",
-    gender: 'F',
-    image: Bailey,
-  },
-  {
-    name: 'Charlie',
-    breed: 'Pastor Alemão',
-    city: 'Belém, PA',
-    state: "PA",
-    size: "MuitoGrande",
-    gender: 'M',
-    image: Charlie,
-  },
-  {
-    name: 'Rosie',
-    breed: 'Maltês',
-    city: 'Maceió, AL',
-    state: "AL",
-    size: "Pequeno",
-    gender: 'F',
-    image: Rosie,
-  },
-  {
-    name: 'Jack',
-    breed: 'Dogue Alemão',
-    city: 'Recife, PE',
-    state: "PE",
-    size: "Grande",
-    gender: 'M',
-    image: Jack,
-  },
-  {
-    name: 'Lucy',
-    breed: 'Pastor Australiano',
-    city: 'Palmas, TO',
-    state: "TO",
-    size: "Medio",
-    gender: 'F',
-    image: Lucy,
-  },
-  {
-    name: 'Duke',
-    breed: 'São Bernardo',
-    city: 'Macapá, AP',
-    state: "AP",
-    size: "MuitoGrande",
-    gender: 'M',
-    image: Duke,
-  },
-  {
-    name: 'Maggie',
-    breed: 'Border Collie',
-    city: 'Boa Vista, RR',
-    state: "RR",
-    size: "Medio",
-    gender: 'F',
-    image: Maggie,
-  }
+  { name: 'Rex', breed: 'Beagle', city: 'São Paulo, SP', state: 'SP', size: 'Medio', gender: 'M', image: Rex },
+  { name: 'Bella', breed: 'Basset Hound', city: 'Rio de Janeiro, RJ', state: 'RJ', size: 'Pequeno', gender: 'F', image: Bella },
+  { name: 'Thor', breed: 'Pinscher', city: 'Santos, SP', state: 'SP', size: 'Pequeno', gender: 'M', image: Thor },
+  { name: 'Pintado', breed: 'Dalmata', city: 'Salvador, BH', state: 'BH', size: 'Grande', gender: 'M', image: Pintado },
+  { name: 'Cesar', breed: 'Labrador Retriever', city: 'Matão, SP', state: 'SP', size: 'Medio', gender: 'M', image: Cesar },
+  { name: 'Dorinha', breed: 'Chihuahua', city: 'Manaus, AM', state: 'AM', size: 'MuitoPequeno', gender: 'F', image: Dorinha },
+  { name: 'Chanel', breed: 'Pinscher', city: 'Rio de Janeiro, RJ', state: 'RJ', size: 'Pequeno', gender: 'F', image: Chanel },
+  { name: 'Birulinha', breed: 'Chihuahua', city: 'Belo Horizonte, MG', state: 'SP', size: 'Pequeno', gender: 'M', image: Birulinha },
+  { name: 'Max', breed: 'Golden Retriever', city: 'Curitiba, PR', state: 'PR', size: 'Grande', gender: 'M', image: Max },
+  { name: 'Luna', breed: 'Poodle', city: 'Fortaleza, CE', state: 'CE', size: 'MuitoPequeno', gender: 'F', image: Luna },
+  { name: 'Buddy', breed: 'Labrador Retriever', city: 'Porto Alegre, RS', state: 'RS', size: 'Grande', gender: 'M', image: Buddy },
+  { name: 'Molly', breed: 'Bulldog Francês', city: 'Florianópolis, SC', state: 'SC', size: 'Pequeno', gender: 'F', image: Molly },
+  { name: 'Rocky', breed: 'Boxer', city: 'São Luís, MA', state: 'MA', size: 'Grande', gender: 'M', image: Rocky },
+  { name: 'Daisy', breed: 'Cocker Spaniel', city: 'João Pessoa, PB', state: 'PB', size: 'Medio', gender: 'F', image: Daisy },
+  { name: 'Zeus', breed: 'Doberman', city: 'Natal, RN', state: 'RN', size: 'Grande', gender: 'M', image: Zeus },
+  { name: 'Lola', breed: 'Shih Tzu', city: 'Vitória, ES', state: 'ES', size: 'Pequeno', gender: 'F', image: Lola },
+  { name: 'Toby', breed: 'Yorkshire Terrier', city: 'Campo Grande, MS', state: 'MS', size: 'Pequeno', gender: 'M', image: Toby },
+  { name: 'Bailey', breed: 'Rottweiler', city: 'Aracaju, SE', state: 'SE', size: 'MuitoGrande', gender: 'F', image: Bailey },
+  { name: 'Charlie', breed: 'Pastor Alemão', city: 'Belém, PA', state: 'PA', size: 'MuitoGrande', gender: 'M', image: Charlie },
+  { name: 'Rosie', breed: 'Maltês', city: 'Maceió, AL', state: 'AL', size: 'Pequeno', gender: 'F', image: Rosie },
+  { name: 'Jack', breed: 'Dogue Alemão', city: 'Recife, PE', state: 'PE', size: 'Grande', gender: 'M', image: Jack },
+  { name: 'Lucy', breed: 'Pastor Australiano', city: 'Palmas, TO', state: 'TO', size: 'Medio', gender: 'F', image: Lucy },
+  { name: 'Duke', breed: 'São Bernardo', city: 'Macapá, AP', state: 'AP', size: 'MuitoGrande', gender: 'M', image: Duke },
+  { name: 'Maggie', breed: 'Border Collie', city: 'Boa Vista, RR', state: 'RR', size: 'Medio', gender: 'F', image: Maggie }
 ];
 
 function DogPage() {
-  const [ selectedBreed, setSelectedBreed ] = useState('-1')
-  const [ selectedGender, setSelectedGender ] = useState('-1')
-  const [ selectedState, setSelectedState ] = useState('-1')
-  const [ selectedSize, setSelectedSize ] = useState('-1')
+  // Estados para filtros e likes
+  const [selectedBreed, setSelectedBreed] = useState('-1');
+  const [selectedGender, setSelectedGender] = useState('-1');
+  const [selectedState, setSelectedState] = useState('-1');
+  const [selectedSize, setSelectedSize] = useState('-1');
+  const [likes, setLikes] = useState(Array(dogs.length).fill(false)); // Array para controlar os likes
+  const [likedDogs, setLikedDogs] = useState([]); // Lista de cachorros curtidos
+  const [user, setUser] = useState(null); // Informações do usuário autenticado
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        // Se o usuário estiver autenticado, define o usuário no estado
+        setUser(user);
+      } else {
+        // Se não estiver autenticado, define o usuário como nulo
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // Função para alternar curtida em um cachorro
+  const handleLikeToggle = (dogName) => {
+    if (user) {
+      if (likedDogs.includes(dogName)) {
+        setLikedDogs(likedDogs.filter(name => name !== dogName));
+      } else {
+        setLikedDogs([...likedDogs, dogName]);
+      }
+    } else {
+      // Aqui você pode redirecionar para a página de login ou exibir uma mensagem de não autenticado
+      alert('Você precisa estar logado para curtir.');
+    }
+  };
+
+  // Função para alterar os filtros
+  const handleFilterChange = (event) => {
+    const { name, value } = event.target;
+    if (name === 'dogBreed') {
+      setSelectedBreed(value);
+    } else if (name === 'dogGender') {
+      setSelectedGender(value);
+    } else if (name === 'state') {
+      setSelectedState(value);
+    } else if (name === 'dogSize') {
+      setSelectedSize(value);
+    }
+  };
+
+  // Filtro dos cachorros com base nos filtros selecionados
   const filteredDogs = dogs.filter(dog => {
     return (selectedGender === '-1' || dog.gender === selectedGender) &&
            (selectedBreed === '-1' || dog.breed === selectedBreed) &&
            (selectedState === '-1' || dog.state === selectedState) &&
-           (selectedSize === '-1' || dog.size === selectedSize)
-  })
+           (selectedSize === '-1' || dog.size === selectedSize);
+  });
 
-  const [ currentPage, setCurrentPage ] = useState(1)
+  // Configuração da paginação
+  const [currentPage, setCurrentPage] = useState(1);
   const dogsPerPage = 12;
+  const indexOfLastDog = currentPage * dogsPerPage;
+  const indexOfFirstDog = indexOfLastDog - dogsPerPage;
+  const currentDogs = filteredDogs.slice(indexOfFirstDog, indexOfLastDog);
+  const totalPages = Math.ceil(filteredDogs.length / dogsPerPage);
 
-  const indexOfLastDog = currentPage * dogsPerPage
-  const indexOfFirstDog = indexOfLastDog - dogsPerPage
-  const currentDogs = filteredDogs.slice(indexOfFirstDog, indexOfLastDog)
-
-  const totalPages = Math.ceil(filteredDogs.length / dogsPerPage)
-
-  const handleFilterChange = (event) =>{
-    const { name, value } = event.target;
-    if (name === 'dogBreed'){
-      setSelectedBreed(value)
-    } else if (name === 'dogGender'){
-      setSelectedGender(value)
-    } else if (name === 'state'){
-      setSelectedState(value)
-    } else if (name === 'dogSize'){
-      setSelectedSize(value)
-    }
-  }
-  
+  // Funções para navegação entre páginas
   const handlePrevPage = () => {
-    if(currentPage > 1){
-      setCurrentPage(currentPage - 1)
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
     }
-  }
+  };
 
   const handleNextPage = () => {
-    if(currentPage < totalPages){
-      setCurrentPage(currentPage + 1)
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
     }
-  } 
-    
-  return (
-    <>
-      <h1 className={styles.title}>Encontre um Parceiro</h1>
-      <div className={styles.container_filter}>
+  };
+
+  // Renderização condicional para quando não houver cachorros encontrados
+  const renderNoDogsMessage = () => {
+    if (filteredDogs.length === 0) {
+      return <p className={styles.noDogsMessage}>Nenhum cachorro encontrado.</p>;
+    }
+    return null;
+  };
+  
+    return (
+      <>
+        <h1 className={styles.title}>Encontre um Parceiro</h1>
+        <div className={styles.container_filter}>
+          {/* Dropdowns para os filtros */}
           <label className={styles.container_filter_input}>
-            <select 
-            name='dogBreed'
-            value={selectedBreed}
-            onChange={handleFilterChange}
-            > 
-              <option className={styles.default_option} selected value="-1">Raça</option>
+            <select
+              name='dogBreed'
+              value={selectedBreed}
+              onChange={handleFilterChange}
+            >
+              <option className={styles.default_option} value="-1">Raça</option>
               <option value="Golden Retriever">Golden Retriever</option>
               <option value="Pit Bull">Pit Bull</option>
               <option value="Labrador Retriever">Labrador Retriever</option>
@@ -336,18 +189,16 @@ function DogPage() {
               <option value="Pinscher">Pinscher</option>
             </select>
           </label>
-          <label 
-          className={styles.container_filter_input} 
-          >
-          <select
+          <label className={styles.container_filter_input}>
+            <select
               name='dogGender'
               value={selectedGender}
               onChange={handleFilterChange}
             >
-              <option className={styles.default_option} selected value="-1">Gênero</option>
-              <option value="M">Masculino</option>  
+              <option className={styles.default_option} value="-1">Gênero</option>
+              <option value="M">Masculino</option>
               <option value="F">Feminino</option>
-            </select> 
+            </select>
           </label>
           <label className={styles.container_filter_input}>
             <select
@@ -355,13 +206,13 @@ function DogPage() {
               value={selectedSize}
               onChange={handleFilterChange}
             >
-              <option selected value="-1">Porte</option>
-              <option value="MuitoPequeno">Muito Pequeno</option>  
-              <option value="Pequeno">Pequeno</option>  
-              <option value="Medio">Médio</option>  
-              <option value="Grande">Grande</option>  
-              <option value="MuitoGrande">Muito Grande</option>  
-            </select> 
+              <option value="-1">Porte</option>
+              <option value="MuitoPequeno">Muito Pequeno</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Medio">Médio</option>
+              <option value="Grande">Grande</option>
+              <option value="MuitoGrande">Muito Grande</option>
+            </select>
           </label>
           <label className={styles.container_filter_input}>
             <select
@@ -369,7 +220,7 @@ function DogPage() {
               value={selectedState}
               onChange={handleFilterChange}
             >
-              <option selected value="-1">Estado</option>
+              <option value="-1">Estado</option>
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
@@ -397,37 +248,49 @@ function DogPage() {
               <option value="SP">São Paulo</option>
               <option value="SE">Sergipe</option>
               <option value="TO">Tocantins</option>
-            </select> 
+            </select>
           </label>
+        </div>
+  
+        <div className={styles.dogHighlights}>
+        {/* Renderização dos cards dos cachorros ou mensagem de não encontrado */}
+        {currentDogs.length > 0 ? (
+          currentDogs.map((dog, index) => (
+            <div key={index} className={styles.dogCard}>
+              <NavLink to={`/detalhes/${dog.name}`} className={styles.dogCardLink}>
+                <img src={dog.image} alt={dog.name} className={styles.dogImage} />
+                <h2 className={styles.dogName}>
+                  {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
+                </h2>
+                <p className={styles.dogDetails}>{dog.city}</p>
+                <p className={styles.dogGender}>{dog.gender === 'M' ? '♂' : '♀'}</p>
+              </NavLink>
+              {/* Botão de like com alternância de coração vazio e cheio */}
+              <button className={styles.likeButton} onClick={() => handleLikeToggle(dog.name)}>
+                <img src={likedDogs.includes(dog.name) ? heartFull : heartEmpty} alt="Like" className={styles.likeIcon} />
+              </button>
+            </div>
+          ))
+        ) : (
+          renderNoDogsMessage()
+        )}
       </div>
-
-      <div className={styles.dogHighlights}>
-        {currentDogs.map((dog, index) => (
-          <NavLink key={index} to={`/detalhes/${dog.name}`} className={styles.dogCard}>
-            <img src={dog.image} alt={dog.name} className={styles.dogImage} />
-            <h2 className={styles.dogName}>
-              {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
-            </h2>
-            <p className={styles.dogDetails}>{dog.city}</p>
-            <p className={styles.dogGender}>
-              {dog.gender === 'M' ? '♂' : '♀'}
-            </p>
-          </NavLink>
-        ))}
-      </div>
-      <div className={styles.pagination}>
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
-          Anterior
-        </button>
-        <span>
-          Página {currentPage} de {totalPages}
-        </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Próxima
-        </button>
-      </div>
-    </>
-  )
-}
-
-export default trasition(DogPage);
+  
+        {/* Controles de paginação */}
+        <div className={styles.pagination}>
+          <button onClick={handlePrevPage} disabled={currentPage === 1}>
+            Anterior
+          </button>
+          <span>
+            Página {currentPage} de {totalPages}
+          </span>
+          <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+            Próxima
+          </button>
+        </div>
+      </>
+    );
+  }
+  
+  export default trasition (DogPage);
+  
