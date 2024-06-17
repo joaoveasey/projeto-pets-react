@@ -3,10 +3,7 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     updateProfile,
-    signOut,
-    FacebookAuthProvider,
-    GithubAuthProvider,
-    signInWithPopup
+    signOut
 } from 'firebase/auth'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
@@ -95,67 +92,6 @@ export const userAuthentication = () => {
             setError(systemErrorMessage)
         }
     }
-
-    const loginWithFacebook = async () => {
-        checkIfIsCancelled();
-        setLoading(true)
-        setError(null)
-
-        
-        try{
-            const provider = new FacebookAuthProvider()
-            await signInWithPopup(auth, provider)
-            setLoading(false)
-            navigate("/cachorros")
-        } catch (error){
-            console.error(error.message)
-
-            let systemErrorMessage
-            if(error.message.includes("account-exists-with-different-credential")){
-                systemErrorMessage = "Conta existente com credencial diferente"
-            } 
-            else if(error.message.includes("auth/popup-closed-by-user")){
-                systemErrorMessage = "A janela de login foi fechada antes da conclusão"
-            }
-            else{
-                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
-            }
-
-            setLoading(false)
-            setError(systemErrorMessage)
-          
-        }
-    }
-
-    const loginWithGithub = async () => {
-        checkIfIsCancelled()
-        setLoading(true)
-        setError(null)
-
-        try{
-            const provider = new GithubAuthProvider()
-            await signInWithPopup(auth, provider)
-            setLoading(false)
-            navigate("/cachorros")
-        } catch (error){
-            console.error(error.message)
-
-            let systemErrorMessage
-            if(error.message.includes("account-exists-with-different-credential")){
-                systemErrorMessage = "Conta existente com credencial diferente"
-            } 
-            else if(error.message.includes("auth/popup-closed-by-user")){
-                systemErrorMessage = "A janela de login foi fechada antes da conclusão"
-            }
-            else{
-                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
-            }
-
-            setLoading(false)
-            setError(systemErrorMessage)
-        }
-    }
-
     useEffect(() => {
         return()=> setCancelled(true)
     }, [])
@@ -166,8 +102,6 @@ export const userAuthentication = () => {
         error,
         loading,
         logout,
-        login,
-        loginWithFacebook,
-        loginWithGithub
+        login,        
     }
 }
