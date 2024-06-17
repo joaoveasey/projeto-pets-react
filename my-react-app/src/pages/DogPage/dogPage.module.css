@@ -1,3 +1,5 @@
+/* Estilos para a página de cachorros */
+
 .title {
   text-align: center;
   font-weight: 900;
@@ -37,19 +39,6 @@
   color: #999;
 }
 
-/* Additional styles for better visual appearance */
-.container_filter_input label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
-}
-
-.container_filter_input select option {
-  padding: 10px;
-}
-
 .dogHighlights {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -59,6 +48,7 @@
 }
 
 .dogCard {
+  position: relative; /* Para posicionar o botão de like */
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -68,11 +58,17 @@
   text-decoration: none;
 }
 
+.dogCardLink {
+  display: block;
+  text-decoration: none;
+}
+
 .dogImage {
   width: 280px;
   height: 180px;
   border-radius: 5px;
   margin-bottom: 10px;
+  
 }
 
 .dogImage:hover {
@@ -97,6 +93,21 @@
 .dogBreed {
   font-size: 14px;
   margin: 10px 0;
+}
+
+.likeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.likeButton img {
+  width: 32px; /* Tamanho do ícone de like */
+  height: 32px;
+  
 }
 
 .pagination {
@@ -126,6 +137,14 @@
 .pagination button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+.noDogsMessage{
+  text-align: center;
+  font-size: 25px;
+  color: #152540;
+  font-weight: 500;
+  margin-top: 126px;
 }
 
 /* Media Queries */
