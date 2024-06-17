@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { userAuthentication } from '../../hooks/userAuthentication';
-import { FaFacebook, FaGithub } from 'react-icons/fa';
 import styles from './login.module.css';
 import trasition from '../../components/Transition/transition'
 
@@ -9,7 +8,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login, loginWithFacebook, loginWithGithub, error: authError, loading } = userAuthentication();
+  const { login, error: authError, loading } = userAuthentication();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -61,16 +60,6 @@ function Login() {
         <Link to="/recuperarSenha">Esqueceu sua senha?</Link>
         {!loading && <button className={styles.button}>Entrar</button>}
         {loading && <button className={styles.button} disabled>Aguarde..</button>}
-        {!loading && (
-          <button onClick={loginWithFacebook} className={styles.facebookButton}>
-            <FaFacebook className={styles.icon} /> Login com Facebook
-          </button>
-        )}
-        {!loading && (
-          <button onClick={loginWithGithub} className={styles.githubButton}>
-            <FaGithub className={styles.icon} /> Login com GitHub
-          </button>
-        )}
         {loading && <button className={styles.button} disabled>Aguarde..</button>}
         {error && <p className='error'>{error}</p>}
         <div className={styles.footer}>
