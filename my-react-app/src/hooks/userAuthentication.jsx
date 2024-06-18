@@ -6,8 +6,7 @@ import {
     signOut,
     FacebookAuthProvider,
     GithubAuthProvider,
-    signInWithPopup,
-    sendEmailVerification
+    signInWithPopup
 } from 'firebase/auth'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
@@ -36,13 +35,11 @@ export const userAuthentication = () => {
                 data.email,
                 data.password
             )
-            sendEmailVerification(auth.currentUser).then(() => {
-                console.log('Verifique seu e-mail para confirmar o cadastro.')
-            })
 
             await updateProfile(user, {
                 displayName: data.displayName
-            })  
+            })
+            
             setLoading(false)
             alert("Conta criada com sucesso!")
         }catch(error){
@@ -77,10 +74,7 @@ export const userAuthentication = () => {
 
         try{
             await signInWithEmailAndPassword(auth, data.email, data.password)
-            if (!user.user.emailVerified){
-                signOut(auth)
-                throw new Error('email-not-verified')
-            }
+            
             setLoading(false)
             navigate("/cachorros")
         }catch(error){
@@ -93,8 +87,6 @@ export const userAuthentication = () => {
                 systemErrorMessage = "Este usuário não está cadastrado"
             } else if(error.message.includes("wrong-password")){
                 systemErrorMessage = "Erro nas credenciais"
-            } else if(error.message.includes("email-not-verified")){
-                systemErrorMessage = ('E-mail não verificado. Acesse a sua caixa de mensagens.')
             } else {
                 systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde."
             }
@@ -163,6 +155,7 @@ export const userAuthentication = () => {
             setError(systemErrorMessage)
         }
     }
+
     useEffect(() => {
         return()=> setCancelled(true)
     }, [])
@@ -173,8 +166,8 @@ export const userAuthentication = () => {
         error,
         loading,
         logout,
-        login,   
+        login,
         loginWithFacebook,
-        loginWithGithub    
+        loginWithGithub
     }
 }
