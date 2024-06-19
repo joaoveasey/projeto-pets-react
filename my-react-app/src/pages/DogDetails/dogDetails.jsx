@@ -319,8 +319,118 @@ const dogData = {
     city: 'Campo Grande',
     state: 'MS',
     size: 'Grande',
-    gender: 'F',
-  }
+    gender: 'Macho',
+    age: '3 anos',
+    description: 'Bailey é um cachorro protetor e carinhoso, adora brincar ao ar livre.',
+    image: Bailey,
+    owner: {
+      name: 'Fernando Oliveira',
+      email: 'fernando.oliveira@example.com',
+      phone: '(67) 98765-4321',
+    }
+  },
+
+  Charlie: {
+    name: 'Charlie',
+    breed: 'Bulldog Inglês',
+    city: 'Porto Alegre',
+    state: 'RS',
+    size: 'Médio',
+    gender: 'Macho',
+    age: '4 anos',
+    description: 'Charlie é um cachorro dócil e muito amigável com crianças.',
+    image: Charlie,
+    owner: {
+      name: 'Mariana Costa',
+      email: 'mariana.costa@example.com',
+      phone: '(51) 98765-4321',
+    }
+  },
+
+  Rosie: {
+    name: 'Rosie',
+    breed: 'Bichon Frisé',
+    city: 'Florianópolis',
+    state: 'SC',
+    size: 'Pequeno',
+    gender: 'Fêmea',
+    age: '2 anos',
+    description: 'Rosie é uma cadela alegre e brincalhona, adora estar cercada de pessoas.',
+    image: Rosie,
+    owner: {
+      name: 'Paula Lima',
+      email: 'paula.lima@example.com',
+      phone: '(48) 98765-4321',
+    }
+  },
+
+  Jack: {
+    name: 'Jack',
+    breed: 'Labrador Retriever',
+    city: 'São Paulo',
+    state: 'SP',
+    size: 'Grande',
+    gender: 'Macho',
+    age: '5 anos',
+    description: 'Jack é um labrador energético e inteligente, adora brincar de pegar a bola.',
+    image: Jack,
+    owner: {
+      name: 'Ricardo Santos',
+      email: 'ricardo.santos@example.com',
+      phone: '(11) 98765-4321',
+    }
+  },
+
+  Lucy: {
+    name: 'Lucy',
+    breed: 'Golden Retriever',
+    city: 'Rio de Janeiro',
+    state: 'RJ',
+    size: 'Médio',
+    gender: 'Fêmea',
+    age: '3 anos',
+    description: 'Lucy é uma golden retriever dócil e amorosa, adora fazer novos amigos.',
+    image: Lucy,
+    owner: {
+      name: 'Camila Oliveira',
+      email: 'camila.oliveira@example.com',
+      phone: '(21) 98765-4321',
+    }
+  },
+
+  Duke: {
+    name: 'Duke',
+    breed: 'Boxer',
+    city: 'Belo Horizonte',
+    state: 'MG',
+    size: 'Grande',
+    gender: 'Macho',
+    age: '4 anos',
+    description: 'Duke é um boxer brincalhão e cheio de energia, sempre pronto para se divertir.',
+    image: Duke,
+    owner: {
+      name: 'Roberto Silva',
+      email: 'roberto.silva@example.com',
+      phone: '(31) 98765-4321',
+    }
+  },
+
+  Maggie: {
+    name: 'Maggie',
+    breed: 'Shih Tzu',
+    city: 'Curitiba',
+    state: 'PR',
+    size: 'Pequeno',
+    gender: 'Fêmea',
+    age: '2 anos',
+    description: 'Maggie é uma shih tzu adorável e muito companheira, gosta de carinho e colo.',
+    image: Maggie,
+    owner: {
+      name: 'Carla Martins',
+      email: 'carla.martins@example.com',
+      phone: '(41) 98765-4321',
+    }
+  },
 }
 
 const Modal = ({ onClose, owner }) => (
@@ -414,79 +524,79 @@ const DogDetails = () => {
 
   return (
     <div className={styles.container}>
-    <div className={styles.imageContainer}>
-      <img src={dog.image} alt={dog.name} className={styles.dogImage} />
-    </div>
-    <div className={styles.content}>
-      <h1 className={styles.dogName}>
-        {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
-      </h1>
-      <div className={styles.details}>
-        <p className={styles.detailItemPaw}>
-          <img src={pawIcon} alt="Paw icon" className={styles.iconPaw} />
-          {dog.gender} | {dog.size} | {dog.age}
-        </p>
-        <p className={styles.detailItemLocation}>
-          <img src={locationIcon} alt="Location icon" className={styles.iconLocation} />
-          {dog.city}, {dog.state}
-        </p>
-        <p className={styles.detailItemDescription}>
-          <img src={descriptionIcon} alt="Description icon" className={styles.iconDescription} />
-          {dog.description}
-        </p>
+      <div className={styles.imageContainer}>
+        <img src={dog.image} alt={dog.name} className={styles.dogImage} />
       </div>
-      <button className={styles.contactButton} onClick={handleContactClick}>
-        Contato
-      </button>
-      <button className={styles.backButton} onClick={() => navigate(-1)}>
-        Voltar
-      </button>
-      <ShareButtons url={currentUrl} text={shareText} />
-    </div>
-    {isModalOpen && <Modal onClose={handleCloseModal} owner={dog.owner} />}
+      <div className={styles.content}>
+        <h1 className={styles.dogName}>
+          {dog.name}, <span className={styles.dogBreed}>{dog.breed}</span>
+        </h1>
+        <div className={styles.details}>
+          <p className={styles.detailItemPaw}>
+            <img src={pawIcon} alt="Paw icon" className={styles.iconPaw} />
+            {dog.gender} | {dog.size} | {dog.age}
+          </p>
+          <p className={styles.detailItemLocation}>
+            <img src={locationIcon} alt="Location icon" className={styles.iconLocation} />
+            {dog.city}, {dog.state}
+          </p>
+          <p className={styles.detailItemDescription}>
+            <img src={descriptionIcon} alt="Description icon" className={styles.iconDescription} />
+            {dog.description}
+          </p>
+        </div>
+        <button className={styles.contactButton} onClick={handleContactClick}>
+          Contato
+        </button>
+        <button className={styles.backButton} onClick={() => navigate(-1)}>
+          Voltar
+        </button>
+        <ShareButtons url={currentUrl} text={shareText} />
+      </div>
+      {isModalOpen && <Modal onClose={handleCloseModal} owner={dog.owner} />}
 
-    <div className={styles.avaliacoesDogs}>
-      <div className={styles.reviewsSection}>
-        <h3 className={styles.sectionTitle}>Avaliações</h3>
-        {reviews.map((review, index) => (
-          <div key={index} className={styles.review}>
-            <p>Nota: {review.rating}</p>
-            <p>{review.comment}</p>
-          </div>
-        ))}
-      </div>
-      <div className={styles.reviewForm}>
-        <h3 className={styles.sectionTitle}>Deixe sua Avaliação</h3>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Nota:</label>
-            <input 
-              type="number" 
-              name="rating" 
-              value={reviewData.rating} 
-              onChange={handleChange} 
-              min="1" 
-              max="5" 
-              required 
-            />
-          </div>
-          <div>
-            <label>Comentário:</label>
-            <textarea 
-              name="comment" 
-              value={reviewData.comment} 
-              onChange={handleChange} 
-              required 
-            />
-          </div>
-          <button type="submit" className={styles.submitButton}>Enviar Avaliação</button>
-        </form>
-        {success && <p>Avaliação enviada com sucesso!</p>}
-        {error && <p>{error}</p>}
-      </div>  
-    </div>
-  </div>
-);
+      {/* <div className={styles.avaliacoesDogs}>
+        <div className={styles.reviewsSection}>
+          <h3 className={styles.sectionTitle}>Avaliações</h3>
+          {reviews.map((review, index) => (
+            <div key={index} className={styles.review}>
+              <p>Nota: {review.rating}</p>
+              <p>{review.comment}</p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.reviewForm}>
+          <h3 className={styles.sectionTitle}>Deixe sua Avaliação</h3>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Nota:</label>
+              <input
+                type="number"
+                name="rating"
+                value={reviewData.rating}
+                onChange={handleChange}
+                min="1"
+                max="5"
+                required
+              />
+            </div>
+            <div>
+              <label>Comentário:</label>
+              <textarea
+                name="comment"
+                value={reviewData.comment}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button type="submit" className={styles.submitButton}>Enviar Avaliação</button>
+          </form>
+          {success && <p>Avaliação enviada com sucesso!</p>}
+          {error && <p>{error}</p>}
+        </div>
+      </div>*/}
+    </div> 
+  );
 };
 
 export default trasition(DogDetails);

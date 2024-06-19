@@ -6,6 +6,7 @@
   background-color: #f8f9fa;
   padding: 20px;
   flex-wrap: wrap; /* Permitir que os itens envolvam em telas menores */
+  margin-top: 44px;
 }
 
 .avatar {

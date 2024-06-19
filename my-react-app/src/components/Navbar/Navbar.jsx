@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faInfoCircle, faLightbulb, faQuestionCircle, faSignInAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faInfoCircle, faLightbulb, faQuestionCircle, faSignInAlt, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import styles from './Navbar.module.css';
 import { userAuthentication } from '../../hooks/userAuthentication';
 import { useAuthValue } from '../../context/AuthContext';
 import logo from "./img/logo.png";
 import userPic from "./img/user.png";
 import poligono from "./img/PolygonOpened.png";
-import { useTheme  } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
 const Navbar = () => {
     const { theme, toggleTheme } = useTheme();
@@ -18,6 +18,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [nightModeActive, setNightModeActive] = useState(false);
 
     const handleLogout = () => {
         logout();
@@ -28,6 +29,11 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const toggleNightMode = () => {
+        setNightModeActive(!nightModeActive);
+        toggleTheme(); // Função para alternar o tema
+    };
+
     return (
         <header className={styles.header}>
             <NavLink to="/" className={styles.brand}>
@@ -36,9 +42,16 @@ const Navbar = () => {
             </NavLink>
             <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}>
                 <ul className={styles.link_list}>
-                    <button className={styles.btnToggleTheme}onClick={toggleTheme}>
-                        {theme === 'light' ? '🌙' : '☀️'}
-                    </button>
+                    <li className={styles.links}>
+                        <button className={`${styles.btnToggleTheme} ${nightModeActive ? styles.active : ''}`} onClick={toggleNightMode}>
+                            {nightModeActive ? (
+                                <FontAwesomeIcon icon={faMoon} />
+                            ) : (
+                                <FontAwesomeIcon className={styles.sun} icon={faSun} />
+                            )}
+                            <div className={styles.toggleSwitch}></div>
+                        </button>
+                    </li>
                     <li className={styles.links}>
                         <NavLink to="/">
                             <FontAwesomeIcon icon={faHome} /> Home
@@ -59,7 +72,6 @@ const Navbar = () => {
                             <FontAwesomeIcon icon={faQuestionCircle} /> FAQ
                         </NavLink>
                     </li>
-            
                     {!user ? (
                         <li className={styles.links}>
                             <NavLink to="/entrar" className={styles.entrarButton}>
@@ -68,20 +80,22 @@ const Navbar = () => {
                         </li>
                     ) : (
                         <li className={styles.links}>
-                            <div className={styles.drawerToggle} onClick={() => setDrawerOpen(!drawerOpen)}>
-                                <img src={poligono} width="20px" height="18px" alt="Menu Toggle" />
-                            </div>
-                            <NavLink to="/usuario" className={styles.usuario}>
-                                <img src={userPic} alt="Usuário" width="80px" height="45px" />
-                                <p>{user.displayName || 'Usuário'}</p>
-                            </NavLink>
-                            {drawerOpen && (
-                                <div className={styles.drawer}>
-                                    <button onClick={handleLogout} className={styles.logoutButton}>
-                                        Sair
-                                    </button>
+                            <div className={styles.profileMenu}>
+                                <NavLink to="/usuario" className={styles.usuario}>
+                                    <img src={userPic} alt="Usuário" />
+                                    <p>{user.displayName || 'Usuário'}</p>
+                                </NavLink>
+                                <div className={styles.drawerToggle} onClick={() => setDrawerOpen(!drawerOpen)}>
+                                    <img src={poligono} width="20px" height="18px" alt="Menu Toggle" />
                                 </div>
-                            )}
+                                {drawerOpen && (
+                                    <div className={styles.drawer}>
+                                        <button onClick={handleLogout} className={styles.logoutButton}>
+                                            Sair
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
                         </li>
                     )}
                 </ul>

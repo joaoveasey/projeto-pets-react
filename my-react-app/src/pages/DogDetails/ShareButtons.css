@@ -1,6 +1,6 @@
 .button {
   margin: 10px;
-  padding: 10px 20px;
+  padding: 10px 30px;
   font-size: 16px;
   cursor: pointer;
   color: white;
@@ -9,27 +9,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 373px;  /* Largura fixa */
-  height: 40px; /* Altura fixa */
+  width: 20vw;
+  margin-left: 15px;
+
 }
 
-  .button svg {
-    margin-right: 8px;
+.button svg {
+  margin-right: 8px;
+}
+
+.button.twitter {
+  background-color: #1da1f2;
+  /* Twitter blue */
+}
+
+.button.twitter:hover {
+  background-color: #0d95e8;
+}
+
+.button.facebook {
+  background-color: #3b5998;
+  /* Facebook blue */
+}
+
+.button.facebook:hover {
+  background-color: #2d4373;
+}
+
+@media (max-width: 1024px) {
+  .button {
+    padding: 5px 170px;
+    font-size: 0.8rem;
+    margin-left: 0;
   }
-  
-  .button.twitter {
-    background-color: #1da1f2; /* Twitter blue */
+}
+
+@media (max-width: 768px) {
+  .button {
+    padding: 5px 170px;
+    font-size: 0.8rem;
+    margin-left: 0;
   }
-  
-  .button.twitter:hover {
-    background-color: #0d95e8;
+}
+
+@media (max-width: 480px) {
+  .button {
+    padding: 5px 170px;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-left: 0;
+    
+
   }
-  
-  .button.facebook {
-    background-color: #3b5998; /* Facebook blue */
-  }
-  
-  .button.facebook:hover {
-    background-color: #2d4373;
-  }
-  
+}

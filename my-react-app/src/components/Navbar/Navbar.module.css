@@ -9,7 +9,46 @@
 }
 
 .btnToggleTheme {
-    background-color: #152540;
+    background-color: #1f4068;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 30px;
+    transition: background-color 0.3s ease;
+    position: relative; /* Para posicionamento relativo */
+}
+
+.btnToggleTheme.active {
+    background-color: #4cd964;
+}
+
+.btnToggleTheme svg {
+    position: absolute; /* Posicionamento absoluto para o ícone */
+    left: 8px; /* Ajuste para o ícone ficar à esquerda */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%);
+}
+
+.toggleSwitch {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.btnToggleTheme.active .toggleSwitch {
+    transform: translateX(30px);
+}
+
+.sun {
+    padding-left: 33px;
+    color: orange;
 }
 
 .brand {
@@ -26,6 +65,7 @@
 
 .brand p {
     font-size: 24px;
+    margin-left: 5px;
 }
 
 .nav {
@@ -37,7 +77,7 @@
 
 .link_list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 800px;
     list-style-type: none;
@@ -47,6 +87,10 @@
     margin-right: 20px;
     display: flex;
     align-items: center;
+}
+
+.links {
+    margin-right: 15px;
 }
 
 .links a {
@@ -75,19 +119,27 @@
     background-color: #fff;
 }
 
-.drawerToggle {
+.profileMenu {
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.drawerToggle {
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px; /* Espaçamento entre o ícone e o nome de usuário */
 }
 
 .drawer {
     position: absolute;
-    top: 95px;
-    right: 195px;
+    top: 50px;
+    right: 0;
     background: #fff;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 .entrarButton {
@@ -125,6 +177,8 @@
 
 .usuario img {
     margin-right: 10px;
+    width: 4.2vw;
+    height: 4.2vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -154,7 +208,6 @@
     .burger {
         display: flex;
         margin-right: 10px;
-
     }
 
     .pageName {
