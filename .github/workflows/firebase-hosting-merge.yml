@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install dependencies and build
       - run: |
-          npm cd projeto-pets-react
+          cd projeto-pets-react
           npm ci
           npm run build
       - name: Deploy to Firebase
