@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies and build
-      - run: cd my-react-app && npm ci && npm run build
+      - run: cd my-react-app && npm i && npm ci && npm run build
       - name: Deploy to Firebase
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
