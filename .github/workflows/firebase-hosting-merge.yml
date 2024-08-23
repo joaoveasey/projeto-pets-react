@@ -9,10 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies and build
-      - run: |
-          cd projeto-pets-react
-          npm ci
-          npm run build
+      - run: cd my-react-app && npm ci && npm run build
       - name: Deploy to Firebase
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -20,4 +17,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROJETO_PETS_CONEXAO_CANINA }}
           channelId: live
           projectId: projeto-pets-conexao-canina
-          entryPoint: projeto-pets-react
