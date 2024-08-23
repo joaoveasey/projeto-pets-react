@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { db } from '../../firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
-import styles from './CommentForm.module.css'; // Importe os estilos CSS usando CSS Modules
+import styles from './CommentForm.module.css'; 
 
 function CommentForm() {
   const [formData, setFormData] = useState({
